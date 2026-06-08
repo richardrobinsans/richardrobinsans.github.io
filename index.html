@@ -151,6 +151,29 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .promo__value{font-size:clamp(1.3rem,6vw,1.9rem);font-weight:800;letter-spacing:.08em;color:var(--gold);
   background:rgba(0,0,0,.28);border:1px dashed rgba(255,200,58,.55);border-radius:10px;padding:10px 18px}
 
+/* ---------- РУЛЕТКА ---------- */
+.wheel-block{text-align:center}
+.wheel-wrap{position:relative;width:min(300px,82vw);aspect-ratio:1;margin:22px auto 0}
+.wheel-wrap::before{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);
+  border-left:13px solid transparent;border-right:13px solid transparent;border-top:20px solid var(--gold);
+  z-index:3;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))}
+.wheel{position:absolute;inset:0;border-radius:50%;border:6px solid var(--surface-2);
+  box-shadow:var(--shadow),inset 0 0 0 2px rgba(255,255,255,.06);
+  transition:transform 4s cubic-bezier(.16,1,.3,1);will-change:transform;
+  background:conic-gradient(
+    var(--gold) 0 45deg, var(--blue) 45deg 90deg,
+    var(--gold) 90deg 135deg, var(--blue) 135deg 180deg,
+    var(--gold) 180deg 225deg, var(--blue) 225deg 270deg,
+    var(--gold) 270deg 315deg, var(--blue) 315deg 360deg)}
+.seg{position:absolute;inset:0}
+.seg b{position:absolute;left:50%;top:14px;transform:translateX(-50%);font-size:.82rem;font-weight:800;white-space:nowrap}
+.seg--gold b{color:var(--gold-ink)}
+.seg--blue b{color:#fff}
+.wheel-hub{position:absolute;top:50%;left:50%;width:46px;height:46px;transform:translate(-50%,-50%);
+  border-radius:50%;background:var(--surface);border:3px solid var(--gold);z-index:2;display:grid;place-items:center;
+  font-weight:800;color:var(--gold);font-size:.72rem}
+.wheel-result{margin-top:16px;font-weight:800;color:var(--gold);min-height:1.3em}
+
 /* ---------- ЗАГЛУШКА ИЗОБРАЖЕНИЯ ---------- */
 .img-ph{margin-top:16px;border:1.5px dashed var(--line);border-radius:14px;min-height:160px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);text-align:center;gap:4px;font-size:.9rem;
@@ -355,6 +378,31 @@ body{padding-bottom:80px}
   </div>
 </section>
 
+<!-- B9b. РУЛЕТКА -->
+<section class="section">
+  <div class="wrap wheel-block">
+    <p class="eyebrow">Бонус-игра</p>
+    <h2>Крути рулетку и забери бонус</h2>
+    <p style="color:var(--muted);max-width:520px;margin:0 auto">Нажми кнопку — рулетка определит твой бонус в фриспинах (от 20 до 100 FS), и промокод скопируется автоматически.</p>
+    <div class="wheel-wrap">
+      <div class="wheel" id="wheel">
+        <div class="seg seg--gold" style="transform:rotate(22.5deg)"><b>100 FS</b></div>
+        <div class="seg seg--blue" style="transform:rotate(67.5deg)"><b>20 FS</b></div>
+        <div class="seg seg--gold" style="transform:rotate(112.5deg)"><b>50 FS</b></div>
+        <div class="seg seg--blue" style="transform:rotate(157.5deg)"><b>30 FS</b></div>
+        <div class="seg seg--gold" style="transform:rotate(202.5deg)"><b>80 FS</b></div>
+        <div class="seg seg--blue" style="transform:rotate(247.5deg)"><b>40 FS</b></div>
+        <div class="seg seg--gold" style="transform:rotate(292.5deg)"><b>70 FS</b></div>
+        <div class="seg seg--blue" style="transform:rotate(337.5deg)"><b>60 FS</b></div>
+      </div>
+      <div class="wheel-hub">FS</div>
+    </div>
+    <p class="wheel-result" id="wheelResult" hidden></p>
+    <p style="margin-top:18px"><button class="btn btn--gold btn--lg" id="spinBtn" type="button"><span class="spin-label">Крутить рулетку</span></button></p>
+    <p style="margin-top:14px"><a class="btn btn--lg" href="/go?b=wheel" rel="nofollow noopener">↓ Скачать и активировать бонус</a></p>
+  </div>
+</section>
+
 <!-- B10. ДЕПОЗИТ И ВЫВОД -->
 <section class="section section--alt">
   <div class="wrap rich">
@@ -446,17 +494,58 @@ body{padding-bottom:80px}
 </div>
 
 <script>
-document.getElementById('y').textContent=new Date().getFullYear();
 (function(){
-  var btn=document.getElementById('copyPromo');
-  if(!btn)return;
-  btn.addEventListener('click',function(){
-    var code=btn.getAttribute('data-code')||'';
-    var label=btn.querySelector('.copy-label');
-    function done(){var t=label.textContent;label.textContent='Скопировано!';setTimeout(function(){label.textContent=t;},1500);}
-    function fallback(){var ta=document.createElement('textarea');ta.value=code;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(done,fallback);}else{fallback();}
-  });
+  var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+  function copyText(text, onDone){
+    function done(){ if(onDone) onDone(); }
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); done();
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done, fallback); }
+    else { fallback(); }
+  }
+
+  // B9 — копирование промокода
+  var copyBtn=document.getElementById('copyPromo');
+  if(copyBtn){
+    copyBtn.addEventListener('click',function(){
+      var code=copyBtn.getAttribute('data-code')||'';
+      var label=copyBtn.querySelector('.copy-label');
+      copyText(code, function(){ var t=label.textContent; label.textContent='Скопировано!'; setTimeout(function(){label.textContent=t;},1500); });
+    });
+  }
+
+  // B9b — рулетка (всегда выпадает 100 FS = реальный бонус)
+  var wheel=document.getElementById('wheel');
+  var spinBtn=document.getElementById('spinBtn');
+  var result=document.getElementById('wheelResult');
+  if(wheel && spinBtn && result){
+    var PROMO='1xcTestCode';
+    var spun=false;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function reveal(){
+      copyText(PROMO, function(){
+        result.hidden=false;
+        result.textContent='🎉 Выпало 100 FS! Промокод '+PROMO+' скопирован';
+        spinBtn.disabled=false;
+        spinBtn.querySelector('.spin-label').textContent='Скопировать промокод';
+      });
+    }
+    spinBtn.addEventListener('click',function(){
+      if(!spun){
+        spun=true; spinBtn.disabled=true;
+        if(reduce){ wheel.style.transform='rotate(1777.5deg)'; reveal(); return; }
+        var deg=1777.5+(Math.random()*24-12); // лёгкий разброс, но в пределах сектора 100 FS
+        wheel.style.transform='rotate('+deg+'deg)';
+        setTimeout(reveal, 4200);
+      } else {
+        copyText(PROMO, function(){ result.textContent='Промокод '+PROMO+' скопирован ✓'; });
+      }
+    });
+  }
 })();
 </script>
 
