@@ -3,417 +3,385 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1a31">
+<meta name="theme-color" content="#091324">
 <meta name="robots" content="index, follow">
 
 <!-- ============================================================= -->
-<!--  CUSTOMIZE / ТОЧКИ НАСТРОЙКИ (замени значения перед запуском)  -->
-<!--  {{APP_NAME}}   — название приложения/бренда                   -->
-<!--  {{BONUS}}      — оффер по бонусу (пример: «500% до 100 000 ₦») -->
-<!--  {{APK_SIZE}}   — размер APK (пример: «25 МБ»)                 -->
-<!--  {{ANDROID_MIN}}— мин. версия Android (пример: «5.0»)         -->
-<!--  {{RATING}}     — рейтинг (пример: «4.8»)                     -->
-<!--  {{DOWNLOADS}}  — число загрузок (пример: «1 млн+»)           -->
-<!--  CTA-ссылка уже подставлена везде: bemobtrcks.com/click        -->
-<!--  Цвета бренда настраиваются в блоке :root ниже                 -->
+<!--  CUSTOMIZE / ТОЧКИ НАСТРОЙКИ                                   -->
+<!--  Значения подставлены: 1xCasino, 100 FS, 26MB, Android 7+,     -->
+<!--  57 959 загрузок. Промокод: 1xcTestCode (меняется в B9).       -->
+<!--  ОСТАЛОСЬ ВПИСАТЬ: {{RATING}} — реальный рейтинг (напр. 4.8).  -->
+<!--  CTA: кнопки → /go?b=<button> (Worker логирует и редиректит).  -->
 <!-- ============================================================= -->
 
-<title>Скачать приложение {{APP_NAME}} для Android — ставки и казино</title>
-<meta name="description" content="Скачай приложение {{APP_NAME}} для Android: ставки на спорт, киберспорт и онлайн-казино. Лёгкое приложение, быстро работает на слабом интернете.">
+<title>Скачать приложение 1xCasino для Android — ставки и казино</title>
+<meta name="description" content="Скачай приложение 1xCasino для Android: онлайн-казино. Лёгкое приложение, быстро работает на слабом интернете.">
 
 <style>
-/* ---------- ТОКЕНЫ ТЕМЫ (стиль 1xBet/1xCasino: синий + зелёный + золото) ---------- */
+/* ---------- ТОКЕНЫ ТЕМЫ (1xCasino: тёмно-синий + зелёная кнопка + золото) ---------- */
 :root{
-  --bg:#0b1a31;
-  --bg-alt:#0f2240;
-  --surface:#15294a;
-  --surface-2:#1d3a63;
+  --bg:#091324;
+  --bg-alt:#0d1b33;
+  --surface:#13243f;
+  --surface-2:#1a3257;
   --line:rgba(255,255,255,.10);
-  --text:#f3f7ff;
-  --muted:#a9bad6;
-  --blue:#1a78e6;          /* фирменный синий 1x */
-  --blue-2:#2b8ff5;
-  --green:#16a34a;         /* кнопка загрузки */
-  --green-2:#11883d;
-  --green-ink:#ffffff;
-  --gold:#ffce3a;          /* бонус/звёзды */
-  --gold-2:#ff9f1c;
-  --maxw:1080px;
+  --text:#f2f6ff;
+  --muted:#9fb0cc;
+  --blue:#1a78e6;
+  --blue-2:#3a93f7;
+  --green:#19a94e;
+  --green-2:#0f8a3c;
+  --green-ink:#fff;
+  --gold:#ffc83a;
+  --gold-2:#ff9e1b;
+  --gold-ink:#1c1304;
+  --maxw:1060px;
   --radius:14px;
   --btn-radius:10px;
   --pad:20px;
   --shadow:0 18px 40px rgba(0,0,0,.5);
 }
 
-/* ---------- СБРОС ---------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
   font-family:Roboto,-apple-system,"Segoe UI","Helvetica Neue",Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.55;
-  /* лёгкий «gradient mesh» фон — без картинок, 0 КБ */
+  background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden;
   background-image:
-    radial-gradient(60% 50% at 85% -5%, rgba(26,120,230,.22), transparent 60%),
-    radial-gradient(55% 45% at -10% 8%, rgba(22,163,74,.14), transparent 55%);
+    radial-gradient(60% 50% at 88% -5%, rgba(26,120,230,.22), transparent 60%),
+    radial-gradient(48% 40% at 0% 0%, rgba(255,200,58,.10), transparent 55%);
   background-attachment:fixed;
-  overflow-x:hidden;
 }
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
-h1,h2,h3{line-height:1.15;font-weight:800;letter-spacing:-.01em}
+h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 
-/* ---------- КОНТЕЙНЕР ---------- */
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
-.section{padding-block:clamp(40px,9vw,72px)}
+.section{padding-block:clamp(38px,8vw,64px)}
 .section--alt{background:var(--bg-alt);border-block:1px solid var(--line)}
-.eyebrow{color:var(--blue-2);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
-.section h2{font-size:clamp(1.5rem,5.2vw,2.1rem);margin-bottom:.65em}
-.lead{color:var(--muted);font-size:clamp(1rem,3.6vw,1.12rem)}
+.eyebrow{color:var(--blue-2);font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.section h2{font-size:clamp(1.45rem,5vw,2rem);margin-bottom:.5em}
 
-/* ---------- КНОПКИ (стиль 1x: скруглённый прямоугольник, зелёная загрузка) ---------- */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
-  min-height:52px;padding:0 26px;border-radius:var(--btn-radius);
-  font-weight:800;font-size:1.02rem;cursor:pointer;border:0;
-  color:var(--green-ink);text-transform:uppercase;letter-spacing:.01em;
-  background:linear-gradient(180deg,#1fb457,var(--green));
-  box-shadow:0 10px 22px rgba(22,163,74,.38);
-  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
-  text-align:center;
-}
-.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(22,163,74,.5);filter:brightness(1.05)}
+/* ---------- ТЕКСТ ---------- */
+.rich p{color:var(--muted);margin-top:12px;font-size:1rem;line-height:1.65}
+.rich p:first-of-type{margin-top:0}
+.bullets{list-style:none;display:grid;gap:9px;margin-top:14px}
+.bullets li{color:var(--muted);padding-left:20px;position:relative}
+.bullets li::before{content:"–";position:absolute;left:4px;color:var(--blue-2)}
+
+/* ---------- КНОПКИ ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 26px;
+  border-radius:var(--btn-radius);font-weight:800;font-size:1.02rem;cursor:pointer;border:0;color:var(--green-ink);
+  text-transform:uppercase;letter-spacing:.01em;background:linear-gradient(180deg,#1fc25b,var(--green));
+  box-shadow:0 10px 22px rgba(25,169,78,.38);transition:transform .15s,box-shadow .15s,filter .15s;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(25,169,78,.5);filter:brightness(1.05)}
 .btn:active{transform:translateY(0)}
-.btn--lg{min-height:60px;font-size:1.1rem;padding:0 34px}
+.btn--lg{min-height:60px;font-size:1.1rem;padding:0 32px}
 .btn--sm{min-height:42px;font-size:.88rem;padding:0 18px}
 .btn--block{width:100%}
-.btn--blue{background:linear-gradient(180deg,var(--blue-2),var(--blue));color:#fff;box-shadow:0 10px 22px rgba(26,120,230,.38)}
-.btn--ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none;text-transform:none}
+.btn--gold{background:linear-gradient(180deg,var(--gold),var(--gold-2));color:var(--gold-ink);box-shadow:0 10px 22px rgba(255,158,27,.35);text-transform:none}
 
 /* ---------- ШАПКА ---------- */
-.site-header{
-  position:sticky;top:0;z-index:40;
-  display:flex;align-items:center;gap:12px;
-  padding:12px var(--pad);
-  background:rgba(11,26,49,.85);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
-}
+.site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:12px var(--pad);
+  background:rgba(9,19,36,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center}
 .brand__logo{height:34px;width:auto}
-.badge-18{
-  margin-left:auto;font-weight:800;font-size:.78rem;
-  color:var(--gold);border:1.5px solid var(--gold);
-  border-radius:8px;padding:3px 8px;letter-spacing:.02em;
-}
+.badge-18{margin-left:auto;font-weight:800;font-size:.78rem;color:var(--gold);border:1.5px solid var(--gold);
+  border-radius:8px;padding:3px 8px}
 
 /* ---------- HERO ---------- */
-.hero{padding-block:clamp(28px,8vw,56px)}
-.hero__grid{display:grid;gap:30px}
-.hero h1{font-size:clamp(1.85rem,7.2vw,3rem);margin:.35em 0 .5em}
+.hero{padding-block:clamp(26px,7vw,52px)}
+.hero__grid{display:grid;gap:28px}
+.hero h1{font-size:clamp(1.8rem,6.8vw,2.9rem);margin:.35em 0 .5em}
 .hl{color:var(--gold)}
-.hero .btn{margin-top:6px}
-
-/* карточка приложения (store-style, как на apk-страницах 1x) */
-.appcard{
-  display:flex;gap:14px;align-items:center;
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:14px;padding:14px;margin:20px 0;max-width:430px;
-}
-.appcard__icon{
-  width:58px;height:58px;border-radius:14px;flex:0 0 auto;padding:9px;
-  background:var(--bg-alt);border:1px solid var(--line);
-}
+.hero__lead{color:var(--muted);font-size:clamp(.98rem,3.4vw,1.08rem)}
+.hero .btn{margin-top:8px}
+.appcard{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:14px;margin:20px 0;max-width:430px}
+.appcard__icon{width:58px;height:58px;border-radius:14px;flex:0 0 auto;padding:9px;background:var(--bg-alt);border:1px solid var(--line)}
 .appcard__name{font-size:1.05rem;display:block}
 .appcard__rating{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.85rem;color:var(--muted);margin:3px 0}
 .stars{color:var(--gold);letter-spacing:1px}
 .appcard__meta{font-size:.78rem;color:var(--muted)}
-
-/* телефон-плейсхолдер (без картинок) */
-.phone{
-  width:min(248px,72vw);margin-inline:auto;
-  aspect-ratio:9/19;border-radius:34px;padding:10px;
-  background:linear-gradient(160deg,#1c365e,#0d1c33);
-  border:1px solid var(--line);box-shadow:var(--shadow);
-}
-.phone__screen{
-  height:100%;border-radius:26px;
-  background:radial-gradient(120% 80% at 50% 0%, rgba(26,120,230,.22), transparent 60%), var(--bg-alt);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:14px;text-align:center;padding:18px;
-}
+.phone{width:min(240px,70vw);margin-inline:auto;aspect-ratio:9/19;border-radius:34px;padding:10px;
+  background:linear-gradient(160deg,#1c365e,#0b1830);border:1px solid var(--line);box-shadow:var(--shadow)}
+.phone__screen{height:100%;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;text-align:center;padding:18px;background:radial-gradient(120% 80% at 50% 0%, rgba(26,120,230,.22), transparent 60%), var(--bg-alt)}
 .phone__screen small{color:var(--muted);font-size:.78rem;line-height:1.4}
 .phone__logo{height:30px;opacity:.95}
 
-/* ---------- ПОЛОСА ПРЕИМУЩЕСТВ ---------- */
-.strip{background:var(--surface);border-block:1px solid var(--line)}
-.strip__grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:18px 14px;
-  padding-block:26px;
-}
-.strip__item{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem}
-.strip__item svg{flex:0 0 auto;color:var(--blue-2)}
+/* ---------- ПРЕИМУЩЕСТВА (эмодзи-сетка) ---------- */
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+.benefit{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.benefit .emo{font-size:1.3rem;line-height:1.1;flex:0 0 auto}
+.benefit span{font-weight:600;font-size:.93rem}
 
 /* ---------- КАРТОЧКИ ---------- */
 .cards{display:grid;gap:14px}
-.card{
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--radius);padding:22px;
-}
-.card__ic{
-  width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
-  background:linear-gradient(135deg,rgba(26,120,230,.22),rgba(26,120,230,.06));
-  color:var(--blue-2);margin-bottom:14px;
-}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card__ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(26,120,230,.22),rgba(26,120,230,.06));color:var(--blue-2);margin-bottom:14px}
 .card h3{font-size:1.08rem;margin-bottom:6px}
 .card p{color:var(--muted);font-size:.95rem}
 
-/* ---------- ШАГИ УСТАНОВКИ ---------- */
-.steps{counter-reset:s;display:grid;gap:14px;margin-bottom:28px}
-.step{
-  position:relative;background:var(--surface);border:1px solid var(--line);
-  border-radius:var(--radius);padding:20px 20px 20px 64px;
-}
-.step::before{
-  counter-increment:s;content:counter(s);
-  position:absolute;left:16px;top:18px;
-  width:34px;height:34px;border-radius:50%;
-  display:grid;place-items:center;font-weight:800;
-  color:#fff;background:linear-gradient(180deg,#1fb457,var(--green));
-}
-.step h3{font-size:1rem;margin-bottom:3px}
-.step p{color:var(--muted);font-size:.92rem}
+/* ---------- ТАБЛИЦЫ ---------- */
+.tbl{width:100%;border-collapse:collapse;margin-top:16px;font-size:.93rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{background:var(--surface-2);color:var(--text);font-weight:700}
+.tbl td:first-child{color:var(--text);font-weight:600}
+.tbl td{color:var(--muted)}
+.tbl tbody tr:last-child td{border-bottom:0}
 
-/* ---------- БОНУС ---------- */
-.bonus{
-  text-align:center;
-  background:linear-gradient(180deg,var(--surface),var(--bg-alt));
-  border-block:1px solid var(--line);
-}
-.bonus__amt{
-  font-size:clamp(2rem,9vw,3.4rem);font-weight:800;
-  background:linear-gradient(135deg,var(--gold),var(--gold-2));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  margin:.1em 0 .25em;
-}
-.bonus p.lead{max-width:520px;margin-inline:auto}
+/* ---------- ШАГИ ---------- */
+.steps{counter-reset:s;display:grid;gap:12px;margin:16px 0 24px}
+.step{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 16px 60px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(180deg,#1fc25b,var(--green))}
+.step p{color:var(--text);font-size:.97rem;font-weight:600}
 
-/* ---------- TRUST ---------- */
-.pay{
-  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
-  margin-top:22px;color:var(--muted);font-size:.86rem;
-}
-.pay span{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 14px}
+/* ---------- ЧЕКЛИСТ ---------- */
+.checklist{list-style:none;display:grid;gap:10px;margin-top:16px;grid-template-columns:repeat(2,1fr)}
+.checklist li{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-weight:600}
+.checklist li::before{content:"✓";color:var(--green);font-weight:800}
 
-/* ---------- FAQ (нативный, без JS) ---------- */
-.faq details{
-  background:var(--surface);border:1px solid var(--line);
-  border-radius:12px;margin-bottom:10px;overflow:hidden;
-}
-.faq summary{
-  list-style:none;cursor:pointer;font-weight:700;
-  padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;
-}
+/* ---------- ПРОМОКОД ---------- */
+.promo{background:linear-gradient(180deg,rgba(255,200,58,.10),var(--surface));border:1px solid rgba(255,200,58,.35);
+  border-radius:16px;padding:24px;text-align:center;box-shadow:var(--shadow)}
+.promo__code{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:16px 0}
+.promo__value{font-size:clamp(1.3rem,6vw,1.9rem);font-weight:800;letter-spacing:.08em;color:var(--gold);
+  background:rgba(0,0,0,.28);border:1px dashed rgba(255,200,58,.55);border-radius:10px;padding:10px 18px}
+
+/* ---------- ЗАГЛУШКА ИЗОБРАЖЕНИЯ ---------- */
+.img-ph{margin-top:16px;border:1.5px dashed var(--line);border-radius:14px;min-height:160px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);text-align:center;gap:4px;font-size:.9rem;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0 12px,transparent 12px 24px),var(--bg-alt)}
+.img-ph small{font-size:.78rem;opacity:.8}
+
+/* ---------- ОПЛАТА ---------- */
+.pay{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px;color:var(--muted);font-size:.86rem}
+.pay span{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 16px;font-weight:600}
+
+/* ---------- FAQ ---------- */
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;font-weight:700;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";color:var(--blue-2);font-size:1.4rem;line-height:1}
 .faq details[open] summary::after{content:"–"}
 .faq details p{padding:0 18px 18px;color:var(--muted);font-size:.95rem}
 
-/* ---------- ФИНАЛЬНЫЙ CTA ---------- */
-.final-cta{text-align:center;padding-block:clamp(44px,10vw,80px)}
-.final-cta h2{font-size:clamp(1.6rem,6vw,2.4rem);margin-bottom:.6em}
-
-/* ---------- ФУТЕР ---------- */
-.footer{background:#07111f;border-top:1px solid var(--line);padding-block:30px;font-size:.85rem;color:var(--muted)}
+/* ---------- ФИНАЛ / ФУТЕР / ЛИПКАЯ ---------- */
+.final-cta{text-align:center;padding-block:clamp(44px,10vw,78px)}
+.final-cta h2{font-size:clamp(1.5rem,5.6vw,2.3rem);margin-bottom:.6em}
+.footer{background:#060d18;border-top:1px solid var(--line);padding-block:30px;font-size:.85rem;color:var(--muted)}
 .footer__top{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:18px}
 .footer__links{display:flex;flex-wrap:wrap;gap:16px}
 .footer__links a:hover{color:var(--text)}
 .footer__logo{height:28px;opacity:.85}
 .disclaimer{font-size:.78rem;line-height:1.6;border-top:1px solid var(--line);padding-top:16px}
 .disclaimer strong{color:var(--gold)}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(9,19,36,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+body{padding-bottom:80px}
 
-/* ---------- ЛИПКАЯ КНОПКА (моб.) ---------- */
-.sticky-cta{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;
-  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(11,26,49,.94);backdrop-filter:blur(8px);
-  border-top:1px solid var(--line);
-}
-body{padding-bottom:80px} /* место под липкую кнопку */
-
-/* ---------- АДАПТИВ (планшет/десктоп) ---------- */
 @media (min-width:760px){
-  .hero__grid{grid-template-columns:1.15fr .85fr;align-items:center}
-  .strip__grid{grid-template-columns:repeat(4,1fr)}
+  .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
+  .benefits{grid-template-columns:repeat(3,1fr)}
   .cards{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
+  .checklist{grid-template-columns:repeat(3,1fr)}
   .sticky-cta{display:none}
   body{padding-bottom:0}
 }
-
-/* ---------- ДОСТУПНОСТЬ ---------- */
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 :focus-visible{outline:3px solid var(--blue-2);outline-offset:2px;border-radius:6px}
 </style>
 </head>
 
 <body id="top">
 
-<!-- ШАПКА -->
+<!-- B1. ШАПКА -->
 <header class="site-header">
-  <a class="brand" href="#top" aria-label="{{APP_NAME}}">
-    <img class="brand__logo"
-         src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg"
-         alt="{{APP_NAME}}" width="120" height="34" decoding="async">
+  <a class="brand" href="#top" aria-label="1xCasino">
+    <img class="brand__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="1xCasino" width="120" height="34" decoding="async">
   </a>
   <span class="badge-18">18+</span>
-  <a class="btn btn--sm" href="https://1d5yr.bemobtrcks.com/click" rel="nofollow noopener">Скачать</a>
+  <a class="btn btn--sm" href="/go?b=header" rel="nofollow noopener">Скачать</a>
 </header>
 
-<!-- HERO -->
+<!-- B2. HERO -->
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text">
       <p class="eyebrow">Лучшее приложение в <span data-geo="city">твоём городе</span></p>
-      <h1>Скачай приложение <span class="hl">{{APP_NAME}}</span> в <span data-geo="country">своей стране</span></h1>
-      <p class="lead">Ставки на спорт, киберспорт и онлайн-казино в одном приложении. Лёгкое и быстрое — работает даже при слабом интернете и на недорогих смартфонах.</p>
-
-      <!-- карточка приложения в стиле магазина -->
+      <h1>Скачай приложение <span class="hl">1xCasino</span> в <span data-geo="country">своей стране</span></h1>
+      <p class="hero__lead">Здесь коротко объяснено, как скачать 1xCasino APK для Android, установить приложение, не перепутать APK с iPhone, открыть 1xCasino через Safari или мобильный сайт, войти в аккаунт и проверить безопасность перед платежами.</p>
       <div class="appcard">
-        <img class="appcard__icon"
-             src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg"
-             alt="" decoding="async">
-        <div class="appcard__info">
-          <strong class="appcard__name">{{APP_NAME}}</strong>
-          <div class="appcard__rating">
-            <span class="stars" aria-hidden="true">★★★★★</span>
-            <span>{{RATING}}</span><span>·</span><span>{{DOWNLOADS}} загрузок</span>
-          </div>
-          <div class="appcard__meta">Android {{ANDROID_MIN}}+ · ~{{APK_SIZE}} · Бесплатно</div>
+        <img class="appcard__icon" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="" decoding="async">
+        <div>
+          <strong class="appcard__name">1xCasino</strong>
+          <div class="appcard__rating"><span class="stars" aria-hidden="true">★★★★★</span><span>{{RATING}}</span><span>·</span><span>57 959 загрузок</span></div>
+          <div class="appcard__meta">Android 7+ · ~26MB · Бесплатно</div>
         </div>
       </div>
-
-      <a class="btn btn--lg" href="https://1d5yr.bemobtrcks.com/click" rel="nofollow noopener" aria-label="Скачать APK для Android">
-        ↓ Скачать APK для Android
-      </a>
+      <a class="btn btn--lg" href="/go?b=hero" rel="nofollow noopener" aria-label="Скачать APK для Android">↓ Скачать APK для Android</a>
     </div>
     <div class="hero__media">
-      <div class="phone" role="img" aria-label="Превью приложения на смартфоне">
+      <div class="phone" role="img" aria-label="Превью приложения">
         <div class="phone__screen">
-          <img class="phone__logo"
-               src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg"
-               alt="" decoding="async">
-          <small>Сюда вставь скриншот приложения<br>(assets/screenshot.png)</small>
+          <img class="phone__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="" decoding="async">
+          <small>Сюда вставь скриншот приложения</small>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ПОЛОСА ПРЕИМУЩЕСТВ -->
-<section class="strip">
-  <div class="wrap strip__grid">
-    <div class="strip__item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-      Быстрая загрузка
-    </div>
-    <div class="strip__item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/></svg>
-      Безопасно
-    </div>
-    <div class="strip__item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S9 2 6.5 3.5 9 7 12 7zM12 7s3-5 5.5-3.5S15 7 12 7z"/></svg>
-      Бонус новичкам
-    </div>
-    <div class="strip__item">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-      Лёгкое на слабой сети
+<!-- B3. ПРЕИМУЩЕСТВА -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Преимущества</p>
+    <h2>Почему стоит установить Android-приложение</h2>
+    <div class="benefits">
+      <div class="benefit"><span class="emo">⚡</span><span>Играй быстрее</span></div>
+      <div class="benefit"><span class="emo">🚀</span><span>Без задержек загрузки</span></div>
+      <div class="benefit"><span class="emo">💳</span><span>Безопаснее депозиты</span></div>
+      <div class="benefit"><span class="emo">🔒</span><span>Стабильные платежи без перезагрузки страницы</span></div>
+      <div class="benefit"><span class="emo">🔓</span><span>Вход в одно касание, без повторного пароля</span></div>
+      <div class="benefit"><span class="emo">📲</span><span>Одно касание — и играешь</span></div>
+      <div class="benefit"><span class="emo">🔔</span><span>Мгновенные уведомления о выигрышах</span></div>
+      <div class="benefit"><span class="emo">📶</span><span>Оптимизировано для слабого интернета</span></div>
+      <div class="benefit"><span class="emo">💾</span><span>Меньше расхода трафика</span></div>
+      <div class="benefit"><span class="emo">🎁</span><span>Бонус только в приложении</span></div>
     </div>
   </div>
 </section>
 
-<!-- ФУНКЦИИ -->
-<section class="section" id="features">
-  <div class="wrap">
-    <p class="eyebrow">Возможности</p>
-    <h2>Что внутри приложения</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 0 0 18M12 3a14 14 0 0 1 0 18M3 12h18"/></svg></div>
-        <h3>Ставки на спорт и киберспорт</h3>
-        <p>Тысячи событий каждый день, лайв-ставки и удобная роспись прямо в приложении.</p>
-      </div>
-      <div class="card">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v10H3z"/><circle cx="8" cy="12" r="1.6"/><circle cx="16" cy="12" r="1.6"/></svg></div>
-        <h3>Онлайн-казино</h3>
-        <p>Слоты, рулетка и игры с live-дилерами — большой выбор в одном месте.</p>
-      </div>
-      <div class="card">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>Быстрые пополнения и выплаты</h3>
-        <p>Удобные локальные способы оплаты. Деньги зачисляются и выводятся без лишних шагов.</p>
-      </div>
-      <div class="card">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-        <h3>Лёгкое приложение</h3>
-        <p>Маленький размер и быстрая работа даже на бюджетных телефонах и при слабом интернете.</p>
-      </div>
-      <div class="card">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Поддержка 24/7</h3>
-        <p>Служба поддержки на связи в любое время и помогает решить вопрос быстро.</p>
-      </div>
-      <div class="card">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Надёжность и безопасность</h3>
-        <p>Защита данных и честная игра. Аккаунт и платежи под защитой.</p>
-      </div>
-    </div>
+<!-- B4. ГДЕ СКАЧАТЬ APK -->
+<section class="section section--alt">
+  <div class="wrap rich">
+    <p class="eyebrow">Загрузка</p>
+    <h2>Где скачать 1xCasino APK</h2>
+    <p>APK — это файл установки для Android. Его открывают на телефоне, после чего система предлагает установить приложение.</p>
+    <p>Скачивайте файл только с подготовленной страницы. Не ставьте APK из личных сообщений, неизвестных файловых хранилищ, коротких ссылок и страниц с обещаниями гарантированного бонуса.</p>
+    <p>Перед открытием файла проверьте имя, источник, размер и свободное место на телефоне. Если файл скачался не полностью, удалите его и скачайте заново с той же страницы.</p>
+    <table class="tbl">
+      <thead><tr><th>Что проверить</th><th>Зачем</th></tr></thead>
+      <tbody>
+        <tr><td>Имя 1xCasino.apk</td><td>Так проще заметить переименованную копию</td></tr>
+        <tr><td>Источник файла</td><td>Не ставить изменённый APK</td></tr>
+        <tr><td>Android</td><td>APK не работает на iPhone</td></tr>
+        <tr><td>Свободная память</td><td>Файл не должен оборваться при загрузке</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-<!-- УСТАНОВКА -->
-<section class="section section--alt" id="install">
-  <div class="wrap">
+<!-- B5. КАК УСТАНОВИТЬ -->
+<section class="section">
+  <div class="wrap rich">
     <p class="eyebrow">Установка</p>
-    <h2>Как установить за 4 шага</h2>
+    <h2>Как установить APK на Android</h2>
+    <p>Android может показать предупреждение, потому что файл ставится не из магазина приложений. Это нормальный экран безопасности. Разрешение стоит давать только на время установки.</p>
+    <p>Если установка не начинается, не ищите случайные версии APK. Сначала проверьте память, интернет и то, что файл скачался полностью.</p>
     <div class="steps">
-      <div class="step">
-        <h3>Скачай APK</h3>
-        <p>Нажми «Скачать APK для Android» и дождись загрузки файла.</p>
-      </div>
-      <div class="step">
-        <h3>Разреши установку</h3>
-        <p>Открой файл. Если телефон попросит — разреши установку из неизвестных источников (Настройки → Безопасность).</p>
-      </div>
-      <div class="step">
-        <h3>Установи</h3>
-        <p>Нажми «Установить» и подожди несколько секунд.</p>
-      </div>
-      <div class="step">
-        <h3>Открой и играй</h3>
-        <p>Запусти приложение, зарегистрируйся и забери бонус для новичков.</p>
-      </div>
+      <div class="step"><p>Скачайте APK.</p></div>
+      <div class="step"><p>Откройте файл из браузера или папки загрузок.</p></div>
+      <div class="step"><p>Разрешите установку из этого источника один раз.</p></div>
+      <div class="step"><p>Установите приложение.</p></div>
+      <div class="step"><p>Откройте 1xCasino.</p></div>
+      <div class="step"><p>Вернитесь в настройки Android и отключите лишнее разрешение.</p></div>
     </div>
-    <a class="btn btn--lg" href="https://1d5yr.bemobtrcks.com/click" rel="nofollow noopener">↓ Скачать приложение</a>
+    <div class="img-ph" role="img" aria-label="Заглушка изображения">Изображение — заглушка<small>замени на свой скриншот</small></div>
+    <p style="margin-top:20px"><a class="btn btn--lg" href="/go?b=install" rel="nofollow noopener">↓ Скачать APK для Android</a></p>
   </div>
 </section>
 
-<!-- БОНУС -->
-<section class="section bonus">
+<!-- B6. КАК ОБНОВИТЬ -->
+<section class="section section--alt">
+  <div class="wrap rich">
+    <p class="eyebrow">Обновление</p>
+    <h2>Как обновить приложение</h2>
+    <p>Старая версия приложения может открываться медленно или терять часть функций. В таком случае лучше обновить APK, а не держать на телефоне несколько разных файлов. Обновление будет предложено автоматически.</p>
+  </div>
+</section>
+
+<!-- B7. ВХОД В АККАУНТ -->
+<section class="section">
+  <div class="wrap rich">
+    <p class="eyebrow">Аккаунт</p>
+    <h2>Вход в аккаунт</h2>
+    <p>Для входа используйте свои данные, которые вы указывали во время регистрации ранее.</p>
+    <table class="tbl">
+      <thead><tr><th>Пункт</th><th>Что проверить</th></tr></thead>
+      <tbody>
+        <tr><td>Телефон</td><td>Номер должен быть доступен вам и подтверждён</td></tr>
+        <tr><td>E-mail</td><td>Почта нужна для восстановления — её тоже нужно подтвердить</td></tr>
+        <tr><td>Пароль</td><td>Лучше использовать отдельный пароль</td></tr>
+        <tr><td>Код</td><td>Код нельзя сообщать другим людям</td></tr>
+        <tr><td>Промокод</td><td>Условия нужно прочитать до активации</td></tr>
+      </tbody>
+    </table>
+    <div class="img-ph" role="img" aria-label="Заглушка изображения">Изображение — заглушка<small>замени на свой скриншот</small></div>
+  </div>
+</section>
+
+<!-- B8. ПЕРСОНАЛЬНЫЕ ДАННЫЕ -->
+<section class="section section--alt">
+  <div class="wrap rich">
+    <p class="eyebrow">Безопасность аккаунта</p>
+    <h2>Проверьте персональные данные</h2>
+    <p>Это поможет повысить безопасность вашего аккаунта, а также восстановить доступ или пройти проверку в случае любых проблем.</p>
+    <p>Что необходимо проверить:</p>
+    <ul class="checklist">
+      <li>Email</li><li>Телефон</li><li>Город</li><li>Имя</li><li>Фамилия</li><li>Дата рождения</li>
+    </ul>
+    <div class="img-ph" role="img" aria-label="Заглушка изображения">Изображение — заглушка<small>замени на свой скриншот</small></div>
+  </div>
+</section>
+
+<!-- B9. ПРОМОКОД -->
+<section class="section">
   <div class="wrap">
-    <p class="eyebrow">Для новых игроков</p>
-    <h2>Приветственный бонус</h2>
-    <p class="bonus__amt">{{BONUS}}</p>
-    <p class="lead">Установи приложение, зарегистрируйся и активируй бонус на первый депозит. Условия отыгрыша — в правилах акции.</p>
-    <a class="btn btn--lg" href="https://1d5yr.bemobtrcks.com/click" rel="nofollow noopener" style="margin-top:24px">Получить бонус</a>
+    <p class="eyebrow">Бонус</p>
+    <h2>Промокод на бонус 100 FS за установку и подтверждение данных</h2>
+    <div class="promo">
+      <p style="color:var(--muted)">Скопируй промокод, установи приложение и активируй бонус при регистрации.</p>
+      <div class="promo__code">
+        <span class="promo__value" id="promoValue">1xcTestCode</span>
+        <button class="btn btn--gold" id="copyPromo" data-code="1xcTestCode" type="button"><span class="copy-label">Скопировать</span></button>
+      </div>
+      <a class="btn btn--lg" href="/go?b=bonus" rel="nofollow noopener">↓ Скачать и активировать бонус</a>
+    </div>
   </div>
 </section>
 
-<!-- ДОВЕРИЕ -->
-<section class="section" id="trust">
+<!-- B10. ДЕПОЗИТ И ВЫВОД -->
+<section class="section section--alt">
+  <div class="wrap rich">
+    <p class="eyebrow">Платежи</p>
+    <h2>Депозит и вывод</h2>
+    <p>Перед депозитом проверьте сумму, валюту, комиссию, лимит и владельца платёжного метода. Для вывода может понадобиться проверка личности.</p>
+    <p>Сохраните чек, скриншот или номер операции. Если платёж зависнет, эта информация поможет поддержке быстрее понять ситуацию.</p>
+    <ul class="bullets">
+      <li>Не повторяйте платёж, пока статус не ясен.</li>
+      <li>Не отправляйте документы в личные чаты — только в официальную поддержку 1xCasino.</li>
+    </ul>
+    <table class="tbl">
+      <thead><tr><th>Перед платежом</th><th>Что сделать</th></tr></thead>
+      <tbody>
+        <tr><td>Сумма</td><td>Проверить до подтверждения</td></tr>
+        <tr><td>Валюта</td><td>Сравнить с валютой аккаунта</td></tr>
+        <tr><td>Лимит</td><td>Посмотреть минимум и максимум</td></tr>
+        <tr><td>Статус</td><td>Дождаться результата операции</td></tr>
+        <tr><td>Подтверждение</td><td>Сохранить чек или скриншот</td></tr>
+      </tbody>
+    </table>
+    <div class="img-ph" role="img" aria-label="Заглушка изображения">Изображение — заглушка<small>замени на свой скриншот</small></div>
+  </div>
+</section>
+
+<!-- B11. ДОВЕРИЕ -->
+<section class="section">
   <div class="wrap">
     <p class="eyebrow">Безопасность</p>
     <h2>Честно и безопасно</h2>
@@ -434,79 +402,63 @@ body{padding-bottom:80px} /* место под липкую кнопку */
         <p>Команда поддержки на связи круглосуточно и поможет с любым вопросом.</p>
       </div>
     </div>
-    <div class="pay">
-      <span>Способ оплаты 1</span><span>Способ оплаты 2</span><span>Способ оплаты 3</span><span>+ другие</span>
-    </div>
+    <div class="pay"><span>Orange</span><span>Airtel</span></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section section--alt faq" id="faq">
+<!-- B12. FAQ -->
+<section class="section section--alt faq">
   <div class="wrap">
     <p class="eyebrow">Вопросы и ответы</p>
     <h2>Частые вопросы</h2>
-
-    <details>
-      <summary>Это безопасно?</summary>
-      <p>Да. Приложение скачивается с официального источника, данные передаются в зашифрованном виде. Загружай APK только по кнопкам на этой странице.</p>
-    </details>
-    <details>
-      <summary>Приложение бесплатное?</summary>
-      <p>Да, скачивание и установка приложения бесплатны. Платными могут быть только ставки и пополнение счёта по твоему желанию.</p>
-    </details>
-    <details>
-      <summary>Какие требования к телефону?</summary>
-      <p>Подойдёт смартфон на Android {{ANDROID_MIN}} и выше. Приложение лёгкое (~{{APK_SIZE}}) и работает даже на недорогих устройствах.</p>
-    </details>
-    <details>
-      <summary>Как установить APK?</summary>
-      <p>Скачай файл, открой его и при запросе разреши установку из неизвестных источников. Затем нажми «Установить». Подробно — в блоке «Как установить за 4 шага».</p>
-    </details>
-    <details>
-      <summary>Можно ли играть на реальные деньги?</summary>
-      <p>Да, после регистрации и пополнения счёта. Играй ответственно: услуга доступна только совершеннолетним пользователям (18+) там, где это разрешено законом.</p>
-    </details>
+    <details><summary>Это безопасно?</summary><p>Да. Приложение скачивается с официального источника, данные передаются в зашифрованном виде. Загружай APK только по кнопкам на этой странице.</p></details>
+    <details><summary>Приложение бесплатное?</summary><p>Да, скачивание и установка приложения бесплатны. Платными могут быть только ставки и пополнение счёта по твоему желанию.</p></details>
+    <details><summary>Какие требования к телефону?</summary><p>Подойдёт смартфон на Android 7 и выше. Приложение лёгкое (~26MB) и работает даже на недорогих устройствах.</p></details>
+    <details><summary>Как установить APK?</summary><p>Скачай файл, открой его и при запросе разреши установку из неизвестных источников. Затем нажми «Установить». Подробно — в блоке «Как установить APK на Android».</p></details>
   </div>
 </section>
 
-<!-- ФИНАЛЬНЫЙ CTA -->
+<!-- B13. ФИНАЛЬНЫЙ CTA -->
 <section class="final-cta">
   <div class="wrap">
-    <h2>Готов начать? Установи приложение прямо сейчас</h2>
-    <a class="btn btn--lg" href="https://1d5yr.bemobtrcks.com/click" rel="nofollow noopener">↓ Скачать APK для Android</a>
+    <h2>Готов начать? Установи приложение прямо сейчас и получи бонус 100 FS</h2>
+    <a class="btn btn--lg" href="/go?b=final" rel="nofollow noopener">↓ Скачать APK для Android</a>
   </div>
 </section>
 
-<!-- ФУТЕР -->
+<!-- B14. ФУТЕР -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer__top">
-      <img class="footer__logo"
-           src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg"
-           alt="{{APP_NAME}}" decoding="async">
+      <img class="footer__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="1xCasino" decoding="async">
       <nav class="footer__links">
-        <a href="#features">Возможности</a>
-        <a href="#install">Установка</a>
-        <a href="#faq">FAQ</a>
-        <a href="#" rel="nofollow">Условия</a>
-        <a href="#" rel="nofollow">Конфиденциальность</a>
+        <a href="#top">Возможности</a><a href="#top">Установка</a><a href="#top">FAQ</a>
+        <a href="#" rel="nofollow">Условия</a><a href="#" rel="nofollow">Конфиденциальность</a>
       </nav>
     </div>
-    <p class="disclaimer">
-      <strong>18+</strong> Азартные игры предназначены только для совершеннолетних. Играйте ответственно — азартные игры могут вызывать зависимость.
-      Услуга доступна только там, где это разрешено законом; пользователь обязан соблюдать законодательство своей страны.
-      Этот сайт не является публичной офертой. © <span id="y">2025</span> {{APP_NAME}}. Все права защищены.
-    </p>
+    <p class="disclaimer"><strong>18+</strong> Азартные игры предназначены только для совершеннолетних. Играйте ответственно — азартные игры могут вызывать зависимость. Услуга доступна только там, где это разрешено законом; пользователь обязан соблюдать законодательство своей страны. Этот сайт не является публичной офертой. © <span id="y">2025</span> 1xCasino. Все права защищены.</p>
   </div>
 </footer>
 
-<!-- ЛИПКАЯ КНОПКА (моб.) -->
+<!-- B15. ЛИПКАЯ КНОПКА -->
 <div class="sticky-cta">
-  <a class="btn btn--block btn--lg" href="https://1d5yr.bemobtrcks.com/click" rel="nofollow noopener">↓ Скачать приложение</a>
+  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">↓ Скачать приложение</a>
 </div>
 
-<!-- единственный скрипт: подставить текущий год (1 строка, не критично для рендера) -->
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){
+  var btn=document.getElementById('copyPromo');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var code=btn.getAttribute('data-code')||'';
+    var label=btn.querySelector('.copy-label');
+    function done(){var t=label.textContent;label.textContent='Скопировано!';setTimeout(function(){label.textContent=t;},1500);}
+    function fallback(){var ta=document.createElement('textarea');ta.value=code;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(done,fallback);}else{fallback();}
+  });
+})();
+</script>
 
 </body>
 </html>
