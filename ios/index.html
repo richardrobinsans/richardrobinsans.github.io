@@ -65,10 +65,11 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:12px var(--pad);
   background:rgba(22,2,65,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center}
-.brand__logo{height:34px;width:auto}
-.lang{margin-left:auto;display:flex;gap:4px;background:var(--field);border:1px solid var(--line);border-radius:9px;padding:3px}
+.brand__logo{height:20px;width:auto}
+.lang{display:flex;gap:4px;background:var(--field);border:1px solid var(--line);border-radius:9px;padding:3px}
 .lang a{font-size:.78rem;font-weight:800;padding:5px 9px;border-radius:7px;color:var(--muted)}
 .lang a[aria-current]{background:var(--violet);color:#fff}
+.site-header .btn--sm{margin-left:auto}
 .badge-18{font-weight:800;font-size:.78rem;color:var(--chip-sand);border:1.5px solid var(--chip-sand);
   border-radius:8px;padding:3px 8px}
 .hero{padding-block:clamp(28px,7vw,56px)}
@@ -183,14 +184,17 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .footer__links{display:flex;flex-wrap:wrap;gap:16px}
 .footer__links a:hover{color:var(--text)}
 .footer__logo{height:28px;opacity:.85}
-.disclaimer{font-size:.78rem;line-height:1.6;border-top:1px solid var(--line);padding-top:16px}
-.disclaimer strong{color:var(--chip-sand)}
+.footer__bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding-top:16px}
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
   background:rgba(18,3,53,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
 body.has-sticky{padding-bottom:80px}
 /* Корневая страница выбора платформы */
 .gate{min-height:calc(100vh - 60px);display:grid;place-items:center;text-align:center;padding-block:clamp(40px,8vw,80px)}
-.gate__logo{height:44px;margin-inline:auto}
+.gate__img{width:min(320px,78vw);margin-inline:auto}
+.gate__bens{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:34px;width:min(640px,100%);margin-inline:auto}
+.gben{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--plate);border:1px solid var(--line);
+  border-radius:14px;padding:16px 10px;font-weight:600;font-size:.88rem;text-align:center}
+.gben .emo{font-size:1.5rem;line-height:1}
 .gate h1{font-size:clamp(1.7rem,6.4vw,2.7rem);margin:.7em 0 .4em}
 .gate p{color:var(--muted);max-width:480px;margin-inline:auto}
 .gate__btns{display:grid;gap:14px;margin-top:30px;width:min(420px,100%);margin-inline:auto}
@@ -207,6 +211,7 @@ body.has-sticky{padding-bottom:80px}
   .steps{grid-template-columns:repeat(2,1fr)}
   .checklist{grid-template-columns:repeat(3,1fr)}
   .gate__btns{grid-template-columns:1fr 1fr}
+  .gate__bens{grid-template-columns:repeat(3,1fr)}
   .sticky-cta{display:none}
   body.has-sticky{padding-bottom:0}
 }
@@ -220,13 +225,12 @@ body.has-sticky{padding-bottom:80px}
 <body id="top" class="has-sticky">
 <header class="site-header">
   <a class="brand" href="/" aria-label="1xCasino">
-    <img class="brand__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="1xCasino" width="120" height="34" decoding="async">
+    <img class="brand__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="1xCasino" height="20" decoding="async">
   </a>
   <nav class="lang" aria-label="Language">
     <a href="/ios/" aria-current="true">EN</a>
     <a href="/fr/ios/">FR</a>
   </nav>
-  <span class="badge-18">18+</span>
   <a class="btn btn--sm" href="/go?b=ios_header" rel="nofollow noopener">Download</a>
 </header>
 
@@ -332,7 +336,13 @@ body.has-sticky{padding-bottom:80px}
         <a href="#" rel="nofollow">Terms</a><a href="#" rel="nofollow">Privacy</a>
       </nav>
     </div>
-    <p class="disclaimer"><strong>18+</strong> Gambling is for adults only. Play responsibly — gambling can be addictive. The service is available only where permitted by law; you must comply with the laws of your country. This site is not a public offer. © <span id="y">2025</span> 1xCasino. All rights reserved.</p>
+    <div class="footer__bottom">
+      <span class="badge-18">18+</span>
+      <nav class="lang" aria-label="Language">
+        <a href="/ios/" aria-current="true">EN</a>
+        <a href="/fr/ios/">FR</a>
+      </nav>
+    </div>
   </div>
 </footer>
 
