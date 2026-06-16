@@ -230,6 +230,9 @@ body.has-sticky{padding-bottom:80px}
 .js .rv.in{opacity:1;transform:none}
 .hero__cta{text-align:center;margin-top:18px}
 .hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
+.footer__contact{text-align:center;margin-bottom:12px}
+.footer__mail{display:inline-block;background:var(--field);padding:7px 14px;border-radius:9px;color:var(--cyan);font-weight:700;font-size:.92rem;text-decoration:none;border:1px solid var(--line)}
+.footer__mail:hover{filter:brightness(1.15)}
 .footer__copy{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:18px}
 .install{margin-top:8px}
 .ckl{list-style:none;display:grid;gap:10px;margin:6px 0 0;padding:0}
@@ -239,6 +242,11 @@ body.has-sticky{padding-bottom:80px}
 .ckl__cb:checked + .ckl__box{background:var(--green);border-color:var(--green)}
 .ckl__cb:checked + .ckl__box::after{content:"✓";color:#fff;font-size:.82rem;font-weight:800;line-height:1}
 .ckl__cb:focus-visible + .ckl__box{outline:3px solid var(--cyan);outline-offset:2px}
+.ckl__cb:checked ~ span:last-child{text-decoration:line-through;opacity:.55}
+.bar{position:relative;height:48px;border-radius:12px;overflow:hidden;margin-top:18px;background:linear-gradient(90deg,var(--violet),var(--green));border:1px solid var(--line)}
+.bar__mask{position:absolute;top:0;right:0;bottom:0;width:100%;background:var(--field);transition:width .45s ease}
+.bar__txt{position:absolute;inset:0;display:grid;place-items:center;z-index:1;padding:0 14px;text-align:center;font-weight:800;font-size:.9rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.ilink{color:var(--cyan);font-weight:700;text-decoration:underline}
 .bform{margin-top:18px;background:var(--plate);border:1px solid var(--line);border-radius:var(--radius);padding:18px;transition:opacity .2s}
 .bform.is-locked{opacity:.5}
 .bform__t{font-weight:700;margin-bottom:12px}
@@ -346,7 +354,11 @@ body.has-sticky{padding-bottom:80px}
         <p class="bform__lock" id="uidLock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
         <p class="bform__msg" id="uidMsg" hidden></p>
       </div>
-      <p style="margin-top:18px"><a class="btn" href="#b4">Изучить каждый шаг подробно</a></p>
+      <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="bar__mask" id="barMask"></div>
+        <span class="bar__txt" id="barTxt">Прогресс разблокировки бонуса</span>
+      </div>
+      <p style="text-align:center;margin-top:18px"><a class="btn" href="#b4">Изучить каждый шаг подробно</a></p>
     </div>
   </div>
 </section>
@@ -381,88 +393,61 @@ body.has-sticky{padding-bottom:80px}
 
 <section class="section section--alt">
   <div class="wrap rich">
-    <p class="eyebrow">Update</p>
-    <h2>How to update the app</h2>
-    <p>An old version may open slowly or lose some features. Update the APK instead of keeping several different files on your phone. The update will be offered automatically.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap rich">
     <p class="eyebrow">Account</p>
-    <h2>Signing in to your account</h2>
-    <p>Sign in with the details you used when you registered.</p>
-    <table class="tbl">
-      <thead><tr><th>Item</th><th>What to check</th></tr></thead>
-      <tbody>
-        <tr><td>Phone</td><td>The number must be accessible to you and verified</td></tr>
-        <tr><td>E-mail</td><td>Needed for recovery — verify it too</td></tr>
-        <tr><td>Password</td><td>Better to use a separate password</td></tr>
-        <tr><td>Code</td><td>Never share the code with anyone</td></tr>
-        <tr><td>Promo code</td><td>Read the terms before activating</td></tr>
-      </tbody>
-    </table>
-    <div class="img-ph" role="img" aria-label="Image placeholder">Image placeholder<small>replace with your screenshot</small></div>
-  </div>
-</section>
-
-<section class="section section--alt">
-  <div class="wrap rich">
-    <p class="eyebrow">Account security</p>
-    <h2>Check your personal details</h2>
-    <p>This improves your account security and helps restore access or pass verification if anything goes wrong.</p>
-    <p>What to check:</p>
-    <ul class="checklist"><li>Email</li><li>Phone</li><li>City</li><li>First name</li><li>Last name</li><li>Date of birth</li></ul>
-    <div class="img-ph" role="img" aria-label="Image placeholder">Image placeholder<small>replace with your screenshot</small></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap rich">
-    <p class="eyebrow">Payments</p>
-    <h2>Deposit and withdrawal</h2>
-    <p>Before a deposit, check the amount, currency, fee, limit and the owner of the payment method. A withdrawal may require identity verification.</p>
-    <p>Keep the receipt, a screenshot or the transaction number. If a payment hangs, this helps support sort it out faster.</p>
+    <h2>Как выполнить логин в 1xcasino приложение</h2>
     <ul class="bullets">
-      <li>Don't repeat a payment until its status is clear.</li>
-      <li>Don't send documents in private chats — only to official 1xCasino support.</li>
+      <li>Для входа используйте свои данные, которые вы указывали во время регистрации ранее.</li>
+      <li>Вы можете войти в аккаунт 1xcasino любым удобным для вас способом, используя: Email, User ID, UserName или Phone.</li>
+      <li>Если вы забыли пароль, то воспользуйтесь функцией Forgot Password для восстановления.</li>
+      <li>Если у вас возникают трудности с входом, то отправьте сообщение на <a class="ilink" href="mailto:info@1xcasino-guide.com?subject=1xCasino%20Guide">info@1xcasino-guide.com</a> с деталями проблемы, мы Вам поможем.</li>
     </ul>
-    <table class="tbl">
-      <thead><tr><th>Before paying</th><th>What to do</th></tr></thead>
-      <tbody>
-        <tr><td>Amount</td><td>Check before confirming</td></tr>
-        <tr><td>Currency</td><td>Compare with your account currency</td></tr>
-        <tr><td>Limit</td><td>Check the minimum and maximum</td></tr>
-        <tr><td>Status</td><td>Wait for the result</td></tr>
-        <tr><td>Confirmation</td><td>Save the receipt or a screenshot</td></tr>
-      </tbody>
-    </table>
-    <div class="img-ph" role="img" aria-label="Image placeholder">Image placeholder<small>replace with your screenshot</small></div>
-  </div>
-</section>
-
-<section class="section section--alt">
-  <div class="wrap">
-    <p class="eyebrow">Security</p>
-    <h2>Fair and secure</h2>
-    <div class="cards">
-      <div class="card rv">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3>Data protection</h3>
-        <p>The connection and your account data are encrypted.</p>
-      </div>
-      <div class="card rv">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h3>Fast payouts</h3>
-        <p>Withdraw via convenient local methods, without extra delays.</p>
-      </div>
-      <div class="card rv">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>24/7 support</h3>
-        <p>The support team is available around the clock for any question.</p>
+    <div class="shots">
+      <h3 class="shots__h">Как выглядит приложение</h3>
+      <div class="shots__track">
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
       </div>
     </div>
-    <div class="pay"><span>Orange</span><span>Airtel</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap rich">
+    <p class="eyebrow">Account security</p>
+    <h2>Проверьте Ваши персональные данные</h2>
+    <p>Это поможет повысить безопасность вашего аккаунта, сохранить Ваши деньги, а также восстановить доступ или пройти проверку в случае любых проблем с аккаунтом.</p>
+    <p>Необходимо проверить заполнение:</p>
+    <table class="tbl">
+      <thead><tr><th>Что проверить</th><th>Что должно быть</th></tr></thead>
+      <tbody>
+        <tr><td>Email</td><td>Заполнен и подтверждён</td></tr>
+        <tr><td>Телефон</td><td>Заполнен и подтверждён</td></tr>
+        <tr><td>Имя</td><td>Заполнено</td></tr>
+        <tr><td>Фамилия</td><td>Заполнено</td></tr>
+        <tr><td>Страна</td><td>Заполнено</td></tr>
+        <tr><td>Город</td><td>Заполнено</td></tr>
+        <tr><td>Дата рождения</td><td>Заполнено</td></tr>
+      </tbody>
+    </table>
+    <div class="shots">
+      <h3 class="shots__h">Как выглядит приложение</h3>
+      <div class="shots__track">
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap rich">
+    <p class="eyebrow">Update</p>
+    <h2>Зачем обновлять приложение?</h2>
+    <p>Старая версия приложения может открываться медленно или терять часть функций. В таком случае лучше обновить приложение. Обновление будет предложено автоматически.</p>
   </div>
 </section>
 
@@ -470,10 +455,11 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap">
     <p class="eyebrow">Q&A</p>
     <h2>Frequently asked questions</h2>
-    <details><summary>Is it safe?</summary><p>Yes. The app is downloaded from the official source and the data is encrypted. Only download the APK via the buttons on this page.</p></details>
-    <details><summary>Is the app free?</summary><p>Yes, downloading and installing the app is free. Only bets and deposits cost money — if you choose to make them.</p></details>
-    <details><summary>What are the phone requirements?</summary><p>Any Android 7+ phone will do. The app is light (~26MB) and runs even on budget devices.</p></details>
-    <details><summary>How do I install the APK?</summary><p>Download the file, open it and allow installs from unknown sources when asked. Then tap “Install”. Details in the “How to install the APK on Android” section.</p></details>
+    <details><summary>Это безопасно?</summary><p>Да. Приложение скачивается с официального источника, данные передаются в зашифрованном виде. Загружай APK только по кнопкам на этой странице.</p></details>
+    <details><summary>Приложение бесплатное?</summary><p>Да, скачивание и установка приложения бесплатны. Платными могут быть только ставки и пополнение счёта по твоему желанию.</p></details>
+    <details><summary>Какие требования к телефону?</summary><p>Подойдёт смартфон на Android 7 и выше. Приложение лёгкое (~25MB) и работает даже на недорогих устройствах.</p></details>
+    <details><summary>Как установить APK?</summary><p>Скачай файл, открой его и при запросе разреши установку из неизвестных источников. Затем нажми «Установить». Подробно — в блоке «Как скачать и установить 1xCasino приложение».</p></details>
+    <details><summary>Мои данные защищены?</summary><p>Соединение и данные аккаунта передаются в зашифрованном виде.</p></details>
   </div>
 </section>
 
@@ -484,48 +470,9 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section section--alt">
-  <div class="wrap">
-    <p class="eyebrow">Bonus</p>
-    <h2>Promo code: 100 FS for installing and confirming your details</h2>
-    <div class="promo rv">
-      <p style="color:var(--muted)">Copy the promo code, install the app and activate the bonus when you sign up.</p>
-      <div class="promo__code">
-        <span class="promo__value" id="promoValue">1xcTestCode</span>
-        <button class="btn btn--violet" id="copyPromo" data-code="1xcTestCode" type="button"><span class="copy-label">Copy</span></button>
-      </div>
-      <a class="btn btn--lg" href="/go?b=bonus" rel="nofollow noopener">↓ Download and activate the bonus</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap wheel-block">
-    <p class="eyebrow">Bonus game</p>
-    <h2>Spin the wheel and grab your bonus</h2>
-    <p style="color:var(--muted);max-width:520px;margin:0 auto">Tap the button — the wheel sets your free-spins bonus (20 to 100 FS), and the promo code is copied automatically.</p>
-    <div class="wheel-wrap">
-      <div class="wheel-ring" aria-hidden="true"></div>
-      <div class="wheel" id="wheel">
-        <div class="seg" style="transform:rotate(22.5deg)"><b>100 FS</b></div>
-        <div class="seg" style="transform:rotate(67.5deg)"><b>20 FS</b></div>
-        <div class="seg" style="transform:rotate(112.5deg)"><b>50 FS</b></div>
-        <div class="seg" style="transform:rotate(157.5deg)"><b>30 FS</b></div>
-        <div class="seg" style="transform:rotate(202.5deg)"><b>80 FS</b></div>
-        <div class="seg" style="transform:rotate(247.5deg)"><b>40 FS</b></div>
-        <div class="seg" style="transform:rotate(292.5deg)"><b>70 FS</b></div>
-        <div class="seg" style="transform:rotate(337.5deg)"><b>60 FS</b></div>
-      </div>
-      <div class="wheel-hub">FS</div>
-    </div>
-    <p class="wheel-result" id="wheelResult" hidden></p>
-    <p style="margin-top:18px"><button class="btn btn--violet btn--lg" id="spinBtn" type="button"><span class="spin-label">Spin the wheel</span></button></p>
-    <p style="margin-top:14px"><a class="btn btn--lg" href="/go?b=wheel" rel="nofollow noopener">↓ Download and activate the bonus</a></p>
-  </div>
-</section>
-
 <footer class="footer">
   <div class="wrap">
+    <div class="footer__contact"><a class="footer__mail" href="mailto:info@1xcasino-guide.com?subject=1xCasino%20Guide">info@1xcasino-guide.com</a></div>
     <div class="footer__copy">Copyright © 2026 «1xCasino»</div>
     <div class="footer__bottom">
       <span class="badge-18">18+</span>
@@ -551,7 +498,7 @@ body.has-sticky{padding-bottom:80px}
 
 
 <div class="sticky-cta">
-  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">↓ Download the app</a>
+  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">📲 Скачать</a>
 </div>
 
 <script>
@@ -599,17 +546,27 @@ body.has-sticky{padding-bottom:80px}
     });
   }
   var cks=document.querySelectorAll('.ckl__cb'),bform=document.getElementById('bform'),uid=document.getElementById('uid'),send=document.getElementById('uidSend'),lock=document.getElementById('uidLock'),fmsg=document.getElementById('uidMsg');
+  var barMask=document.getElementById('barMask'),barTxt=document.getElementById('barTxt'),bar=document.getElementById('bar'),sent=false;
   if(cks.length&&bform&&uid&&send){
-    function allChk(){for(var i=0;i<cks.length;i++){if(!cks[i].checked)return false;}return true;}
+    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
+    function allChk(){return chkCount()===cks.length;}
     function validId(v){return /^[0-9]{8,12}$/.test(v);}
-    function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));}
+    function updateBar(){
+      if(!barMask)return;
+      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
+      barMask.style.width=(100-pct)+'%';
+      if(bar)bar.setAttribute('aria-valuenow',pct);
+      if(barTxt)barTxt.textContent=(n>=cks.length)?'Отправь твою User ID':'Прогресс разблокировки бонуса';
+    }
+    function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));updateBar();}
     for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',refresh);}
     uid.addEventListener('input',function(){if(fmsg)fmsg.hidden=true;refresh();});
     send.addEventListener('click',function(){
       var v=uid.value.trim();
       if(!allChk())return;
       if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent='Введите корректный USER ID, например 1569699313';}return;}
-      window.location.href='mailto:guide@1xcasino.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
+      window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
+      sent=true;updateBar();
       if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent='Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.';}
     });
     refresh();
