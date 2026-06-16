@@ -4,8 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#160241">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="1XC Guide">
 <meta name="robots" content="index, follow">
-<title>Download the 1xCasino app for Android — betting and casino</title>
+<title>Скачать приложение 1xCasino для Android — онлайн казино в Африке, Aviator, JexX</title>
 <meta name="description" content="Download the 1xCasino app for Android: online casino. A light app that runs fast even on a slow connection.">
 <link rel="alternate" hreflang="en" href="https://1xcasino-guide.com/android/">
 <link rel="alternate" hreflang="fr" href="https://1xcasino-guide.com/fr/android/">
@@ -222,6 +228,35 @@ body.has-sticky{padding-bottom:80px}
 .os-ic{width:22px;height:22px;flex:0 0 auto}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .js .rv.in{opacity:1;transform:none}
+.hero__cta{text-align:center;margin-top:18px}
+.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
+.footer__copy{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:18px}
+.install{margin-top:8px}
+.ckl{list-style:none;display:grid;gap:10px;margin:6px 0 0;padding:0}
+.ckl__row{display:flex;gap:12px;align-items:flex-start;background:var(--plate);border:1px solid var(--line);border-radius:12px;padding:13px 14px;cursor:pointer;font-weight:600}
+.ckl__cb{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.ckl__box{flex:0 0 auto;width:22px;height:22px;border-radius:6px;border:2px solid var(--line);display:grid;place-items:center;margin-top:1px;transition:background .15s,border-color .15s}
+.ckl__cb:checked + .ckl__box{background:var(--green);border-color:var(--green)}
+.ckl__cb:checked + .ckl__box::after{content:"✓";color:#fff;font-size:.82rem;font-weight:800;line-height:1}
+.ckl__cb:focus-visible + .ckl__box{outline:3px solid var(--cyan);outline-offset:2px}
+.bform{margin-top:18px;background:var(--plate);border:1px solid var(--line);border-radius:var(--radius);padding:18px;transition:opacity .2s}
+.bform.is-locked{opacity:.5}
+.bform__t{font-weight:700;margin-bottom:12px}
+.bform__row{display:flex;gap:10px;flex-wrap:wrap}
+.bform__in{flex:1 1 200px;min-height:52px;padding:0 16px;border-radius:12px;background:var(--field);border:1px solid var(--line);color:var(--text);font-size:1rem}
+.bform__in::placeholder{color:var(--muted)}
+.bform__in:focus{outline:2px solid var(--cyan);outline-offset:1px}
+.bform__lock{margin-top:10px;font-size:.85rem;color:var(--muted)}
+.bform__msg{margin-top:10px;font-size:.9rem;font-weight:700}
+.bform__msg.ok{color:var(--green)}
+.bform__msg.err{color:#ff7676}
+.shots{margin-top:24px}
+.shots__h{font-size:1.05rem;margin-bottom:12px}
+.shots__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
+.shots__track::-webkit-scrollbar{display:none}
+.shot{flex:0 0 66%;scroll-snap-align:start;margin:0}
+.shot__cap{margin:0 0 8px;color:var(--muted);font-size:.88rem}
+.shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
 @media (min-width:760px){
   .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
   .benefits{grid-template-columns:repeat(3,1fr)}
@@ -232,6 +267,7 @@ body.has-sticky{padding-bottom:80px}
   .gate__bens{grid-template-columns:repeat(3,1fr)}
   .sticky-cta{display:none}
   body.has-sticky{padding-bottom:0}
+  .shot{flex:0 0 31%}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -251,14 +287,14 @@ body.has-sticky{padding-bottom:80px}
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text">
-      <p class="eyebrow">The best app in <span data-geo="city">your city</span></p>
-      <h1>Get the <span class="hl">1xCasino</span> app in <span data-geo="country">your country</span></h1>
-      <p class="hero__lead">A short guide: how to download the 1xCasino APK for Android, install it, avoid mixing APK up with iPhone, sign in to your account and check security before any payment.</p>
+      <p class="eyebrow">Скачай приложение 1xCasino в <span data-geo="country">your country</span></p>
+      <h1>Install our app and get an extra <span class="hl">100 FS</span> in Aviatrix!</h1>
+      <p class="hero__lead">Здесь ты найдёшь пошаговую инструкцию, как скачать APK, установить, не перепутать с iPhone, войти, проверить безопасность и получить бонус!</p>
       <div class="appcard">
-        <img class="appcard__icon" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="" decoding="async">
+        <img class="appcard__icon" src="/assets/icons/icon-96.png" alt="" width="58" height="58" decoding="async">
         <div>
-          <strong class="appcard__name">1xCasino</strong>
-          <div class="appcard__rating"><span class="stars" aria-hidden="true">★★★★★</span><span>{{RATING}}</span><span>·</span><span>57,959 downloads</span></div>
+          <strong class="appcard__name">1xCasino Africa</strong>
+          <div class="appcard__rating"><span class="stars" aria-hidden="true">★★★★★</span><span>·</span><span>57,959 downloads</span></div>
           <div class="appcard__chips">
             <span class="chip chip--green">Free</span>
             <span class="chip chip--blue">Android 7+</span>
@@ -266,17 +302,10 @@ body.has-sticky{padding-bottom:80px}
           </div>
         </div>
       </div>
-      <a class="btn btn--lg" href="/go?b=hero" rel="nofollow noopener">↓ Download APK for Android</a>
+      <div class="hero__cta"><a class="btn btn--lg" href="/go?b=hero" rel="nofollow noopener">📲 Скачать APK для Android</a></div>
     </div>
     <div class="hero__media">
-      <div class="phone-zone">
-        <div class="phone" role="img" aria-label="App preview">
-          <div class="phone__screen">
-            <img class="phone__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="" decoding="async">
-            <small>replace with your screenshot</small>
-          </div>
-        </div>
-      </div>
+      <img class="hero__img" src="/assets/casino_app_mainpage.webp" alt="1xCasino app" width="561" height="580" decoding="async">
     </div>
   </div>
 </section>
@@ -285,56 +314,68 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap">
     <p class="eyebrow">Benefits</p>
     <h2>Why install the Android app</h2>
-    <div class="benefits">
-      <div class="benefit rv"><span class="emo">⚡</span><span>Play faster</span></div>
-      <div class="benefit rv"><span class="emo">🚀</span><span>No loading delays</span></div>
-      <div class="benefit rv"><span class="emo">💳</span><span>Safer deposits</span></div>
-      <div class="benefit rv"><span class="emo">🔒</span><span>Stable payments without page reloads</span></div>
-      <div class="benefit rv"><span class="emo">🔓</span><span>One-tap sign-in, no retyping your password</span></div>
-      <div class="benefit rv"><span class="emo">📲</span><span>One tap — and you're playing</span></div>
-      <div class="benefit rv"><span class="emo">🔔</span><span>Instant win notifications</span></div>
-      <div class="benefit rv"><span class="emo">📶</span><span>Optimized for slow connections</span></div>
-      <div class="benefit rv"><span class="emo">💾</span><span>Uses less data</span></div>
-      <div class="benefit rv"><span class="emo">🎁</span><span>In-app exclusive bonus</span></div>
+    <div class="gate__bens">
+        <div class="gben"><span class="emo">🚀</span><span>Less loading delays</span></div>
+        <div class="gben"><span class="emo">💳</span><span>Safer &amp; stable payments</span></div>
+        <div class="gben"><span class="emo">🎁</span><span>Get app-only bonus</span></div>
+        <div class="gben"><span class="emo">🔔</span><span>Get instant winning alerts</span></div>
+        <div class="gben"><span class="emo">📶</span><span>Optimized for slow internet</span></div>
+        <div class="gben"><span class="emo">💾</span><span>Uses less traffic data</span></div>
     </div>
   </div>
 </section>
 
 <section class="section section--alt">
   <div class="wrap rich">
-    <p class="eyebrow">Download</p>
-    <h2>Where to download the 1xCasino APK</h2>
-    <p>An APK is the install file for Android. You open it on your phone, and the system offers to install the app.</p>
-    <p>Download the file only from this page. Don't install APKs from private messages, unknown file hosts, short links or pages promising a guaranteed bonus.</p>
-    <p>Before opening the file, check its name, source, size and the free space on your phone. If the download was interrupted, delete the file and download it again from this page.</p>
-    <table class="tbl">
-      <thead><tr><th>What to check</th><th>Why</th></tr></thead>
-      <tbody>
-        <tr><td>1xCasino.apk file name</td><td>Easier to spot a renamed copy</td></tr>
-        <tr><td>File source</td><td>Don't install a modified APK</td></tr>
-        <tr><td>Android</td><td>APK doesn't work on iPhone</td></tr>
-        <tr><td>Free storage</td><td>The file must not get cut off mid-download</td></tr>
-      </tbody>
-    </table>
+    <p class="eyebrow">Install</p>
+    <h2>Как установить 1xCasino App и получить бонус</h2>
+    <p>Ниже приведён краткий пошаговый чеклист:</p>
+    <div class="install">
+      <ul class="ckl" id="ckl">
+      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Скачать 1xCasino.apk</span></label></li>
+      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Установить приложение на телефон</span></label></li>
+      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Выполнить LogIn с вашими доступами к 1xcasino</span></label></li>
+      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Проверить заполнение персональных данных в профиле (Email добавлен и активирован, Телефон добавлен и активирован, Город, Имя, Фамилия, Дата рождения). Эти данные нужны для повышения защиты Вашего аккаунта и счёта.</span></label></li>
+      </ul>
+      <div class="bform is-locked" id="bform">
+        <p class="bform__t">Отправьте Ваш USER ID, мы проверим ваш аккаунт и отправим Вам Промокод с бонусом, который вы сможете активировать в разделе Промокодов.</p>
+        <div class="bform__row">
+          <input type="text" id="uid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, например 1569699313">
+          <button type="button" class="btn btn--violet" id="uidSend" disabled>Отправить</button>
+        </div>
+        <p class="bform__lock" id="uidLock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
+        <p class="bform__msg" id="uidMsg" hidden></p>
+      </div>
+      <p style="margin-top:18px"><a class="btn" href="#b4">Изучить каждый шаг подробно</a></p>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="b4">
   <div class="wrap rich">
-    <p class="eyebrow">Install</p>
-    <h2>How to install the APK on Android</h2>
-    <p>Android may show a warning because the file isn't from the app store. That's a normal security screen. Grant the permission only for the time of the install.</p>
-    <p>If the install doesn't start, don't look for random APK versions. First check storage, your connection and that the file downloaded fully.</p>
-    <div class="steps">
-      <div class="step rv"><p>Download the APK.</p></div>
-      <div class="step rv"><p>Open the file from your browser or the Downloads folder.</p></div>
-      <div class="step rv"><p>Allow installs from this source — once.</p></div>
-      <div class="step rv"><p>Install the app.</p></div>
-      <div class="step rv"><p>Open 1xCasino.</p></div>
-      <div class="step rv"><p>Go back to Android settings and turn the extra permission off.</p></div>
+    <p class="eyebrow">Download</p>
+    <h2>Как скачать и установить 1xCasino приложение</h2>
+    <p>APK — это файл установки для Android. Его открывают на телефоне, после чего система предлагает установить приложение.</p>
+    <p>Скачивайте файл с приложением для <span data-geo="country">your country</span> только с официальных сайтов 1xcasino.com, 1xcasino-af.com, 1xcasino.co.zm, 1xcasino.com.gh и с текущей Guideline страницы.</p>
+    <p>Перед открытием файла проверьте имя, источник, размер и свободное место на телефоне. Если файл скачался не полностью, удалите его и скачайте заново с той же страницы.</p>
+    <p>Ваш телефон может показать предупреждение, потому что файл ставится не из Google Play Market. Это нормальный экран безопасности. Разрешение стоит давать только на время установки.</p>
+    <table class="tbl">
+      <thead><tr><th>Что проверить</th><th>Что должно быть</th></tr></thead>
+      <tbody>
+        <tr><td>Имя APK</td><td>1xCasino.apk</td></tr>
+        <tr><td>Android</td><td>Android 7+</td></tr>
+        <tr><td>Свободная память</td><td>25MB</td></tr>
+      </tbody>
+    </table>
+    <div class="shots">
+      <h3 class="shots__h">Как выглядит приложение</h3>
+      <div class="shots__track">
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+      </div>
     </div>
-    <div class="img-ph" role="img" aria-label="Image placeholder">Image placeholder<small>replace with your screenshot</small></div>
-    <p style="margin-top:20px"><a class="btn btn--lg" href="/go?b=install" rel="nofollow noopener">↓ Download APK for Android</a></p>
   </div>
 </section>
 
@@ -377,6 +418,73 @@ body.has-sticky{padding-bottom:80px}
 </section>
 
 <section class="section">
+  <div class="wrap rich">
+    <p class="eyebrow">Payments</p>
+    <h2>Deposit and withdrawal</h2>
+    <p>Before a deposit, check the amount, currency, fee, limit and the owner of the payment method. A withdrawal may require identity verification.</p>
+    <p>Keep the receipt, a screenshot or the transaction number. If a payment hangs, this helps support sort it out faster.</p>
+    <ul class="bullets">
+      <li>Don't repeat a payment until its status is clear.</li>
+      <li>Don't send documents in private chats — only to official 1xCasino support.</li>
+    </ul>
+    <table class="tbl">
+      <thead><tr><th>Before paying</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>Amount</td><td>Check before confirming</td></tr>
+        <tr><td>Currency</td><td>Compare with your account currency</td></tr>
+        <tr><td>Limit</td><td>Check the minimum and maximum</td></tr>
+        <tr><td>Status</td><td>Wait for the result</td></tr>
+        <tr><td>Confirmation</td><td>Save the receipt or a screenshot</td></tr>
+      </tbody>
+    </table>
+    <div class="img-ph" role="img" aria-label="Image placeholder">Image placeholder<small>replace with your screenshot</small></div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <p class="eyebrow">Security</p>
+    <h2>Fair and secure</h2>
+    <div class="cards">
+      <div class="card rv">
+        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>Data protection</h3>
+        <p>The connection and your account data are encrypted.</p>
+      </div>
+      <div class="card rv">
+        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Fast payouts</h3>
+        <p>Withdraw via convenient local methods, without extra delays.</p>
+      </div>
+      <div class="card rv">
+        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>24/7 support</h3>
+        <p>The support team is available around the clock for any question.</p>
+      </div>
+    </div>
+    <div class="pay"><span>Orange</span><span>Airtel</span></div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="wrap">
+    <p class="eyebrow">Q&A</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is it safe?</summary><p>Yes. The app is downloaded from the official source and the data is encrypted. Only download the APK via the buttons on this page.</p></details>
+    <details><summary>Is the app free?</summary><p>Yes, downloading and installing the app is free. Only bets and deposits cost money — if you choose to make them.</p></details>
+    <details><summary>What are the phone requirements?</summary><p>Any Android 7+ phone will do. The app is light (~26MB) and runs even on budget devices.</p></details>
+    <details><summary>How do I install the APK?</summary><p>Download the file, open it and allow installs from unknown sources when asked. Then tap “Install”. Details in the “How to install the APK on Android” section.</p></details>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Ready to start? Install the app now and get the 100 FS bonus</h2>
+    <a class="btn btn--lg" href="/go?b=final" rel="nofollow noopener">📲 Скачать APK для Android</a>
+  </div>
+</section>
+
+<section class="section section--alt">
   <div class="wrap">
     <p class="eyebrow">Bonus</p>
     <h2>Promo code: 100 FS for installing and confirming your details</h2>
@@ -416,82 +524,9 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section section--alt">
-  <div class="wrap rich">
-    <p class="eyebrow">Payments</p>
-    <h2>Deposit and withdrawal</h2>
-    <p>Before a deposit, check the amount, currency, fee, limit and the owner of the payment method. A withdrawal may require identity verification.</p>
-    <p>Keep the receipt, a screenshot or the transaction number. If a payment hangs, this helps support sort it out faster.</p>
-    <ul class="bullets">
-      <li>Don't repeat a payment until its status is clear.</li>
-      <li>Don't send documents in private chats — only to official 1xCasino support.</li>
-    </ul>
-    <table class="tbl">
-      <thead><tr><th>Before paying</th><th>What to do</th></tr></thead>
-      <tbody>
-        <tr><td>Amount</td><td>Check before confirming</td></tr>
-        <tr><td>Currency</td><td>Compare with your account currency</td></tr>
-        <tr><td>Limit</td><td>Check the minimum and maximum</td></tr>
-        <tr><td>Status</td><td>Wait for the result</td></tr>
-        <tr><td>Confirmation</td><td>Save the receipt or a screenshot</td></tr>
-      </tbody>
-    </table>
-    <div class="img-ph" role="img" aria-label="Image placeholder">Image placeholder<small>replace with your screenshot</small></div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <p class="eyebrow">Security</p>
-    <h2>Fair and secure</h2>
-    <div class="cards">
-      <div class="card rv">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-        <h3>Data protection</h3>
-        <p>The connection and your account data are encrypted.</p>
-      </div>
-      <div class="card rv">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h3>Fast payouts</h3>
-        <p>Withdraw via convenient local methods, without extra delays.</p>
-      </div>
-      <div class="card rv">
-        <div class="card__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>24/7 support</h3>
-        <p>The support team is available around the clock for any question.</p>
-      </div>
-    </div>
-    <div class="pay"><span>Orange</span><span>Airtel</span></div>
-  </div>
-</section>
-
-<section class="section section--alt faq">
-  <div class="wrap">
-    <p class="eyebrow">Q&A</p>
-    <h2>Frequently asked questions</h2>
-    <details><summary>Is it safe?</summary><p>Yes. The app is downloaded from the official source and the data is encrypted. Only download the APK via the buttons on this page.</p></details>
-    <details><summary>Is the app free?</summary><p>Yes, downloading and installing the app is free. Only bets and deposits cost money — if you choose to make them.</p></details>
-    <details><summary>What are the phone requirements?</summary><p>Any Android 7+ phone will do. The app is light (~26MB) and runs even on budget devices.</p></details>
-    <details><summary>How do I install the APK?</summary><p>Download the file, open it and allow installs from unknown sources when asked. Then tap “Install”. Details in the “How to install the APK on Android” section.</p></details>
-  </div>
-</section>
-
-<section class="final-cta">
-  <div class="wrap">
-    <h2>Ready to start? Install the app now and get the 100 FS bonus</h2>
-    <a class="btn btn--lg" href="/go?b=final" rel="nofollow noopener">↓ Download APK for Android</a>
-  </div>
-</section>
-
 <footer class="footer">
   <div class="wrap">
-    <div class="footer__top">
-      <img class="footer__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="1xCasino" decoding="async">
-      <nav class="footer__links">
-        <a href="#top">Features</a><a href="#top">Install</a><a href="#top">FAQ</a>
-        <a href="#" rel="nofollow">Terms</a><a href="#" rel="nofollow">Privacy</a>
-      </nav>
-    </div>
+    <div class="footer__copy">Copyright © 2026 «1xCasino»</div>
     <div class="footer__bottom">
       <span class="badge-18">18+</span>
       <label for="navtoggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
@@ -562,6 +597,22 @@ body.has-sticky{padding-bottom:80px}
         copyText(PROMO,function(){ result.textContent='Promo code 1xcTestCode copied ✓'; });
       }
     });
+  }
+  var cks=document.querySelectorAll('.ckl__cb'),bform=document.getElementById('bform'),uid=document.getElementById('uid'),send=document.getElementById('uidSend'),lock=document.getElementById('uidLock'),fmsg=document.getElementById('uidMsg');
+  if(cks.length&&bform&&uid&&send){
+    function allChk(){for(var i=0;i<cks.length;i++){if(!cks[i].checked)return false;}return true;}
+    function validId(v){return /^[0-9]{8,12}$/.test(v);}
+    function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));}
+    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',refresh);}
+    uid.addEventListener('input',function(){if(fmsg)fmsg.hidden=true;refresh();});
+    send.addEventListener('click',function(){
+      var v=uid.value.trim();
+      if(!allChk())return;
+      if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent='Введите корректный USER ID, например 1569699313';}return;}
+      window.location.href='mailto:guide@1xcasino.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
+      if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent='Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.';}
+    });
+    refresh();
   }
   if('IntersectionObserver' in window){
     document.documentElement.classList.add('js');
