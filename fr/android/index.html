@@ -337,6 +337,10 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap rich">
     <p class="eyebrow">Installation</p>
     <h2>Comment installer l'application 1xCasino et obtenir le bonus</h2>
+    <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="bar__mask" id="barMask"></div>
+      <span class="bar__txt" id="barTxt">Progression du déblocage du bonus</span>
+    </div>
     <p>Voici une courte checklist étape par étape :</p>
     <div class="install">
       <ul class="ckl" id="ckl">
@@ -353,10 +357,6 @@ body.has-sticky{padding-bottom:80px}
         </div>
         <p class="bform__lock" id="uidLock">Cochez toutes les étapes ci-dessus pour envoyer votre USER ID.</p>
         <p class="bform__msg" id="uidMsg" hidden></p>
-      </div>
-      <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-        <div class="bar__mask" id="barMask"></div>
-        <span class="bar__txt" id="barTxt">Progression du déblocage du bonus</span>
       </div>
       <p style="text-align:center;margin-top:18px"><a class="btn" href="#b4">Découvrir chaque étape en détail</a></p>
     </div>
@@ -519,18 +519,18 @@ body.has-sticky{padding-bottom:80px}
     copyBtn.addEventListener('click',function(){
       var code=copyBtn.getAttribute('data-code')||'';
       var label=copyBtn.querySelector('.copy-label');
-      copyText(code,function(){ var o=label.textContent; label.textContent='Copié !'; setTimeout(function(){label.textContent=o;},1500); });
+      copyText(code,function(){ var o=label.textContent; label.textContent="Copié !"; setTimeout(function(){label.textContent=o;},1500); });
     });
   }
   // Wheel: always lands on 100 FS — a real fixed bonus for everyone
   var wheel=document.getElementById('wheel'),spinBtn=document.getElementById('spinBtn'),result=document.getElementById('wheelResult');
   if(wheel&&spinBtn&&result){
-    var PROMO='1xcTestCode',spun=false;
+    var PROMO="1xcTestCode",spun=false;
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function reveal(){
       copyText(PROMO,function(){
-        result.hidden=false; result.textContent='🎉 100 FS ! Le code promo 1xcTestCode est copié';
-        spinBtn.disabled=false; spinBtn.querySelector('.spin-label').textContent='Copier le code promo';
+        result.hidden=false; result.textContent="🎉 100 FS ! Le code promo 1xcTestCode est copié";
+        spinBtn.disabled=false; spinBtn.querySelector('.spin-label').textContent="Copier le code promo";
       });
     }
     spinBtn.addEventListener('click',function(){
@@ -541,7 +541,7 @@ body.has-sticky{padding-bottom:80px}
         wheel.style.transform='rotate('+deg+'deg)';
         setTimeout(reveal,4200);
       } else {
-        copyText(PROMO,function(){ result.textContent='Code promo 1xcTestCode copié ✓'; });
+        copyText(PROMO,function(){ result.textContent="Code promo 1xcTestCode copié ✓"; });
       }
     });
   }
@@ -556,7 +556,7 @@ body.has-sticky{padding-bottom:80px}
       var n=chkCount();var pct=sent?100:Math.min(n*20,80);
       barMask.style.width=(100-pct)+'%';
       if(bar)bar.setAttribute('aria-valuenow',pct);
-      if(barTxt)barTxt.textContent=(n>=cks.length)?'Envoyez votre User ID':'Progression du déblocage du bonus';
+      if(barTxt)barTxt.textContent=(n>=cks.length)?"Envoyez votre User ID":"Progression du déblocage du bonus";
     }
     function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));updateBar();}
     for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',refresh);}
@@ -564,10 +564,10 @@ body.has-sticky{padding-bottom:80px}
     send.addEventListener('click',function(){
       var v=uid.value.trim();
       if(!allChk())return;
-      if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent='Saisissez un USER ID valide, par exemple 1569699313';}return;}
+      if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent="Saisissez un USER ID valide, par exemple 1569699313";}return;}
       window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
       sent=true;updateBar();
-      if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent='C'est fait ! Votre messagerie va s'ouvrir — envoyez le message et nous vérifierons le compte et enverrons le code promo.';}
+      if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent="C'est fait ! Votre messagerie va s'ouvrir — envoyez le message et nous vérifierons le compte et enverrons le code promo.";}
     });
     refresh();
   }
