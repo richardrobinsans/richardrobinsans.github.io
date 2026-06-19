@@ -258,6 +258,19 @@ body.has-sticky{padding-bottom:80px}
 .bform__msg{margin-top:10px;font-size:.9rem;font-weight:700}
 .bform__msg.ok{color:var(--green)}
 .bform__msg.err{color:#ff7676}
+/* draft B5 sandbox variants */
+.bar--draft{border-width:2px;border-color:rgba(255,255,255,.5)}
+.ckl__row.is-locked{opacity:.4;cursor:not-allowed}
+.ckl__row.is-locked .ckl__box{border-style:dashed}
+.bform--draft{text-align:center}
+.bform--draft.is-locked{pointer-events:none}
+.bform--draft .ckl{margin-bottom:14px}
+.bform--draft .bform__row{justify-content:center}
+.bform--draft .bform__in{flex:0 1 280px;text-align:center}
+.scroll-arrow{display:block;width:100%;padding:22px 0 8px;text-align:center;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.scroll-arrow__chev{display:inline-block;width:26px;height:26px;animation:arrowBounce 1.4s ease-in-out infinite}
+.scroll-arrow__chev::before{content:"";display:block;width:100%;height:100%;border-right:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(45deg)}
+@keyframes arrowBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
 .shots{margin-top:24px}
 .shots__h{font-size:1.05rem;margin-bottom:12px}
 .shots__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
@@ -300,7 +313,40 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section" id="draft-b5">
+  <div class="wrap rich">
+    <p class="eyebrow">Установка</p>
+    <h2>Как установить 1xCasino App и получить бонус</h2>
+    <div class="bar bar--draft" id="dbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="bar__mask" id="dmask"></div>
+      <span class="bar__txt" id="dtxt">Прогресс разблокировки бонуса</span>
+    </div>
+    <p>Ниже приведён краткий пошаговый чеклист:</p>
+    <div class="install">
+      <ul class="ckl" id="dckl">
+        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Скачать 1xCasino.apk</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Установить приложение на телефон</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Выполнить LogIn с вашими доступами к 1xcasino</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Проверить заполнение персональных данных в профиле (Email добавлен и активирован, Телефон добавлен и активирован, Город, Имя, Фамилия, Дата рождения). Эти данные нужны для повышения защиты Вашего аккаунта и счёта.</span></label></li>
+      </ul>
+      <div class="bform bform--draft is-locked" id="dform">
+        <ul class="ckl">
+          <li><label class="ckl__row"><input type="checkbox" class="ckl__cb" id="dformChk" disabled><span class="ckl__box" aria-hidden="true"></span><span>Отправь свой USER ID для получения бонуса</span></label></li>
+        </ul>
+        <p class="bform__t">Отправьте Ваш USER ID, мы проверим ваш аккаунт и отправим Вам Промокод с бонусом, который вы сможете активировать в разделе Промокодов.</p>
+        <div class="bform__row">
+          <input type="text" id="duid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, например 1569699313">
+          <button type="button" class="btn btn--violet" id="dsend" disabled>Отправить</button>
+        </div>
+        <p class="bform__lock" id="dlock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
+        <p class="bform__msg" id="dmsg" hidden></p>
+      </div>
+      <a class="scroll-arrow" href="#draft-next" aria-label="Листать вниз"><span class="scroll-arrow__chev"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="draft-next">
   <div class="wrap">
     <p class="eyebrow">Безопасность</p>
     <h2>Честно и безопасно</h2>
@@ -504,6 +550,55 @@ body.has-sticky{padding-bottom:80px}
     },{rootMargin:'0px 0px -8% 0px'});
     document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   }
+})();
+</script>
+<script>
+(function(){
+  var root=document.getElementById('draft-b5');
+  if(!root)return;
+  var cks=[].slice.call(document.querySelectorAll('#dckl .ckl__cb'));
+  var formChk=document.getElementById('dformChk');
+  var dform=document.getElementById('dform'),duid=document.getElementById('duid'),dsend=document.getElementById('dsend'),dlock=document.getElementById('dlock'),dmsg=document.getElementById('dmsg');
+  var dmask=document.getElementById('dmask'),dtxt=document.getElementById('dtxt'),dbar=document.getElementById('dbar');
+  var sent=false;
+  function validId(v){return /^[0-9]{8,12}$/.test(v);}
+  function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
+  function allDone(){return cks.length>0&&chkCount()===cks.length;}
+  function syncSeq(){
+    for(var i=0;i<cks.length;i++){
+      var en=(i===0)||cks[i-1].checked;
+      if(!en&&cks[i].checked)cks[i].checked=false;
+      cks[i].disabled=!en;
+      var row=cks[i].parentNode;
+      if(row&&row.classList)row.classList.toggle('is-locked',!en);
+    }
+  }
+  function openForm(){
+    var open=allDone();
+    if(dform)dform.classList.toggle('is-locked',!open);
+    if(dlock)dlock.style.display=open?'none':'';
+    if(formChk)formChk.checked=open;
+    if(dsend)dsend.disabled=!open;
+    updateBar();
+  }
+  function updateBar(){
+    if(!dmask)return;
+    var n=chkCount();var pct=sent?100:Math.min(n*20,80);
+    dmask.style.width=(100-pct)+'%';
+    if(dbar)dbar.setAttribute('aria-valuenow',pct);
+    if(dtxt)dtxt.textContent=(n>=cks.length&&cks.length>0)?"Отправь твою User ID":"Прогресс разблокировки бонуса";
+  }
+  for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',function(){syncSeq();openForm();});}
+  if(duid)duid.addEventListener('input',function(){if(dmsg)dmsg.hidden=true;});
+  if(dsend)dsend.addEventListener('click',function(){
+    if(!allDone())return;
+    var v=duid.value.trim();
+    if(!validId(v)){if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg err';dmsg.textContent="Пожалуйста, введи корректный USER ID. Пример: 1569699313";}return;}
+    window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
+    sent=true;updateBar();
+    if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg ok';dmsg.textContent="Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.";}
+  });
+  syncSeq();openForm();
 })();
 </script>
 </body>

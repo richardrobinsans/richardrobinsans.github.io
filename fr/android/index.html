@@ -258,6 +258,19 @@ body.has-sticky{padding-bottom:80px}
 .bform__msg{margin-top:10px;font-size:.9rem;font-weight:700}
 .bform__msg.ok{color:var(--green)}
 .bform__msg.err{color:#ff7676}
+/* draft B5 sandbox variants */
+.bar--draft{border-width:2px;border-color:rgba(255,255,255,.5)}
+.ckl__row.is-locked{opacity:.4;cursor:not-allowed}
+.ckl__row.is-locked .ckl__box{border-style:dashed}
+.bform--draft{text-align:center}
+.bform--draft.is-locked{pointer-events:none}
+.bform--draft .ckl{margin-bottom:14px}
+.bform--draft .bform__row{justify-content:center}
+.bform--draft .bform__in{flex:0 1 280px;text-align:center}
+.scroll-arrow{display:block;width:100%;padding:22px 0 8px;text-align:center;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.scroll-arrow__chev{display:inline-block;width:26px;height:26px;animation:arrowBounce 1.4s ease-in-out infinite}
+.scroll-arrow__chev::before{content:"";display:block;width:100%;height:100%;border-right:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(45deg)}
+@keyframes arrowBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
 .shots{margin-top:24px}
 .shots__h{font-size:1.05rem;margin-bottom:12px}
 .shots__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
