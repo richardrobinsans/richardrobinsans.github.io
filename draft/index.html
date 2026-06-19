@@ -267,6 +267,18 @@ body.has-sticky{padding-bottom:80px}
 .bform--draft .ckl{margin-bottom:14px}
 .bform--draft .bform__row{justify-content:center}
 .bform--draft .bform__in{flex:0 1 280px;text-align:center}
+.form-chk{display:flex;gap:12px;align-items:flex-start;text-align:left;font-weight:600;margin-bottom:16px}
+.form-chk .ckl__cb:checked ~ span:last-child{text-decoration:none;opacity:1}
+.reviews{margin-top:20px;max-width:560px;margin-inline:auto}
+.reviews__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
+.reviews__track::-webkit-scrollbar{display:none}
+.review{flex:0 0 auto;width:min(280px,80%);scroll-snap-align:start;background:var(--plate);border:1px solid var(--line);border-radius:14px;padding:16px}
+.review__top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.review__ava{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 auto;background:var(--field)}
+.review__text{color:var(--muted);font-size:.92rem;line-height:1.5;margin:0}
+.stars-rate{display:inline-block;position:relative;font-size:1rem;line-height:1;letter-spacing:1px}
+.stars-rate::before{content:"°5°5°5°5°5";color:rgba(255,255,255,.18)}
+.stars-rate::after{content:"°5°5°5°5°5";color:#f5c518;position:absolute;left:0;top:0;width:var(--r);overflow:hidden;white-space:nowrap}
 .scroll-arrow{display:block;width:100%;padding:22px 0 8px;text-align:center;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
 .scroll-arrow__chev{display:inline-block;width:26px;height:26px;animation:arrowBounce 1.4s ease-in-out infinite}
 .scroll-arrow__chev::before{content:"";display:block;width:100%;height:100%;border-right:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(45deg)}
@@ -330,9 +342,7 @@ body.has-sticky{padding-bottom:80px}
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Проверить заполнение персональных данных в профиле (Email добавлен и активирован, Телефон добавлен и активирован, Город, Имя, Фамилия, Дата рождения). Эти данные нужны для повышения защиты Вашего аккаунта и счёта.</span></label></li>
       </ul>
       <div class="bform bform--draft is-locked" id="dform">
-        <ul class="ckl">
-          <li><label class="ckl__row"><input type="checkbox" class="ckl__cb" id="dformChk" disabled><span class="ckl__box" aria-hidden="true"></span><span>Отправь свой USER ID для получения бонуса</span></label></li>
-        </ul>
+        <label class="form-chk"><input type="checkbox" class="ckl__cb" id="dformChk" disabled><span class="ckl__box" aria-hidden="true"></span><span>Отправь свой USER ID для получения бонуса</span></label>
         <p class="bform__t">Отправьте Ваш USER ID, мы проверим ваш аккаунт и отправим Вам Промокод с бонусом, который вы сможете активировать в разделе Промокодов.</p>
         <div class="bform__row">
           <input type="text" id="duid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, например 1569699313">
@@ -341,7 +351,58 @@ body.has-sticky{padding-bottom:80px}
         <p class="bform__lock" id="dlock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
         <p class="bform__msg" id="dmsg" hidden></p>
       </div>
-      <a class="scroll-arrow" href="#draft-next" aria-label="Листать вниз"><span class="scroll-arrow__chev"></span></a>
+      <a class="scroll-arrow" href="#draft-reviews" aria-label="Листать вниз"><span class="scroll-arrow__chev"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="draft-reviews">
+  <div class="wrap rich">
+    <p class="eyebrow">Отзывы</p>
+    <h2>Отзывы пользователей о приложении</h2>
+    <div class="reviews">
+      <div class="reviews__track">
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a1.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Приложение работает стабильно, игры запускаются быстро.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a2.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
+          <p class="review__text">Удобный вход, понятный интерфейс и хорошие бонусы.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a3.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Понравилась безопасность платежей и стабильная работа.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a4.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 из 5"></div></div>
+          <p class="review__text">Бонусы в приложении легко найти и активировать.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a5.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Игры не зависают, приложение работает уверенно.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a6.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
+          <p class="review__text">Удобно играть с телефона, все быстро открывается.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a7.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Хорошие бонусы и стабильная работа без сбоев.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a8.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 из 5"></div></div>
+          <p class="review__text">Приложение выглядит надёжно, платежи проходят спокойно.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a9.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
+          <p class="review__text">Быстрый запуск игр и понятные акции в приложении.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a10.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">1xCasino удобно использовать каждый день.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
