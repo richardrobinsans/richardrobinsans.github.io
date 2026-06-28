@@ -229,7 +229,7 @@ body.has-sticky{padding-bottom:80px}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .js .rv.in{opacity:1;transform:none}
 .hero__cta{text-align:center;margin-top:18px}
-.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
+.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;margin-bottom:clamp(-48px,-10vw,-22px);filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
 .footer__contact{text-align:center;margin-bottom:12px}
 .footer__mail{display:inline-block;background:var(--field);padding:7px 14px;border-radius:9px;color:var(--cyan);font-weight:700;font-size:.92rem;text-decoration:none;border:1px solid var(--line)}
 .footer__mail:hover{filter:brightness(1.15)}
@@ -288,10 +288,11 @@ body.has-sticky{padding-bottom:80px}
 .shots__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
 .shots__track::-webkit-scrollbar{display:none}
 .shot{flex:0 0 66%;scroll-snap-align:start;margin:0}
-.shot__cap{margin:0 0 8px;color:var(--muted);font-size:.88rem}
+.shot__cap{margin:10px 0 0;color:var(--muted);font-size:.88rem}
 .shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
 @media (min-width:760px){
   .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
+  .hero__img{margin-bottom:0}
   .benefits{grid-template-columns:repeat(3,1fr)}
   .cards{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
@@ -325,7 +326,7 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section" id="draft-b5">
+<section class="section section--alt" id="install">
   <div class="wrap rich">
     <p class="eyebrow">Установка</p>
     <h2>Как установить 1xCasino App и получить бонус</h2>
@@ -351,12 +352,12 @@ body.has-sticky{padding-bottom:80px}
         <p class="bform__lock" id="dlock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
         <p class="bform__msg" id="dmsg" hidden></p>
       </div>
-      <a class="scroll-arrow" href="#draft-reviews" aria-label="Листать вниз"><span class="scroll-arrow__chev"></span></a>
+      <a class="scroll-arrow" href="#reviews" aria-label="Листать вниз"><span class="scroll-arrow__chev"></span></a>
     </div>
   </div>
 </section>
 
-<section class="section" id="draft-reviews">
+<section class="section" id="reviews">
   <div class="wrap rich">
     <p class="eyebrow">Отзывы</p>
     <h2>Отзывы пользователей о приложении</h2>
@@ -407,7 +408,7 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section section--alt" id="draft-next">
+<section class="section section--alt">
   <div class="wrap">
     <p class="eyebrow">Безопасность</p>
     <h2>Честно и безопасно</h2>
@@ -578,31 +579,51 @@ body.has-sticky{padding-bottom:80px}
       }
     });
   }
-  var cks=document.querySelectorAll('.ckl__cb'),bform=document.getElementById('bform'),uid=document.getElementById('uid'),send=document.getElementById('uidSend'),lock=document.getElementById('uidLock'),fmsg=document.getElementById('uidMsg');
-  var barMask=document.getElementById('barMask'),barTxt=document.getElementById('barTxt'),bar=document.getElementById('bar'),sent=false;
-  if(cks.length&&bform&&uid&&send){
-    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
-    function allChk(){return chkCount()===cks.length;}
+  // B5* install flow: sequential checklist + gated form + auto-checkbox + progress
+  var root=document.getElementById('install');
+  if(root){
+    var cks=[].slice.call(document.querySelectorAll('#dckl .ckl__cb'));
+    var formChk=document.getElementById('dformChk');
+    var dform=document.getElementById('dform'),duid=document.getElementById('duid'),dsend=document.getElementById('dsend'),dlock=document.getElementById('dlock'),dmsg=document.getElementById('dmsg');
+    var dmask=document.getElementById('dmask'),dtxt=document.getElementById('dtxt'),dbar=document.getElementById('dbar'),sent=false;
     function validId(v){return /^[0-9]{8,12}$/.test(v);}
-    function updateBar(){
-      if(!barMask)return;
-      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
-      barMask.style.width=(100-pct)+'%';
-      if(bar)bar.setAttribute('aria-valuenow',pct);
-      if(barTxt)barTxt.textContent=(n>=cks.length)?"Отправь твою User ID":"Прогресс разблокировки бонуса";
+    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
+    function allDone(){return cks.length>0&&chkCount()===cks.length;}
+    function syncSeq(){
+      for(var i=0;i<cks.length;i++){
+        var en=(i===0)||cks[i-1].checked;
+        if(!en&&cks[i].checked)cks[i].checked=false;
+        cks[i].disabled=!en;
+        var row=cks[i].parentNode;
+        if(row&&row.classList)row.classList.toggle('is-locked',!en);
+      }
     }
-    function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));updateBar();}
-    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',refresh);}
-    uid.addEventListener('input',function(){if(fmsg)fmsg.hidden=true;refresh();});
-    send.addEventListener('click',function(){
-      var v=uid.value.trim();
-      if(!allChk())return;
-      if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent="Введите корректный USER ID, например 1569699313";}return;}
+    function updateBar(){
+      if(!dmask)return;
+      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
+      dmask.style.width=(100-pct)+'%';
+      if(dbar)dbar.setAttribute('aria-valuenow',pct);
+      if(dtxt)dtxt.textContent=(n>=cks.length&&cks.length>0)?"Отправь твою User ID":"Прогресс разблокировки бонуса";
+    }
+    function openForm(){
+      var open=allDone();
+      if(dform)dform.classList.toggle('is-locked',!open);
+      if(dlock)dlock.style.display=open?'none':'';
+      if(formChk)formChk.checked=open;
+      if(dsend)dsend.disabled=!open;
+      updateBar();
+    }
+    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',function(){syncSeq();openForm();});}
+    if(duid)duid.addEventListener('input',function(){if(dmsg)dmsg.hidden=true;});
+    if(dsend)dsend.addEventListener('click',function(){
+      if(!allDone())return;
+      var v=duid.value.trim();
+      if(!validId(v)){if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg err';dmsg.textContent="Пожалуйста, введи корректный USER ID. Пример: 1569699313";}return;}
       window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
       sent=true;updateBar();
-      if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent="Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.";}
+      if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg ok';dmsg.textContent="Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.";}
     });
-    refresh();
+    syncSeq();openForm();
   }
   if('IntersectionObserver' in window){
     document.documentElement.classList.add('js');
@@ -611,55 +632,6 @@ body.has-sticky{padding-bottom:80px}
     },{rootMargin:'0px 0px -8% 0px'});
     document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   }
-})();
-</script>
-<script>
-(function(){
-  var root=document.getElementById('draft-b5');
-  if(!root)return;
-  var cks=[].slice.call(document.querySelectorAll('#dckl .ckl__cb'));
-  var formChk=document.getElementById('dformChk');
-  var dform=document.getElementById('dform'),duid=document.getElementById('duid'),dsend=document.getElementById('dsend'),dlock=document.getElementById('dlock'),dmsg=document.getElementById('dmsg');
-  var dmask=document.getElementById('dmask'),dtxt=document.getElementById('dtxt'),dbar=document.getElementById('dbar');
-  var sent=false;
-  function validId(v){return /^[0-9]{8,12}$/.test(v);}
-  function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
-  function allDone(){return cks.length>0&&chkCount()===cks.length;}
-  function syncSeq(){
-    for(var i=0;i<cks.length;i++){
-      var en=(i===0)||cks[i-1].checked;
-      if(!en&&cks[i].checked)cks[i].checked=false;
-      cks[i].disabled=!en;
-      var row=cks[i].parentNode;
-      if(row&&row.classList)row.classList.toggle('is-locked',!en);
-    }
-  }
-  function openForm(){
-    var open=allDone();
-    if(dform)dform.classList.toggle('is-locked',!open);
-    if(dlock)dlock.style.display=open?'none':'';
-    if(formChk)formChk.checked=open;
-    if(dsend)dsend.disabled=!open;
-    updateBar();
-  }
-  function updateBar(){
-    if(!dmask)return;
-    var n=chkCount();var pct=sent?100:Math.min(n*20,80);
-    dmask.style.width=(100-pct)+'%';
-    if(dbar)dbar.setAttribute('aria-valuenow',pct);
-    if(dtxt)dtxt.textContent=(n>=cks.length&&cks.length>0)?"Отправь твою User ID":"Прогресс разблокировки бонуса";
-  }
-  for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',function(){syncSeq();openForm();});}
-  if(duid)duid.addEventListener('input',function(){if(dmsg)dmsg.hidden=true;});
-  if(dsend)dsend.addEventListener('click',function(){
-    if(!allDone())return;
-    var v=duid.value.trim();
-    if(!validId(v)){if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg err';dmsg.textContent="Пожалуйста, введи корректный USER ID. Пример: 1569699313";}return;}
-    window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
-    sent=true;updateBar();
-    if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg ok';dmsg.textContent="Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.";}
-  });
-  syncSeq();openForm();
 })();
 </script>
 </body>

@@ -229,7 +229,7 @@ body.has-sticky{padding-bottom:80px}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .js .rv.in{opacity:1;transform:none}
 .hero__cta{text-align:center;margin-top:18px}
-.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
+.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;margin-bottom:clamp(-48px,-10vw,-22px);filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
 .footer__contact{text-align:center;margin-bottom:12px}
 .footer__mail{display:inline-block;background:var(--field);padding:7px 14px;border-radius:9px;color:var(--cyan);font-weight:700;font-size:.92rem;text-decoration:none;border:1px solid var(--line)}
 .footer__mail:hover{filter:brightness(1.15)}
@@ -288,10 +288,11 @@ body.has-sticky{padding-bottom:80px}
 .shots__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
 .shots__track::-webkit-scrollbar{display:none}
 .shot{flex:0 0 66%;scroll-snap-align:start;margin:0}
-.shot__cap{margin:0 0 8px;color:var(--muted);font-size:.88rem}
+.shot__cap{margin:10px 0 0;color:var(--muted);font-size:.88rem}
 .shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
 @media (min-width:760px){
   .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
+  .hero__img{margin-bottom:0}
   .benefits{grid-template-columns:repeat(3,1fr)}
   .cards{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
@@ -358,43 +359,96 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section section--alt" id="reviews">
   <div class="wrap rich">
-    <p class="eyebrow">Install</p>
-    <h2>How to install the 1xCasino App and get the bonus</h2>
-    <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <div class="bar__mask" id="barMask"></div>
-      <span class="bar__txt" id="barTxt">Bonus unlock progress</span>
-    </div>
-    <p>Here is a short step-by-step checklist:</p>
-    <div class="install">
-      <ul class="ckl" id="ckl">
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Download 1xCasino.apk</span></label></li>
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Install the app on your phone</span></label></li>
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Log in with your 1xcasino credentials</span></label></li>
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Check that your personal data is filled in your profile (Email added and activated, Phone added and activated, City, First name, Last name, Date of birth). This data is needed to improve the protection of your account and balance.</span></label></li>
-      </ul>
-      <div class="bform is-locked" id="bform">
-        <p class="bform__t">Send us your USER ID — we'll check your account and send you a Promo code with a bonus that you can activate in the Promo codes section.</p>
-        <div class="bform__row">
-          <input type="text" id="uid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, for example 1569699313">
-          <button type="button" class="btn btn--violet" id="uidSend" disabled>Send</button>
-        </div>
-        <p class="bform__lock" id="uidLock">Tick all the steps above to send your USER ID.</p>
-        <p class="bform__msg" id="uidMsg" hidden></p>
+    <p class="eyebrow">Reviews</p>
+    <h2>User reviews of the app</h2>
+    <div class="reviews">
+      <div class="reviews__track">
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a1.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 of 5"></div></div>
+          <p class="review__text">Stable app, games launch fast and smoothly.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a2.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 of 5"></div></div>
+          <p class="review__text">Easy login, clear interface, and good bonuses.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a3.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 of 5"></div></div>
+          <p class="review__text">I liked the payment safety and stable performance.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a4.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 of 5"></div></div>
+          <p class="review__text">App bonuses are easy to find and activate.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a5.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 of 5"></div></div>
+          <p class="review__text">Games do not freeze, the app runs reliably.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a6.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 of 5"></div></div>
+          <p class="review__text">Easy to play on mobile, everything opens fast.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a7.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 of 5"></div></div>
+          <p class="review__text">Good bonuses and stable work without crashes.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a8.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 of 5"></div></div>
+          <p class="review__text">The app feels reliable, payments go smoothly.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a9.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 of 5"></div></div>
+          <p class="review__text">Fast game launch and clear in-app promos.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a10.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 of 5"></div></div>
+          <p class="review__text">1xCasino is convenient to use every day.</p>
+        </article>
       </div>
-      <p style="text-align:center;margin-top:18px"><a class="btn" href="#b4">Explore each step in detail</a></p>
     </div>
   </div>
 </section>
 
-<section class="section" id="b4">
+<section class="section" id="install">
+  <div class="wrap rich">
+    <p class="eyebrow">Install</p>
+    <h2>How to install the 1xCasino App and get the bonus</h2>
+    <div class="bar bar--draft" id="dbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="bar__mask" id="dmask"></div>
+      <span class="bar__txt" id="dtxt">Bonus unlock progress</span>
+    </div>
+    <p>Here is a short step-by-step checklist:</p>
+    <div class="install">
+      <ul class="ckl" id="dckl">
+        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Download 1xCasino.apk</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Install the app on your phone</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Log in with your 1xcasino credentials</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Check that your personal data is filled in your profile (Email added and activated, Phone added and activated, City, First name, Last name, Date of birth). This data is needed to improve the protection of your account and balance.</span></label></li>
+      </ul>
+      <div class="bform bform--draft is-locked" id="dform">
+        <label class="form-chk"><input type="checkbox" class="ckl__cb" id="dformChk" disabled><span class="ckl__box" aria-hidden="true"></span><span>Send your USER ID to claim the bonus</span></label>
+        <p class="bform__t">Send us your USER ID — we'll check your account and send you a Promo code with a bonus that you can activate in the Promo codes section.</p>
+        <div class="bform__row">
+          <input type="text" id="duid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, for example 1569699313">
+          <button type="button" class="btn btn--violet" id="dsend" disabled>Send</button>
+        </div>
+        <p class="bform__lock" id="dlock">Tick all the steps above to send your USER ID.</p>
+        <p class="bform__msg" id="dmsg" hidden></p>
+      </div>
+      <a class="scroll-arrow" href="#b4" aria-label="Scroll down"><span class="scroll-arrow__chev"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="b4">
   <div class="wrap rich">
     <p class="eyebrow">Download</p>
     <h2>How to download and install the 1xCasino app</h2>
     <p>An APK is an installation file for Android. You open it on your phone, and the system then offers to install the app.</p>
     <p>Download the app file for <span data-geo="country">your country</span> only from the official sites 1xcasino.com, 1xcasino-af.com, 1xcasino.co.zm, 1xcasino.com.gh and from this Guideline page.</p>
-    <p>Before opening the file, check the name, source, size and free space on your phone. If the file didn't download completely, delete it and download it again from the same page.</p>
+    <p>Before opening the file, check the name, source, size and free space on your phone.</p>
+    <p>If the installation was interrupted, download the app again and check the available memory on your phone. The app is ~25MB, but you need at least 100MB for the installation process itself.</p>
     <p>Your phone may show a warning because the file is not being installed from the Google Play Market. This is a normal security screen. You should only grant permission for the duration of the installation.</p>
     <table class="tbl">
       <thead><tr><th>What to check</th><th>What it should be</th></tr></thead>
@@ -405,18 +459,25 @@ body.has-sticky{padding-bottom:80px}
       </tbody>
     </table>
     <div class="shots">
-      <h3 class="shots__h">What the app looks like</h3>
+      <h3 class="shots__h">Step-by-step guide</h3>
       <div class="shots__track">
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><img src="/assets/shots/install_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Download the APK using one of the available buttons on the Guideline page.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Allow the download of 1xCasinoAfrica.apk from a 1xCasino mirror site. Downloading from this site is completely safe.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Open the Downloads section on your phone and tap the downloaded 1xCasinoAfrica.apk file to start the installation.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">If installation from Unknown sources is blocked, open Settings and allow installation for your browser.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">This example shows Chrome, but allow installation for the browser you used to download 1xCasinoAfrica.apk.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Your phone will offer to install the 1xCasino app. Tap Install and wait for the installation to finish.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Once the installation is complete, open the 1xCasino app.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_8.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Once the app opens, allow Push notifications to get more bonuses, account alerts, and news about new promotions.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_9.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">If the app's language isn't the one you need, go to the Menu section.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_10.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Open Settings in the top-right corner. There you can also fine-tune the app to suit your needs.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_11.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Choose your preferred language from the list. Congratulations — setup is complete, you can move to the next step!</figcaption></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section">
   <div class="wrap rich">
     <p class="eyebrow">Account</p>
     <h2>How to log in to the 1xcasino app</h2>
@@ -427,18 +488,17 @@ body.has-sticky{padding-bottom:80px}
       <li>If you have any trouble logging in, send a message to <a class="ilink" href="mailto:info@1xcasino-guide.com?subject=1xCasino%20Guide">info@1xcasino-guide.com</a> with the details of the problem and we'll help you.</li>
     </ul>
     <div class="shots">
-      <h3 class="shots__h">What the app looks like</h3>
+      <h3 class="shots__h">Step-by-step guide</h3>
       <div class="shots__track">
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><img src="/assets/shots/login_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Tap LogIn in the app and sign in using the details you entered during registration.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/login_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Use the login form with your Email, ID, Username, or phone number.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/login_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">If you've forgotten your login details, use the password recovery feature.</figcaption></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--alt">
   <div class="wrap rich">
     <p class="eyebrow">Account security</p>
     <h2>Check your personal data</h2>
@@ -457,18 +517,21 @@ body.has-sticky{padding-bottom:80px}
       </tbody>
     </table>
     <div class="shots">
-      <h3 class="shots__h">What the app looks like</h3>
+      <h3 class="shots__h">Step-by-step guide</h3>
       <div class="shots__track">
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">This is just placeholder text explaining the step</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><img src="/assets/shots/profile_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Open your user profile. We don't share your data with third parties — it's needed to protect your account and winnings.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Check that Username, Email, Phone, Name, Surname, Country, and City are filled in.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Go to the extended personal data section.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Check that Patronymic, Date of Birth, and Place of Birth are filled in.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Go to the Settings section.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Complete the Security settings to improve your account's security.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Copy your profile ID — you'll need it to claim your bonus.</figcaption></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section">
   <div class="wrap rich">
     <p class="eyebrow">Update</p>
     <h2>Why update the app?</h2>
@@ -523,7 +586,7 @@ body.has-sticky{padding-bottom:80px}
 
 
 <div class="sticky-cta">
-  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">📲 Download</a>
+  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">📲 Download Android APK</a>
 </div>
 
 <script>
@@ -570,31 +633,51 @@ body.has-sticky{padding-bottom:80px}
       }
     });
   }
-  var cks=document.querySelectorAll('.ckl__cb'),bform=document.getElementById('bform'),uid=document.getElementById('uid'),send=document.getElementById('uidSend'),lock=document.getElementById('uidLock'),fmsg=document.getElementById('uidMsg');
-  var barMask=document.getElementById('barMask'),barTxt=document.getElementById('barTxt'),bar=document.getElementById('bar'),sent=false;
-  if(cks.length&&bform&&uid&&send){
-    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
-    function allChk(){return chkCount()===cks.length;}
+  // B5* install flow: sequential checklist + gated form + auto-checkbox + progress
+  var root=document.getElementById('install');
+  if(root){
+    var cks=[].slice.call(document.querySelectorAll('#dckl .ckl__cb'));
+    var formChk=document.getElementById('dformChk');
+    var dform=document.getElementById('dform'),duid=document.getElementById('duid'),dsend=document.getElementById('dsend'),dlock=document.getElementById('dlock'),dmsg=document.getElementById('dmsg');
+    var dmask=document.getElementById('dmask'),dtxt=document.getElementById('dtxt'),dbar=document.getElementById('dbar'),sent=false;
     function validId(v){return /^[0-9]{8,12}$/.test(v);}
-    function updateBar(){
-      if(!barMask)return;
-      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
-      barMask.style.width=(100-pct)+'%';
-      if(bar)bar.setAttribute('aria-valuenow',pct);
-      if(barTxt)barTxt.textContent=(n>=cks.length)?"Send your User ID":"Bonus unlock progress";
+    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
+    function allDone(){return cks.length>0&&chkCount()===cks.length;}
+    function syncSeq(){
+      for(var i=0;i<cks.length;i++){
+        var en=(i===0)||cks[i-1].checked;
+        if(!en&&cks[i].checked)cks[i].checked=false;
+        cks[i].disabled=!en;
+        var row=cks[i].parentNode;
+        if(row&&row.classList)row.classList.toggle('is-locked',!en);
+      }
     }
-    function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));updateBar();}
-    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',refresh);}
-    uid.addEventListener('input',function(){if(fmsg)fmsg.hidden=true;refresh();});
-    send.addEventListener('click',function(){
-      var v=uid.value.trim();
-      if(!allChk())return;
-      if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent="Enter a valid USER ID, for example 1569699313";}return;}
+    function updateBar(){
+      if(!dmask)return;
+      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
+      dmask.style.width=(100-pct)+'%';
+      if(dbar)dbar.setAttribute('aria-valuenow',pct);
+      if(dtxt)dtxt.textContent=(n>=cks.length&&cks.length>0)?"Send your User ID":"Bonus unlock progress";
+    }
+    function openForm(){
+      var open=allDone();
+      if(dform)dform.classList.toggle('is-locked',!open);
+      if(dlock)dlock.style.display=open?'none':'';
+      if(formChk)formChk.checked=open;
+      if(dsend)dsend.disabled=!open;
+      updateBar();
+    }
+    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',function(){syncSeq();openForm();});}
+    if(duid)duid.addEventListener('input',function(){if(dmsg)dmsg.hidden=true;});
+    if(dsend)dsend.addEventListener('click',function(){
+      if(!allDone())return;
+      var v=duid.value.trim();
+      if(!validId(v)){if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg err';dmsg.textContent="Please enter a valid USER ID. Example: 1569699313";}return;}
       window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
       sent=true;updateBar();
-      if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent="Done! Your email app will open — send the message and we'll check the account and send the promo code.";}
+      if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg ok';dmsg.textContent="Done! Your email app will open — send the message and we'll check the account and send the promo code.";}
     });
-    refresh();
+    syncSeq();openForm();
   }
   if('IntersectionObserver' in window){
     document.documentElement.classList.add('js');

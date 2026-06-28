@@ -229,7 +229,7 @@ body.has-sticky{padding-bottom:80px}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .js .rv.in{opacity:1;transform:none}
 .hero__cta{text-align:center;margin-top:18px}
-.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
+.hero__img{width:min(360px,84%);height:auto;display:block;margin-inline:auto;margin-bottom:clamp(-48px,-10vw,-22px);filter:drop-shadow(0 18px 40px rgba(0,0,0,.45));animation:floatY 6s ease-in-out infinite}
 .footer__contact{text-align:center;margin-bottom:12px}
 .footer__mail{display:inline-block;background:var(--field);padding:7px 14px;border-radius:9px;color:var(--cyan);font-weight:700;font-size:.92rem;text-decoration:none;border:1px solid var(--line)}
 .footer__mail:hover{filter:brightness(1.15)}
@@ -288,10 +288,11 @@ body.has-sticky{padding-bottom:80px}
 .shots__track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;scrollbar-width:none}
 .shots__track::-webkit-scrollbar{display:none}
 .shot{flex:0 0 66%;scroll-snap-align:start;margin:0}
-.shot__cap{margin:0 0 8px;color:var(--muted);font-size:.88rem}
+.shot__cap{margin:10px 0 0;color:var(--muted);font-size:.88rem}
 .shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
 @media (min-width:760px){
   .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
+  .hero__img{margin-bottom:0}
   .benefits{grid-template-columns:repeat(3,1fr)}
   .cards{grid-template-columns:repeat(3,1fr)}
   .steps{grid-template-columns:repeat(2,1fr)}
@@ -358,43 +359,96 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section section--alt" id="reviews">
   <div class="wrap rich">
-    <p class="eyebrow">Установка</p>
-    <h2>Как установить 1xCasino App и получить бонус</h2>
-    <div class="bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <div class="bar__mask" id="barMask"></div>
-      <span class="bar__txt" id="barTxt">Прогресс разблокировки бонуса</span>
-    </div>
-    <p>Ниже приведён краткий пошаговый чеклист:</p>
-    <div class="install">
-      <ul class="ckl" id="ckl">
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Скачать 1xCasino.apk</span></label></li>
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Установить приложение на телефон</span></label></li>
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Выполнить LogIn с вашими доступами к 1xcasino</span></label></li>
-      <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Проверить заполнение персональных данных в профиле (Email добавлен и активирован, Телефон добавлен и активирован, Город, Имя, Фамилия, Дата рождения). Эти данные нужны для повышения защиты Вашего аккаунта и счёта.</span></label></li>
-      </ul>
-      <div class="bform is-locked" id="bform">
-        <p class="bform__t">Отправьте Ваш USER ID, мы проверим ваш аккаунт и отправим Вам Промокод с бонусом, который вы сможете активировать в разделе Промокодов.</p>
-        <div class="bform__row">
-          <input type="text" id="uid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, например 1569699313">
-          <button type="button" class="btn btn--violet" id="uidSend" disabled>Отправить</button>
-        </div>
-        <p class="bform__lock" id="uidLock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
-        <p class="bform__msg" id="uidMsg" hidden></p>
+    <p class="eyebrow">Отзывы</p>
+    <h2>Отзывы пользователей о приложении</h2>
+    <div class="reviews">
+      <div class="reviews__track">
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a1.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Приложение работает стабильно, игры запускаются быстро.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a2.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
+          <p class="review__text">Удобный вход, понятный интерфейс и хорошие бонусы.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a3.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Понравилась безопасность платежей и стабильная работа.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a4.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 из 5"></div></div>
+          <p class="review__text">Бонусы в приложении легко найти и активировать.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a5.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Игры не зависают, приложение работает уверенно.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a6.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
+          <p class="review__text">Удобно играть с телефона, все быстро открывается.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a7.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">Хорошие бонусы и стабильная работа без сбоев.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a8.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 из 5"></div></div>
+          <p class="review__text">Приложение выглядит надёжно, платежи проходят спокойно.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a9.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
+          <p class="review__text">Быстрый запуск игр и понятные акции в приложении.</p>
+        </article>
+        <article class="review">
+          <div class="review__top"><img class="review__ava" src="/assets/reviews/a10.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
+          <p class="review__text">1xCasino удобно использовать каждый день.</p>
+        </article>
       </div>
-      <p style="text-align:center;margin-top:18px"><a class="btn" href="#b4">Изучить каждый шаг подробно</a></p>
     </div>
   </div>
 </section>
 
-<section class="section" id="b4">
+<section class="section" id="install">
+  <div class="wrap rich">
+    <p class="eyebrow">Установка</p>
+    <h2>Как установить 1xCasino App и получить бонус</h2>
+    <div class="bar bar--draft" id="dbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="bar__mask" id="dmask"></div>
+      <span class="bar__txt" id="dtxt">Прогресс разблокировки бонуса</span>
+    </div>
+    <p>Ниже приведён краткий пошаговый чеклист:</p>
+    <div class="install">
+      <ul class="ckl" id="dckl">
+        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Скачать 1xCasino.apk</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Установить приложение на телефон</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Выполнить LogIn с вашими доступами к 1xcasino</span></label></li>
+        <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Проверить заполнение персональных данных в профиле (Email добавлен и активирован, Телефон добавлен и активирован, Город, Имя, Фамилия, Дата рождения). Эти данные нужны для повышения защиты Вашего аккаунта и счёта.</span></label></li>
+      </ul>
+      <div class="bform bform--draft is-locked" id="dform">
+        <label class="form-chk"><input type="checkbox" class="ckl__cb" id="dformChk" disabled><span class="ckl__box" aria-hidden="true"></span><span>Отправь свой USER ID для получения бонуса</span></label>
+        <p class="bform__t">Отправьте Ваш USER ID, мы проверим ваш аккаунт и отправим Вам Промокод с бонусом, который вы сможете активировать в разделе Промокодов.</p>
+        <div class="bform__row">
+          <input type="text" id="duid" class="bform__in" inputmode="numeric" autocomplete="off" placeholder="USER ID, например 1569699313">
+          <button type="button" class="btn btn--violet" id="dsend" disabled>Отправить</button>
+        </div>
+        <p class="bform__lock" id="dlock">Отметьте все шаги выше, чтобы отправить USER ID.</p>
+        <p class="bform__msg" id="dmsg" hidden></p>
+      </div>
+      <a class="scroll-arrow" href="#b4" aria-label="Листать вниз"><span class="scroll-arrow__chev"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="b4">
   <div class="wrap rich">
     <p class="eyebrow">Загрузка</p>
     <h2>Как скачать и установить 1xCasino приложение</h2>
     <p>APK — это файл установки для Android. Его открывают на телефоне, после чего система предлагает установить приложение.</p>
     <p>Скачивайте файл с приложением для <span data-geo="country">своей стране</span> только с официальных сайтов 1xcasino.com, 1xcasino-af.com, 1xcasino.co.zm, 1xcasino.com.gh и с текущей Guideline страницы.</p>
-    <p>Перед открытием файла проверьте имя, источник, размер и свободное место на телефоне. Если файл скачался не полностью, удалите его и скачайте заново с той же страницы.</p>
+    <p>Перед открытием файла проверьте имя, источник, размер и свободное место на телефоне.</p>
+    <p>Если установка прервалась, скачайте приложение заново и проверьте доступную память на вашем телефоне. Вес приложения ~25MB, но вам необходимо как минимум 100MB для самого процесса установки.</p>
     <p>Ваш телефон может показать предупреждение, потому что файл ставится не из Google Play Market. Это нормальный экран безопасности. Разрешение стоит давать только на время установки.</p>
     <table class="tbl">
       <thead><tr><th>Что проверить</th><th>Что должно быть</th></tr></thead>
@@ -405,18 +459,25 @@ body.has-sticky{padding-bottom:80px}
       </tbody>
     </table>
     <div class="shots">
-      <h3 class="shots__h">Как выглядит приложение</h3>
+      <h3 class="shots__h">Пошаговая инструкция</h3>
       <div class="shots__track">
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><img src="/assets/shots/install_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Загрузите APK, нажав одну из доступных кнопок на странице Guideline.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Разрешите загрузку файла 1xCasinoAfrica.apk с одного из сайтов-зеркал 1xCasino. Загрузка с этого сайта полностью безопасна.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте раздел «Загрузки» на телефоне и нажмите на скачанный файл 1xCasinoAfrica.apk, чтобы начать установку.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если установка из «Неизвестных источников» запрещена, откройте настройки и разрешите установку для вашего браузера.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">В примере показан Chrome, но разрешите установку для того браузера, в котором вы скачали 1xCasinoAfrica.apk.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Телефон предложит установить приложение 1xCasino. Нажмите «Установить» и дождитесь завершения установки.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">После успешной установки откройте приложение 1xCasino.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_8.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Открыв приложение, разрешите Push-уведомления — так вы получите больше бонусов, новости об акциях и оповещения по счёту.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_9.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если язык приложения вам неудобен, перейдите в раздел «Menu».</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_10.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте настройки в правом верхнем углу. Там же можно гибко настроить приложение под себя.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/install_11.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Выберите нужный язык из доступных. Поздравляем — установка завершена, можно переходить к следующему шагу!</figcaption></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section">
   <div class="wrap rich">
     <p class="eyebrow">Аккаунт</p>
     <h2>Как выполнить логин в 1xcasino приложение</h2>
@@ -427,18 +488,17 @@ body.has-sticky{padding-bottom:80px}
       <li>Если у вас возникают трудности с входом, то отправьте сообщение на <a class="ilink" href="mailto:info@1xcasino-guide.com?subject=1xCasino%20Guide">info@1xcasino-guide.com</a> с деталями проблемы, мы Вам поможем.</li>
     </ul>
     <div class="shots">
-      <h3 class="shots__h">Как выглядит приложение</h3>
+      <h3 class="shots__h">Пошаговая инструкция</h3>
       <div class="shots__track">
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><img src="/assets/shots/login_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Нажмите LogIn в приложении и войдите, используя данные, которые указывали при регистрации.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/login_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Используйте форму входа по Email, ID, Username или по номеру телефона.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/login_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если вы забыли данные для входа, воспользуйтесь функцией восстановления пароля.</figcaption></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section section--alt">
   <div class="wrap rich">
     <p class="eyebrow">Безопасность аккаунта</p>
     <h2>Проверьте Ваши персональные данные</h2>
@@ -457,18 +517,21 @@ body.has-sticky{padding-bottom:80px}
       </tbody>
     </table>
     <div class="shots">
-      <h3 class="shots__h">Как выглядит приложение</h3>
+      <h3 class="shots__h">Пошаговая инструкция</h3>
       <div class="shots__track">
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
-        <figure class="shot"><figcaption class="shot__cap">Это просто текст-заглушка с объяснением шага</figcaption><img src="/assets/appscreen.webp" alt="" loading="lazy" decoding="async"></figure>
+        <figure class="shot"><img src="/assets/shots/profile_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте профиль пользователя. Мы не передаём данные третьим лицам — они нужны для защиты вашего аккаунта и выигрышей.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Проверьте заполнение полей Username, Email, Phone, Name, Surname, Country, City.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Перейдите в раздел расширенных персональных данных.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Проверьте заполнение полей Patronymic, Date of Birth, Place of Birth.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Перейдите в раздел настроек.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Заполните Security settings, чтобы повысить безопасность вашего аккаунта.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/profile_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Скопируйте ID вашего профиля — он понадобится для получения бонуса.</figcaption></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section">
   <div class="wrap rich">
     <p class="eyebrow">Обновление</p>
     <h2>Зачем обновлять приложение?</h2>
@@ -523,7 +586,7 @@ body.has-sticky{padding-bottom:80px}
 
 
 <div class="sticky-cta">
-  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">📲 Скачать</a>
+  <a class="btn btn--block btn--lg" href="/go?b=sticky" rel="nofollow noopener">📲 Скачать Android APK</a>
 </div>
 
 <script>
@@ -570,31 +633,51 @@ body.has-sticky{padding-bottom:80px}
       }
     });
   }
-  var cks=document.querySelectorAll('.ckl__cb'),bform=document.getElementById('bform'),uid=document.getElementById('uid'),send=document.getElementById('uidSend'),lock=document.getElementById('uidLock'),fmsg=document.getElementById('uidMsg');
-  var barMask=document.getElementById('barMask'),barTxt=document.getElementById('barTxt'),bar=document.getElementById('bar'),sent=false;
-  if(cks.length&&bform&&uid&&send){
-    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
-    function allChk(){return chkCount()===cks.length;}
+  // B5* install flow: sequential checklist + gated form + auto-checkbox + progress
+  var root=document.getElementById('install');
+  if(root){
+    var cks=[].slice.call(document.querySelectorAll('#dckl .ckl__cb'));
+    var formChk=document.getElementById('dformChk');
+    var dform=document.getElementById('dform'),duid=document.getElementById('duid'),dsend=document.getElementById('dsend'),dlock=document.getElementById('dlock'),dmsg=document.getElementById('dmsg');
+    var dmask=document.getElementById('dmask'),dtxt=document.getElementById('dtxt'),dbar=document.getElementById('dbar'),sent=false;
     function validId(v){return /^[0-9]{8,12}$/.test(v);}
-    function updateBar(){
-      if(!barMask)return;
-      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
-      barMask.style.width=(100-pct)+'%';
-      if(bar)bar.setAttribute('aria-valuenow',pct);
-      if(barTxt)barTxt.textContent=(n>=cks.length)?"Отправь твою User ID":"Прогресс разблокировки бонуса";
+    function chkCount(){var n=0;for(var i=0;i<cks.length;i++){if(cks[i].checked)n++;}return n;}
+    function allDone(){return cks.length>0&&chkCount()===cks.length;}
+    function syncSeq(){
+      for(var i=0;i<cks.length;i++){
+        var en=(i===0)||cks[i-1].checked;
+        if(!en&&cks[i].checked)cks[i].checked=false;
+        cks[i].disabled=!en;
+        var row=cks[i].parentNode;
+        if(row&&row.classList)row.classList.toggle('is-locked',!en);
+      }
     }
-    function refresh(){var ok=allChk();bform.classList.toggle('is-locked',!ok);if(lock)lock.style.display=ok?'none':'';send.disabled=!(ok&&validId(uid.value.trim()));updateBar();}
-    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',refresh);}
-    uid.addEventListener('input',function(){if(fmsg)fmsg.hidden=true;refresh();});
-    send.addEventListener('click',function(){
-      var v=uid.value.trim();
-      if(!allChk())return;
-      if(!validId(v)){if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg err';fmsg.textContent="Введите корректный USER ID, например 1569699313";}return;}
+    function updateBar(){
+      if(!dmask)return;
+      var n=chkCount();var pct=sent?100:Math.min(n*20,80);
+      dmask.style.width=(100-pct)+'%';
+      if(dbar)dbar.setAttribute('aria-valuenow',pct);
+      if(dtxt)dtxt.textContent=(n>=cks.length&&cks.length>0)?"Отправь твою User ID":"Прогресс разблокировки бонуса";
+    }
+    function openForm(){
+      var open=allDone();
+      if(dform)dform.classList.toggle('is-locked',!open);
+      if(dlock)dlock.style.display=open?'none':'';
+      if(formChk)formChk.checked=open;
+      if(dsend)dsend.disabled=!open;
+      updateBar();
+    }
+    for(var i=0;i<cks.length;i++){cks[i].addEventListener('change',function(){syncSeq();openForm();});}
+    if(duid)duid.addEventListener('input',function(){if(dmsg)dmsg.hidden=true;});
+    if(dsend)dsend.addEventListener('click',function(){
+      if(!allDone())return;
+      var v=duid.value.trim();
+      if(!validId(v)){if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg err';dmsg.textContent="Пожалуйста, введи корректный USER ID. Пример: 1569699313";}return;}
       window.location.href='mailto:info@1xcasino-guide.com?subject='+encodeURIComponent('App Bonus for USER ID '+v)+'&body='+encodeURIComponent('USER ID '+v);
       sent=true;updateBar();
-      if(fmsg){fmsg.hidden=false;fmsg.className='bform__msg ok';fmsg.textContent="Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.";}
+      if(dmsg){dmsg.hidden=false;dmsg.className='bform__msg ok';dmsg.textContent="Готово! Откроется почта — отправьте письмо, и мы проверим аккаунт и пришлём промокод.";}
     });
-    refresh();
+    syncSeq();openForm();
   }
   if('IntersectionObserver' in window){
     document.documentElement.classList.add('js');
