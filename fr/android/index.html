@@ -290,6 +290,13 @@ body.has-sticky{padding-bottom:80px}
 .shot{flex:0 0 66%;scroll-snap-align:start;margin:0}
 .shot__cap{margin:10px 0 0;color:var(--muted);font-size:.88rem}
 .shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
+.blockpage{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:36px 20px;text-align:center}
+.blockpage__wrap{width:min(560px,100%);display:flex;flex-direction:column;align-items:center;gap:18px}
+.blockpage__img{width:min(320px,82%);height:auto}
+.blockpage__logo{height:34px;width:auto}
+.blockpage__h1{font-size:clamp(1.3rem,5vw,1.75rem);margin:0}
+.blockpage__p{color:var(--muted);margin:0;max-width:460px;line-height:1.55}
+.blockpage .btn{margin-top:8px}
 @media (min-width:760px){
   .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
   .hero__img{margin-bottom:0}
@@ -461,17 +468,17 @@ body.has-sticky{padding-bottom:80px}
     <div class="shots">
       <h3 class="shots__h">Guide étape par étape</h3>
       <div class="shots__track">
-        <figure class="shot"><img src="/assets/shots/install_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Téléchargez l'APK via l'un des boutons disponibles sur la page Guideline.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Autorisez le téléchargement de 1xCasinoAfrica.apk depuis un site miroir 1xCasino. Ce téléchargement est totalement sûr.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Ouvrez les « Téléchargements » de votre téléphone et appuyez sur le fichier 1xCasinoAfrica.apk pour lancer l'installation.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Si l'installation depuis « Sources inconnues » est bloquée, ouvrez les paramètres et autorisez-la pour votre navigateur.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Cet exemple montre Chrome ; autorisez l'installation pour le navigateur utilisé pour télécharger 1xCasinoAfrica.apk.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Votre téléphone proposera d'installer l'application 1xCasino. Appuyez sur « Installer » et attendez la fin.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Une fois l'installation terminée, ouvrez l'application 1xCasino.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_8.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">À l'ouverture de l'app, autorisez les notifications Push pour plus de bonus, des alertes de compte et les promos.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_9.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Si la langue de l'application ne vous convient pas, allez dans la section « Menu ».</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_10.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Ouvrez les paramètres en haut à droite. Vous pouvez aussi y adapter l'application à vos besoins.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_11.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Choisissez votre langue parmi celles proposées. Félicitations, l'installation est terminée, passez à l'étape suivante !</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Téléchargez l'APK via l'un des boutons disponibles sur la page Guideline.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Autorisez le téléchargement de 1xCasinoAfrica.apk depuis un site miroir 1xCasino. Ce téléchargement est totalement sûr.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Ouvrez les « Téléchargements » de votre téléphone et appuyez sur le fichier 1xCasinoAfrica.apk pour lancer l'installation.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Si l'installation depuis « Sources inconnues » est bloquée, ouvrez les paramètres et autorisez-la pour votre navigateur.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Cet exemple montre Chrome ; autorisez l'installation pour le navigateur utilisé pour télécharger 1xCasinoAfrica.apk.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Votre téléphone proposera d'installer l'application 1xCasino. Appuyez sur « Installer » et attendez la fin.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Une fois l'installation terminée, ouvrez l'application 1xCasino.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_8.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">À l'ouverture de l'app, autorisez les notifications Push pour plus de bonus, des alertes de compte et les promos.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_9.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Si la langue de l'application ne vous convient pas, allez dans la section « Menu ».</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_10.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Ouvrez les paramètres en haut à droite. Vous pouvez aussi y adapter l'application à vos besoins.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/install_11.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Choisissez votre langue parmi celles proposées. Félicitations, l'installation est terminée, passez à l'étape suivante !</figcaption></figure>
       </div>
     </div>
   </div>
@@ -490,9 +497,9 @@ body.has-sticky{padding-bottom:80px}
     <div class="shots">
       <h3 class="shots__h">Guide étape par étape</h3>
       <div class="shots__track">
-        <figure class="shot"><img src="/assets/shots/login_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Appuyez sur LogIn dans l'application et connectez-vous avec les données saisies lors de l'inscription.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/login_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Utilisez le formulaire de connexion par Email, ID, Username ou numéro de téléphone.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/login_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Si vous avez oublié vos identifiants, utilisez la fonction de récupération du mot de passe.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/login_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Appuyez sur LogIn dans l'application et connectez-vous avec les données saisies lors de l'inscription.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/login_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Utilisez le formulaire de connexion par Email, ID, Username ou numéro de téléphone.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/login_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Si vous avez oublié vos identifiants, utilisez la fonction de récupération du mot de passe.</figcaption></figure>
       </div>
     </div>
   </div>
@@ -519,13 +526,13 @@ body.has-sticky{padding-bottom:80px}
     <div class="shots">
       <h3 class="shots__h">Guide étape par étape</h3>
       <div class="shots__track">
-        <figure class="shot"><img src="/assets/shots/profile_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Ouvrez votre profil. Nous ne partageons pas vos données — elles servent à protéger votre compte et vos gains.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Vérifiez les champs Username, Email, Phone, Name, Surname, Country, City.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Accédez à la section des données personnelles avancées.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Vérifiez les champs Patronymic, Date of Birth, Place of Birth.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Accédez à la section des paramètres.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Renseignez les Security settings pour renforcer la sécurité de votre compte.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Copiez l'ID de votre profil — il vous servira à obtenir le bonus.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Ouvrez votre profil. Nous ne partageons pas vos données — elles servent à protéger votre compte et vos gains.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Vérifiez les champs Username, Email, Phone, Name, Surname, Country, City.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Accédez à la section des données personnelles avancées.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Vérifiez les champs Patronymic, Date of Birth, Place of Birth.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Accédez à la section des paramètres.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Renseignez les Security settings pour renforcer la sécurité de votre compte.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/fr/profile_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Copiez l'ID de votre profil — il vous servira à obtenir le bonus.</figcaption></figure>
       </div>
     </div>
   </div>

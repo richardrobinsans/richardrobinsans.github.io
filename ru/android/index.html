@@ -290,6 +290,13 @@ body.has-sticky{padding-bottom:80px}
 .shot{flex:0 0 66%;scroll-snap-align:start;margin:0}
 .shot__cap{margin:10px 0 0;color:var(--muted);font-size:.88rem}
 .shot img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
+.blockpage{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:36px 20px;text-align:center}
+.blockpage__wrap{width:min(560px,100%);display:flex;flex-direction:column;align-items:center;gap:18px}
+.blockpage__img{width:min(320px,82%);height:auto}
+.blockpage__logo{height:34px;width:auto}
+.blockpage__h1{font-size:clamp(1.3rem,5vw,1.75rem);margin:0}
+.blockpage__p{color:var(--muted);margin:0;max-width:460px;line-height:1.55}
+.blockpage .btn{margin-top:8px}
 @media (min-width:760px){
   .hero__grid{grid-template-columns:1.12fr .88fr;align-items:center}
   .hero__img{margin-bottom:0}
@@ -461,17 +468,17 @@ body.has-sticky{padding-bottom:80px}
     <div class="shots">
       <h3 class="shots__h">Пошаговая инструкция</h3>
       <div class="shots__track">
-        <figure class="shot"><img src="/assets/shots/install_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Загрузите APK, нажав одну из доступных кнопок на странице Guideline.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Разрешите загрузку файла 1xCasinoAfrica.apk с одного из сайтов-зеркал 1xCasino. Загрузка с этого сайта полностью безопасна.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте раздел «Загрузки» на телефоне и нажмите на скачанный файл 1xCasinoAfrica.apk, чтобы начать установку.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если установка из «Неизвестных источников» запрещена, откройте настройки и разрешите установку для вашего браузера.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">В примере показан Chrome, но разрешите установку для того браузера, в котором вы скачали 1xCasinoAfrica.apk.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Телефон предложит установить приложение 1xCasino. Нажмите «Установить» и дождитесь завершения установки.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">После успешной установки откройте приложение 1xCasino.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_8.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Открыв приложение, разрешите Push-уведомления — так вы получите больше бонусов, новости об акциях и оповещения по счёту.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_9.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если язык приложения вам неудобен, перейдите в раздел «Menu».</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_10.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте настройки в правом верхнем углу. Там же можно гибко настроить приложение под себя.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/install_11.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Выберите нужный язык из доступных. Поздравляем — установка завершена, можно переходить к следующему шагу!</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Загрузите APK, нажав одну из доступных кнопок на странице Guideline.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Разрешите загрузку файла 1xCasinoAfrica.apk с одного из сайтов-зеркал 1xCasino. Загрузка с этого сайта полностью безопасна.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте раздел «Загрузки» на телефоне и нажмите на скачанный файл 1xCasinoAfrica.apk, чтобы начать установку.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если установка из «Неизвестных источников» запрещена, откройте настройки и разрешите установку для вашего браузера.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">В примере показан Chrome, но разрешите установку для того браузера, в котором вы скачали 1xCasinoAfrica.apk.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Телефон предложит установить приложение 1xCasino. Нажмите «Установить» и дождитесь завершения установки.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">После успешной установки откройте приложение 1xCasino.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_8.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Открыв приложение, разрешите Push-уведомления — так вы получите больше бонусов, новости об акциях и оповещения по счёту.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_9.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если язык приложения вам неудобен, перейдите в раздел «Menu».</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_10.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте настройки в правом верхнем углу. Там же можно гибко настроить приложение под себя.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/install_11.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Выберите нужный язык из доступных. Поздравляем — установка завершена, можно переходить к следующему шагу!</figcaption></figure>
       </div>
     </div>
   </div>
@@ -490,9 +497,9 @@ body.has-sticky{padding-bottom:80px}
     <div class="shots">
       <h3 class="shots__h">Пошаговая инструкция</h3>
       <div class="shots__track">
-        <figure class="shot"><img src="/assets/shots/login_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Нажмите LogIn в приложении и войдите, используя данные, которые указывали при регистрации.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/login_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Используйте форму входа по Email, ID, Username или по номеру телефона.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/login_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если вы забыли данные для входа, воспользуйтесь функцией восстановления пароля.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/login_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Нажмите LogIn в приложении и войдите, используя данные, которые указывали при регистрации.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/login_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Используйте форму входа по Email, ID, Username или по номеру телефона.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/login_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Если вы забыли данные для входа, воспользуйтесь функцией восстановления пароля.</figcaption></figure>
       </div>
     </div>
   </div>
@@ -519,13 +526,13 @@ body.has-sticky{padding-bottom:80px}
     <div class="shots">
       <h3 class="shots__h">Пошаговая инструкция</h3>
       <div class="shots__track">
-        <figure class="shot"><img src="/assets/shots/profile_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте профиль пользователя. Мы не передаём данные третьим лицам — они нужны для защиты вашего аккаунта и выигрышей.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Проверьте заполнение полей Username, Email, Phone, Name, Surname, Country, City.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Перейдите в раздел расширенных персональных данных.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Проверьте заполнение полей Patronymic, Date of Birth, Place of Birth.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Перейдите в раздел настроек.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Заполните Security settings, чтобы повысить безопасность вашего аккаунта.</figcaption></figure>
-        <figure class="shot"><img src="/assets/shots/profile_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Скопируйте ID вашего профиля — он понадобится для получения бонуса.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_1.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Откройте профиль пользователя. Мы не передаём данные третьим лицам — они нужны для защиты вашего аккаунта и выигрышей.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_2.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Проверьте заполнение полей Username, Email, Phone, Name, Surname, Country, City.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_3.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Перейдите в раздел расширенных персональных данных.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_4.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Проверьте заполнение полей Patronymic, Date of Birth, Place of Birth.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_5.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Перейдите в раздел настроек.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_6.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Заполните Security settings, чтобы повысить безопасность вашего аккаунта.</figcaption></figure>
+        <figure class="shot"><img src="/assets/shots/en/profile_7.webp" alt="" loading="lazy" decoding="async"><figcaption class="shot__cap">Скопируйте ID вашего профиля — он понадобится для получения бонуса.</figcaption></figure>
       </div>
     </div>
   </div>
