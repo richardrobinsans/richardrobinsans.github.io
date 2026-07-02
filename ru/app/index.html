@@ -350,6 +350,21 @@ body.has-sticky{padding-bottom:80px}
   </a>
   <label for="navtoggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
 </header>
+<input type="checkbox" id="navtoggle" class="nav-cb">
+<label for="navtoggle" class="scrim" aria-hidden="true"></label>
+<div class="menu-layer">
+  <aside class="drawer" aria-label="Menu">
+    <label for="navtoggle" class="drawer__close" aria-label="Close">×</label>
+    <div class="drawer__sec">
+      <span class="drawer__h">Язык</span>
+      <nav class="langsw" aria-label="Language"><a href="/app/">English</a><a href="/fr/app/">Français</a></nav>
+    </div>
+    <div class="drawer__sec drawer__apps">
+      <a class="btn btn--block" href="/ru/android/"><svg class="os-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 8.5h-11A1.5 1.5 0 0 0 5 10v7a1.5 1.5 0 0 0 1.5 1.5H8V21a1 1 0 0 0 2 0v-2.5h4V21a1 1 0 0 0 2 0v-2.5h1.5A1.5 1.5 0 0 0 19 17v-7a1.5 1.5 0 0 0-1.5-1.5zM7.7 3.2a.5.5 0 0 1 .87-.5l1 1.74A6.4 6.4 0 0 1 12 4c.86 0 1.68.16 2.43.44l1-1.73a.5.5 0 1 1 .87.5l-.97 1.68A5.5 5.5 0 0 1 17.9 7.5H6.1a5.5 5.5 0 0 1 2.57-2.61z"/></svg> Android App</a>
+      <a class="btn btn--block btn--violet" href="/ru/ios/"><svg class="os-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.9-1.6 0-3.1 1-4 2.4-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.3 1.3-2.7 1.3-2.7s-2.5-1-2.6-3.8zM14.4 5.4c.7-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.5z"/></svg> iOS App</a>
+    </div>
+  </aside>
+</div>
 
 <main class="gate">
   <div class="wrap">
@@ -378,23 +393,7 @@ body.has-sticky{padding-bottom:80px}
     <div class="footer__copy">Copyright © 2026 «1xCasino»</div>
     <div class="footer__bottom">
       <span class="badge-18">18+</span>
-      <label for="navtoggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
     </div>
-  </div>
-  <input type="checkbox" id="navtoggle" class="nav-cb">
-  <label for="navtoggle" class="scrim" aria-hidden="true"></label>
-  <div class="menu-layer">
-  <aside class="drawer" aria-label="Menu">
-    <label for="navtoggle" class="drawer__close" aria-label="Close">×</label>
-    <div class="drawer__sec">
-      <span class="drawer__h">Язык</span>
-      <nav class="langsw" aria-label="Language"><a href="/app/">English</a><a href="/fr/app/">Français</a></nav>
-    </div>
-    <div class="drawer__sec drawer__apps">
-      <a class="btn btn--block" href="/ru/android/"><svg class="os-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 8.5h-11A1.5 1.5 0 0 0 5 10v7a1.5 1.5 0 0 0 1.5 1.5H8V21a1 1 0 0 0 2 0v-2.5h4V21a1 1 0 0 0 2 0v-2.5h1.5A1.5 1.5 0 0 0 19 17v-7a1.5 1.5 0 0 0-1.5-1.5zM7.7 3.2a.5.5 0 0 1 .87-.5l1 1.74A6.4 6.4 0 0 1 12 4c.86 0 1.68.16 2.43.44l1-1.73a.5.5 0 1 1 .87.5l-.97 1.68A5.5 5.5 0 0 1 17.9 7.5H6.1a5.5 5.5 0 0 1 2.57-2.61z"/></svg> Android App</a>
-      <a class="btn btn--block btn--violet" href="/ru/ios/"><svg class="os-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.9-1.6 0-3.1 1-4 2.4-1.7 2.9-.4 7.3 1.2 9.7.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.3 1.3-2.7 1.3-2.7s-2.5-1-2.6-3.8zM14.4 5.4c.7-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.5z"/></svg> iOS App</a>
-    </div>
-  </aside>
   </div>
 </footer>
 
