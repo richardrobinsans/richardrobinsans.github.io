@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#160241">
 <link rel="manifest" href="/manifest.json">
+ <link rel="icon" href="/assets/1xcasino.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -298,7 +299,8 @@ body.has-sticky{padding-bottom:80px}
 .blockpage__p{color:var(--muted);margin:0;max-width:460px;line-height:1.55}
 .blockpage .btn{margin-top:8px}
 /* 404 slot page */
-.err404{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:26px 16px;position:relative;overflow:hidden;background:radial-gradient(120% 78% at 50% -6%,#2C0A6E 0%,var(--bg) 62%),var(--bg)}
+.err404{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative;overflow:hidden;background:radial-gradient(120% 78% at 50% -6%,#2C0A6E 0%,var(--bg) 62%),var(--bg)}
+.err404__main{flex:1;display:grid;place-items:center;padding:26px 16px;position:relative;z-index:1}
 .err404::before{content:"";position:absolute;inset:0;z-index:0;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2792%27%20height%3D%2792%27%3E%3Cg%20fill%3D%27%23ffffff%27%20font-size%3D%2722%27%20font-family%3D%27sans-serif%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%2723%27%20y%3D%2732%27%3E%E2%99%A0%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2732%27%3E%E2%99%A5%3C%2Ftext%3E%3Ctext%20x%3D%2723%27%20y%3D%2778%27%3E%E2%99%A6%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2778%27%3E%E2%99%A3%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:92px 92px}
 .slot-wrap{position:relative;z-index:1;width:min(480px,94%);display:flex;flex-direction:column;align-items:center;gap:30px}
 .slot{position:relative;width:100%;background:linear-gradient(180deg,#F6C948,#E19E1C);border:6px solid #C9861A;border-radius:26px;padding:52px clamp(16px,5vw,26px) 26px;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 2px 0 rgba(255,255,255,.55)}
@@ -344,7 +346,7 @@ body.has-sticky{padding-bottom:80px}
 <body id="top">
 <header class="site-header">
   <a class="brand" href="/ru/" aria-label="1xCasino">
-    <img class="brand__logo" src="https://v3.traincdn.com/genfiles/cms/292-648/desktop/media_asset/198e43305cd7cbdbc26fe9cafecbc215.svg" alt="1xCasino" height="20" decoding="async">
+    <img class="brand__logo" src="/assets/logo.svg" alt="1xCasino" height="20" decoding="async">
   </a>
   <label for="navtoggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
 </header>
@@ -353,7 +355,7 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap">
     <div class="gate__zone">
       <img class="gate__img" src="/assets/casino_app_mainpage.webp" alt="1xCasino app" width="561" height="580" decoding="async">
-      <h1>Установи наше приложение и получи дополнительные <span class="hl">100 FS</span> в Aviatrix!</h1>
+      <h1>Установи наше приложение и получи дополнительные <span class="hl">95 FS</span> в Aviatrix2!</h1>
       <p>Выбирай своё устройство и получай пошаговую инструкцию, как безопасно установить приложение и получить бонус!</p>
       <div class="gate__btns">
         <a class="btn btn--lg" href="/ru/android/"><svg class="os-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 8.5h-11A1.5 1.5 0 0 0 5 10v7a1.5 1.5 0 0 0 1.5 1.5H8V21a1 1 0 0 0 2 0v-2.5h4V21a1 1 0 0 0 2 0v-2.5h1.5A1.5 1.5 0 0 0 19 17v-7a1.5 1.5 0 0 0-1.5-1.5zM7.7 3.2a.5.5 0 0 1 .87-.5l1 1.74A6.4 6.4 0 0 1 12 4c.86 0 1.68.16 2.43.44l1-1.73a.5.5 0 1 1 .87.5l-.97 1.68A5.5 5.5 0 0 1 17.9 7.5H6.1a5.5 5.5 0 0 1 2.57-2.61z"/></svg> Android App</a>
