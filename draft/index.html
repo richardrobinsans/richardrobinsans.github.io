@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#160241">
 <link rel="manifest" href="/manifest.json">
+ <link rel="icon" href="/assets/1xcasino.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -298,7 +299,8 @@ body.has-sticky{padding-bottom:80px}
 .blockpage__p{color:var(--muted);margin:0;max-width:460px;line-height:1.55}
 .blockpage .btn{margin-top:8px}
 /* 404 slot page */
-.err404{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:26px 16px;position:relative;overflow:hidden;background:radial-gradient(120% 78% at 50% -6%,#2C0A6E 0%,var(--bg) 62%),var(--bg)}
+.err404{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative;overflow:hidden;background:radial-gradient(120% 78% at 50% -6%,#2C0A6E 0%,var(--bg) 62%),var(--bg)}
+.err404__main{flex:1;display:grid;place-items:center;padding:26px 16px;position:relative;z-index:1}
 .err404::before{content:"";position:absolute;inset:0;z-index:0;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2792%27%20height%3D%2792%27%3E%3Cg%20fill%3D%27%23ffffff%27%20font-size%3D%2722%27%20font-family%3D%27sans-serif%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%2723%27%20y%3D%2732%27%3E%E2%99%A0%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2732%27%3E%E2%99%A5%3C%2Ftext%3E%3Ctext%20x%3D%2723%27%20y%3D%2778%27%3E%E2%99%A6%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2778%27%3E%E2%99%A3%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:92px 92px}
 .slot-wrap{position:relative;z-index:1;width:min(480px,94%);display:flex;flex-direction:column;align-items:center;gap:30px}
 .slot{position:relative;width:100%;background:linear-gradient(180deg,#F6C948,#E19E1C);border:6px solid #C9861A;border-radius:26px;padding:52px clamp(16px,5vw,26px) 26px;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 2px 0 rgba(255,255,255,.55)}
@@ -368,7 +370,7 @@ body.has-sticky{padding-bottom:80px}
     <p>Ниже приведён краткий пошаговый чеклист:</p>
     <div class="install">
       <ul class="ckl" id="dckl">
-        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Скачать 1xCasino.apk</span></label></li>
+        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Скачать APK файл</span></label></li>
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Установить приложение на телефон</span></label></li>
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Выполнить LogIn с вашими доступами к 1xcasino</span></label></li>
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Проверить заполнение персональных данных в профиле (Email добавлен и активирован, Телефон добавлен и активирован, Город, Имя, Фамилия, Дата рождения). Эти данные нужны для повышения защиты Вашего аккаунта и счёта.</span></label></li>
@@ -396,43 +398,23 @@ body.has-sticky{padding-bottom:80px}
       <div class="reviews__track">
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a1.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
-          <p class="review__text">Приложение работает стабильно, игры запускаются быстро.</p>
+          <p class="review__text">Приложение работает стабильно, игры запускаются быстро — очень доволен!</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a2.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
-          <p class="review__text">Удобный вход, понятный интерфейс и хорошие бонусы.</p>
+          <p class="review__text">Удобный вход, приложение всегда доступно, интерфейс в целом понятный.</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a3.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
-          <p class="review__text">Понравилась безопасность платежей и стабильная работа.</p>
+          <p class="review__text">Работает стабильнее, чем сайт: выше безопасность и надёжность платежей.</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a4.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 из 5"></div></div>
-          <p class="review__text">Бонусы в приложении легко найти и активировать.</p>
+          <p class="review__text">Нравятся дополнительные бонусы и более простой, понятный интерфейс.</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a5.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
-          <p class="review__text">Игры не зависают, приложение работает уверенно.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a6.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
-          <p class="review__text">Удобно играть с телефона, все быстро открывается.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a7.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
-          <p class="review__text">Хорошие бонусы и стабильная работа без сбоев.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a8.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 из 5"></div></div>
-          <p class="review__text">Приложение выглядит надёжно, платежи проходят спокойно.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a9.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 из 5"></div></div>
-          <p class="review__text">Быстрый запуск игр и понятные акции в приложении.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a10.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 из 5"></div></div>
-          <p class="review__text">1xCasino удобно использовать каждый день.</p>
+          <p class="review__text">Игры работают стабильнее и не зависают, платежи и выводы удобные и безопасные.</p>
         </article>
       </div>
     </div>
@@ -467,7 +449,7 @@ body.has-sticky{padding-bottom:80px}
 <section class="section">
   <div class="wrap">
     <p class="eyebrow">Бонус</p>
-    <h2>Промокод на бонус 100 FS за установку и подтверждение данных</h2>
+    <h2>Промокод на бонус 95 FS за установку и подтверждение данных</h2>
     <div class="promo rv">
       <p style="color:var(--muted)">Скопируй промокод, установи приложение и активируй бонус при регистрации.</p>
       <div class="promo__code">
@@ -483,11 +465,11 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap wheel-block">
     <p class="eyebrow">Бонус-игра</p>
     <h2>Крути рулетку и забери бонус</h2>
-    <p style="color:var(--muted);max-width:520px;margin:0 auto">Нажми кнопку — рулетка определит твой бонус в фриспинах (от 20 до 100 FS), и промокод скопируется автоматически.</p>
+    <p style="color:var(--muted);max-width:520px;margin:0 auto">Нажми кнопку — рулетка определит твой бонус в фриспинах (от 20 до 95 FS), и промокод скопируется автоматически.</p>
     <div class="wheel-wrap">
       <div class="wheel-ring" aria-hidden="true"></div>
       <div class="wheel" id="wheel">
-        <div class="seg" style="transform:rotate(22.5deg)"><b>100 FS</b></div>
+        <div class="seg" style="transform:rotate(22.5deg)"><b>95 FS</b></div>
         <div class="seg" style="transform:rotate(67.5deg)"><b>20 FS</b></div>
         <div class="seg" style="transform:rotate(112.5deg)"><b>50 FS</b></div>
         <div class="seg" style="transform:rotate(157.5deg)"><b>30 FS</b></div>
@@ -587,14 +569,14 @@ body.has-sticky{padding-bottom:80px}
       copyText(code,function(){ var o=label.textContent; label.textContent="Скопировано!"; setTimeout(function(){label.textContent=o;},1500); });
     });
   }
-  // Wheel: always lands on 100 FS — a real fixed bonus for everyone
+  // Wheel: always lands on 95 FS — a real fixed bonus for everyone
   var wheel=document.getElementById('wheel'),spinBtn=document.getElementById('spinBtn'),result=document.getElementById('wheelResult');
   if(wheel&&spinBtn&&result){
     var PROMO="1xcTestCode",spun=false;
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function reveal(){
       copyText(PROMO,function(){
-        result.hidden=false; result.textContent="🎉 Выпало 100 FS! Промокод 1xcTestCode скопирован";
+        result.hidden=false; result.textContent="🎉 Выпало 95 FS! Промокод 1xcTestCode скопирован";
         spinBtn.disabled=false; spinBtn.querySelector('.spin-label').textContent="Скопировать промокод";
       });
     }

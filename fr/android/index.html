@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#160241">
 <link rel="manifest" href="/manifest.json">
+ <link rel="icon" href="/assets/1xcasino.ico" sizes="any">
 <link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -298,7 +299,8 @@ body.has-sticky{padding-bottom:80px}
 .blockpage__p{color:var(--muted);margin:0;max-width:460px;line-height:1.55}
 .blockpage .btn{margin-top:8px}
 /* 404 slot page */
-.err404{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:26px 16px;position:relative;overflow:hidden;background:radial-gradient(120% 78% at 50% -6%,#2C0A6E 0%,var(--bg) 62%),var(--bg)}
+.err404{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;position:relative;overflow:hidden;background:radial-gradient(120% 78% at 50% -6%,#2C0A6E 0%,var(--bg) 62%),var(--bg)}
+.err404__main{flex:1;display:grid;place-items:center;padding:26px 16px;position:relative;z-index:1}
 .err404::before{content:"";position:absolute;inset:0;z-index:0;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2792%27%20height%3D%2792%27%3E%3Cg%20fill%3D%27%23ffffff%27%20font-size%3D%2722%27%20font-family%3D%27sans-serif%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%2723%27%20y%3D%2732%27%3E%E2%99%A0%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2732%27%3E%E2%99%A5%3C%2Ftext%3E%3Ctext%20x%3D%2723%27%20y%3D%2778%27%3E%E2%99%A6%3C%2Ftext%3E%3Ctext%20x%3D%2769%27%20y%3D%2778%27%3E%E2%99%A3%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:92px 92px}
 .slot-wrap{position:relative;z-index:1;width:min(480px,94%);display:flex;flex-direction:column;align-items:center;gap:30px}
 .slot{position:relative;width:100%;background:linear-gradient(180deg,#F6C948,#E19E1C);border:6px solid #C9861A;border-radius:26px;padding:52px clamp(16px,5vw,26px) 26px;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 2px 0 rgba(255,255,255,.55)}
@@ -353,13 +355,13 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap hero__grid">
     <div class="hero__text">
       <p class="eyebrow">Téléchargez l'application 1xCasino — <span data-geo="country">ton pays</span></p>
-      <h1>Installe notre application et reçois <span class="hl">100 FS</span> supplémentaires sur Aviatrix !</h1>
-      <p class="hero__lead">Vous trouverez ici un guide étape par étape pour télécharger l'APK, l'installer, ne pas le confondre avec l'iPhone, vous connecter, vérifier la sécurité et obtenir votre bonus !</p>
+      <h1>Installe l'application 1xCasino et reçois <span class="hl">95 FS</span> supplémentaires sur <span class="hl">Aviatrix2</span> !</h1>
+      <p class="hero__lead">Ici tu trouveras un guide étape par étape pour télécharger l'APK Android, l'installer, vérifier la sécurité et obtenir ton bonus !</p>
       <div class="appcard">
-        <img class="appcard__icon" src="/assets/icons/icon-96.png" alt="" width="58" height="58" decoding="async">
+        <img class="appcard__icon" src="/assets/app_icon.webp" alt="" width="58" height="58" decoding="async">
         <div>
-          <strong class="appcard__name">1xCasino Africa</strong>
-          <div class="appcard__rating"><span class="stars" aria-hidden="true">★★★★★</span><span>·</span><span>57 959 téléchargements</span></div>
+          <strong class="appcard__name">1xCasino</strong>
+          <div class="appcard__rating"><span class="stars" aria-hidden="true">★★★★★</span><span>·</span><span>57K+ téléchargements</span></div>
           <div class="appcard__chips">
             <span class="chip chip--green">Gratuit</span>
             <span class="chip chip--blue">Android 7+</span>
@@ -398,43 +400,23 @@ body.has-sticky{padding-bottom:80px}
       <div class="reviews__track">
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a1.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 sur 5"></div></div>
-          <p class="review__text">Appli stable, les jeux se lancent vite.</p>
+          <p class="review__text">L'application est stable et les jeux se lancent vite — j'adore !</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a2.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 sur 5"></div></div>
-          <p class="review__text">Connexion facile, interface claire et bons bonus.</p>
+          <p class="review__text">Connexion facile, l'application est toujours accessible et l'interface est claire dans l'ensemble.</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a3.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 sur 5"></div></div>
-          <p class="review__text">J'aime la sécurité des paiements et la stabilité.</p>
+          <p class="review__text">Plus stable que le site web, avec une meilleure sécurité et des paiements plus fiables.</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a4.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 sur 5"></div></div>
-          <p class="review__text">Les bonus sont faciles à trouver et activer.</p>
+          <p class="review__text">J'aime les bonus supplémentaires et l'interface plus simple et claire.</p>
         </article>
         <article class="review">
           <div class="review__top"><img class="review__ava" src="/assets/reviews/a5.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 sur 5"></div></div>
-          <p class="review__text">Les jeux ne bloquent pas, l'appli est fiable.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a6.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 sur 5"></div></div>
-          <p class="review__text">Pratique sur mobile, tout s'ouvre vite.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a7.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 sur 5"></div></div>
-          <p class="review__text">Bons bonus et fonctionnement stable sans bugs.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a8.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:80%" role="img" aria-label="4 sur 5"></div></div>
-          <p class="review__text">L'appli semble fiable, les paiements sont fluides.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a9.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:90%" role="img" aria-label="4,5 sur 5"></div></div>
-          <p class="review__text">Jeux rapides à lancer et promos claires.</p>
-        </article>
-        <article class="review">
-          <div class="review__top"><img class="review__ava" src="/assets/reviews/a10.webp" alt="" width="52" height="52" loading="lazy" decoding="async"><div class="stars-rate" style="--r:100%" role="img" aria-label="5 sur 5"></div></div>
-          <p class="review__text">1xCasino est pratique à utiliser chaque jour.</p>
+          <p class="review__text">Les jeux tournent mieux sans se figer, et les dépôts et retraits sont simples et sécurisés.</p>
         </article>
       </div>
     </div>
@@ -452,7 +434,7 @@ body.has-sticky{padding-bottom:80px}
     <p>Voici une courte checklist étape par étape :</p>
     <div class="install">
       <ul class="ckl" id="dckl">
-        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Télécharger 1xCasino.apk</span></label></li>
+        <li><label class="ckl__row"><input type="checkbox" class="ckl__cb"><span class="ckl__box" aria-hidden="true"></span><span>Télécharger le fichier APK</span></label></li>
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Installer l'application sur le téléphone</span></label></li>
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Se connecter avec vos identifiants 1xcasino</span></label></li>
         <li><label class="ckl__row is-locked"><input type="checkbox" class="ckl__cb" disabled><span class="ckl__box" aria-hidden="true"></span><span>Vérifier que vos données personnelles sont renseignées dans le profil (Email ajouté et activé, Téléphone ajouté et activé, Ville, Prénom, Nom, Date de naissance). Ces données servent à renforcer la protection de votre compte et de votre solde.</span></label></li>
@@ -476,17 +458,14 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap rich">
     <p class="eyebrow">Téléchargement</p>
     <h2>Comment télécharger et installer l'application 1xCasino</h2>
-    <p>Un APK est un fichier d'installation pour Android. Vous l'ouvrez sur votre téléphone, puis le système propose d'installer l'application.</p>
-    <p>Téléchargez le fichier de l'application — <span data-geo="country">ton pays</span> uniquement depuis les sites officiels 1xcasino.com, 1xcasino-af.com, 1xcasino.co.zm, 1xcasino.com.gh et depuis cette page Guideline.</p>
-    <p>Avant d'ouvrir le fichier, vérifiez le nom, la source, la taille et l'espace libre sur votre téléphone.</p>
+    <p>Téléchargez le fichier depuis cette page Guideline.</p>
     <p>Si l'installation a été interrompue, téléchargez à nouveau l'application et vérifiez la mémoire disponible sur votre téléphone. L'application pèse ~25MB, mais il vous faut au moins 100MB pour le processus d'installation.</p>
     <p>Votre téléphone peut afficher un avertissement car le fichier n'est pas installé depuis le Google Play Market. C'est un écran de sécurité normal. N'accordez l'autorisation que le temps de l'installation.</p>
     <table class="tbl">
       <thead><tr><th>À vérifier</th><th>Ce qui est attendu</th></tr></thead>
       <tbody>
-        <tr><td>Nom de l'APK</td><td>1xCasino.apk</td></tr>
         <tr><td>Android</td><td>Android 7+</td></tr>
-        <tr><td>Espace libre</td><td>25MB</td></tr>
+        <tr><td>Espace libre</td><td>~25MB</td></tr>
       </tbody>
     </table>
     <div class="shots">
@@ -584,7 +563,7 @@ body.has-sticky{padding-bottom:80px}
 
 <section class="final-cta">
   <div class="wrap">
-    <h2>Prêt à commencer ? Installe l'application maintenant et reçois le bonus de 100 FS</h2>
+    <h2>Prêt à commencer ? Installe l'application maintenant et reçois le bonus de 95 FS</h2>
     <a class="btn btn--lg" href="/go?b=final" rel="nofollow noopener">📲 Télécharger l'APK pour Android</a>
   </div>
 </section>
@@ -641,14 +620,14 @@ body.has-sticky{padding-bottom:80px}
       copyText(code,function(){ var o=label.textContent; label.textContent="Copié !"; setTimeout(function(){label.textContent=o;},1500); });
     });
   }
-  // Wheel: always lands on 100 FS — a real fixed bonus for everyone
+  // Wheel: always lands on 95 FS — a real fixed bonus for everyone
   var wheel=document.getElementById('wheel'),spinBtn=document.getElementById('spinBtn'),result=document.getElementById('wheelResult');
   if(wheel&&spinBtn&&result){
     var PROMO="1xcTestCode",spun=false;
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function reveal(){
       copyText(PROMO,function(){
-        result.hidden=false; result.textContent="🎉 100 FS ! Le code promo 1xcTestCode est copié";
+        result.hidden=false; result.textContent="🎉 95 FS ! Le code promo 1xcTestCode est copié";
         spinBtn.disabled=false; spinBtn.querySelector('.spin-label').textContent="Copier le code promo";
       });
     }
