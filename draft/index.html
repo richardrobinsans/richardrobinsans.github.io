@@ -342,6 +342,24 @@ body.has-sticky{padding-bottom:80px}
   .js .rv{opacity:1;transform:none}
 }
 :focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:6px}
+.offer .wrap{max-width:840px}
+.offer__card{display:flex;gap:24px;align-items:center;background:linear-gradient(150deg,#2A0A78 0%,var(--plate) 62%);border:1px solid rgba(30,178,223,.38);border-radius:22px;padding:26px 30px;box-shadow:0 0 0 1px rgba(100,30,251,.18),0 22px 55px -22px rgba(30,178,223,.5)}
+.offer__img{flex:0 0 auto;width:180px;height:auto;filter:drop-shadow(0 12px 30px rgba(30,178,223,.55))}
+.offer__body{flex:1;min-width:0}
+.offer__title{margin:0 0 8px;font-size:1.5rem;line-height:1.22}
+.offer__sub{margin:0 0 18px;color:var(--muted);font-size:1rem}
+.offer__sub .sub-rest{color:transparent}
+.offer__sub.is-typing .sub-typed::after{content:'▏';margin-left:1px;color:var(--cyan);animation:offerCaret .7s step-end infinite}
+.offer__sub.is-blink{animation:offerBlink .32s ease 2}
+@keyframes offerCaret{50%{opacity:0}}
+@keyframes offerBlink{0%,100%{opacity:1}50%{opacity:.15}}
+.offer__timer{display:inline-flex;align-items:flex-start;gap:10px;margin:0 0 22px}
+.offer__timer.is-done{opacity:.5}
+.tunit{display:flex;align-items:center;justify-content:center;min-width:70px;background:rgba(9,2,40,.62);border:1px solid rgba(30,178,223,.42);border-radius:14px;padding:12px 16px}
+.tunit__val{font-size:2.1rem;font-weight:800;line-height:1;color:var(--cyan);font-variant-numeric:tabular-nums;text-shadow:0 0 16px rgba(30,178,223,.65)}
+.tsep{font-size:2.1rem;font-weight:800;line-height:1;color:var(--cyan);opacity:.65;padding-top:9px}
+.offer__cta{margin-bottom:0}
+@media(max-width:640px){.offer__card{flex-direction:column;text-align:center;padding:24px 18px}.offer__img{width:150px}.offer__timer{margin-left:auto;margin-right:auto;gap:8px}.offer__title{font-size:1.3rem}.tunit{min-width:54px;padding:10px 12px}.tunit__val{font-size:1.7rem}.tsep{font-size:1.7rem}}
 </style>
 </head>
 <body id="top">
@@ -366,6 +384,86 @@ body.has-sticky{padding-bottom:80px}
     </div>
   </aside>
 </div>
+
+
+<section class="section offer" id="offer">
+  <div class="wrap">
+    <div class="offer__card">
+      <img class="offer__img" src="/assets/bonus.webp" alt="" width="360" height="212" loading="lazy" decoding="async">
+      <div class="offer__body">
+        <h2 class="offer__title">Не упусти свой шанс забрать <span class="hl">95 FS</span> в <span class="hl">Aviatrix2</span>!</h2>
+        <p class="offer__sub" id="offerSub">Твоё персональное предложение ограничено!</p>
+        <div class="offer__timer" id="offerTimer" aria-live="off" role="timer">
+          <div class="tunit"><span class="tunit__val" id="tHours">05</span></div>
+          <span class="tsep" aria-hidden="true">:</span>
+          <div class="tunit"><span class="tunit__val" id="tMins">00</span></div>
+          <span class="tsep" aria-hidden="true">:</span>
+          <div class="tunit"><span class="tunit__val" id="tSecs">00</span></div>
+        </div>
+        <a class="btn btn--lg offer__cta" id="offerCta" href="/ru/android/" rel="nofollow noopener">Хочу забрать бонус</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var box = document.getElementById('offerTimer');
+  if(!box) return;
+  var KEY = 'bonus_deadline', DUR = 5*60*60*1000; // 5 часов
+  function getCookie(n){ var m = document.cookie.match('(?:^|; )'+n+'=([^;]*)'); return m ? decodeURIComponent(m[1]) : null; }
+  function setCookie(n,v,age){ document.cookie = n+'='+encodeURIComponent(v)+'; path=/; max-age='+age+'; SameSite=Lax'; }
+  var dl = parseInt(getCookie(KEY), 10);
+  if(!dl || isNaN(dl)){ dl = Date.now() + DUR; setCookie(KEY, dl, 60*60*24*30); } // дедлайн хранится 30 дней; сброс — только чисткой cookie
+  var hEl = document.getElementById('tHours'), mEl = document.getElementById('tMins'), sEl = document.getElementById('tSecs');
+  function pad(n){ return (n<10?'0':'')+n; }
+  var iv;
+  function tick(){
+    var left = dl - Date.now(); if(left < 0) left = 0;
+    var ts = Math.floor(left/1000);
+    hEl.textContent = pad(Math.floor(ts/3600));
+    mEl.textContent = pad(Math.floor((ts % 3600)/60));
+    sEl.textContent = pad(ts % 60);
+    if(left <= 0){ clearInterval(iv); box.classList.add('is-done'); }
+  }
+  tick(); iv = setInterval(tick, 1000);
+})();
+(function(){
+  var cta = document.getElementById('offerCta'); if(!cta) return;
+  var ua = navigator.userAgent || navigator.vendor || '';
+  var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  cta.setAttribute('href', isIOS ? '/ru/ios/' : '/ru/android/');
+})();
+(function(){
+  var sub = document.getElementById('offerSub');
+  if(!sub) return;
+  var full = sub.textContent;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function run(){
+    sub.innerHTML = '<span class="sub-typed"></span><span class="sub-rest"></span>';
+    var typedEl = sub.firstChild, restEl = sub.lastChild;
+    restEl.textContent = full;               // резервируем финальную высоту сразу — блок не скачет
+    sub.classList.add('is-typing');
+    var i = 0;
+    (function type(){
+      i++;
+      typedEl.textContent = full.slice(0, i);
+      restEl.textContent = full.slice(i);
+      if(i < full.length){ setTimeout(type, 42); }
+      else {
+        sub.classList.remove('is-typing');
+        sub.classList.add('is-blink');
+        sub.addEventListener('animationend', function(){ sub.classList.remove('is-blink'); }, {once:true});
+      }
+    })();
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); run(); } });
+    }, {threshold:0.6});
+    io.observe(sub);
+  } else { run(); }
+})();
+</script>
 
 <section class="section">
   <div class="wrap rich">
