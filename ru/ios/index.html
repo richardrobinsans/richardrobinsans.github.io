@@ -95,8 +95,7 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .langsw a:hover{background:var(--field);color:var(--text)}
 .langsw a[aria-current]{background:var(--violet);color:#fff}
 .gate__one{width:min(360px,100%);margin:30px auto 0}
-.badge-18{font-weight:800;font-size:.78rem;color:var(--chip-sand);border:1.5px solid var(--chip-sand);
-  border-radius:8px;padding:3px 8px}
+
 .hero{padding-block:clamp(28px,7vw,56px)}
 .hero__grid{display:grid;gap:30px}
 .hero h1{font-size:clamp(1.8rem,6.8vw,2.9rem);margin:.35em 0 .5em}
@@ -342,6 +341,7 @@ body.has-sticky{padding-bottom:80px}
   .js .rv{opacity:1;transform:none}
 }
 :focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:6px}
+.hero-timer{margin:12px 0 16px}
 .offer .wrap{max-width:840px}
 .offer__card{display:flex;gap:24px;align-items:center;background:linear-gradient(150deg,#2A0A78 0%,var(--plate) 62%);border:1px solid rgba(30,178,223,.38);border-radius:22px;padding:26px 30px;box-shadow:0 0 0 1px rgba(100,30,251,.18),0 22px 55px -22px rgba(30,178,223,.5)}
 .offer__img{flex:0 0 auto;width:300px;max-width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(30,178,223,.55))}
@@ -361,6 +361,7 @@ body.has-sticky{padding-bottom:80px}
 .offer__cta{margin-bottom:0}
 @media(max-width:640px){.offer__card{flex-direction:column;text-align:center;padding:24px 18px}.offer__img{width:min(300px,72vw)}.offer__timer{margin-left:auto;margin-right:auto;gap:8px}.offer__title{font-size:1.3rem}.tunit{min-width:54px;padding:10px 12px}.tunit__val{font-size:1.7rem}.tsep{font-size:1.7rem}}
 </style>
+<script src="/assets/popup.js" data-popup="main_v1" defer></script>
 </head>
 <body id="top" class="has-sticky">
 <header class="site-header">
@@ -390,6 +391,33 @@ body.has-sticky{padding-bottom:80px}
     <div class="hero__text">
       <p class="eyebrow">Скачай приложение 1xCasino в <span data-geo="country">своей стране</span></p>
       <h1>Установи приложение 1xCasino и получи дополнительные <span class="hl">95 FS</span> в <span class="hl">Aviatrix2</span>!</h1>
+      <div class="hero-timer"><div class="offer__timer" id="heroTimer" aria-live="off" role="timer">
+        <div class="tunit"><span class="tunit__val" id="htH">24</span></div>
+        <span class="tsep" aria-hidden="true">:</span>
+        <div class="tunit"><span class="tunit__val" id="htM">00</span></div>
+        <span class="tsep" aria-hidden="true">:</span>
+        <div class="tunit"><span class="tunit__val" id="htS">00</span></div>
+      </div></div>
+<script>(function(){
+  var box=document.getElementById('heroTimer'); if(!box) return;
+  var KEY='bonus_deadline_24h', DUR=24*60*60*1000;
+  function gc(n){var m=document.cookie.match('(?:^|; )'+n+'=([^;]*)');return m?decodeURIComponent(m[1]):null;}
+  function sc(n,v,a){document.cookie=n+'='+encodeURIComponent(v)+'; path=/; max-age='+a+'; SameSite=Lax';}
+  var dl=parseInt(gc(KEY),10);
+  if(!dl||isNaN(dl)){dl=Date.now()+DUR;sc(KEY,dl,60*60*24*30);}
+  var hE=document.getElementById('htH'),mE=document.getElementById('htM'),sE=document.getElementById('htS');
+  function pad(n){return (n<10?'0':'')+n;}
+  var iv;
+  function tick(){
+    var left=dl-Date.now(); if(left<0)left=0;
+    var ts=Math.floor(left/1000);
+    hE.textContent=pad(Math.floor(ts/3600));
+    mE.textContent=pad(Math.floor((ts%3600)/60));
+    sE.textContent=pad(ts%60);
+    if(left<=0){clearInterval(iv);box.classList.add('is-done');}
+  }
+  tick(); iv=setInterval(tick,1000);
+})();</script>
       <p class="hero__lead">Здесь ты найдёшь пошаговую инструкцию, как скачать IOS приложение и получить бонус!</p>
       <div class="appcard">
         <img class="appcard__icon" src="/assets/app_icon.webp" alt="" width="58" height="58" decoding="async">
@@ -575,9 +603,6 @@ body.has-sticky{padding-bottom:80px}
   <div class="wrap">
     <div class="footer__contact"><a class="footer__mail" href="mailto:info@1xcasino-guide.com?subject=1xCasino%20Guide">info@1xcasino-guide.com</a></div>
     <div class="footer__copy">Copyright © 2026 «1xCasino»</div>
-    <div class="footer__bottom">
-      <span class="badge-18">18+</span>
-    </div>
   </div>
 </footer>
 

@@ -95,8 +95,7 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .langsw a:hover{background:var(--field);color:var(--text)}
 .langsw a[aria-current]{background:var(--violet);color:#fff}
 .gate__one{width:min(360px,100%);margin:30px auto 0}
-.badge-18{font-weight:800;font-size:.78rem;color:var(--chip-sand);border:1.5px solid var(--chip-sand);
-  border-radius:8px;padding:3px 8px}
+
 .hero{padding-block:clamp(28px,7vw,56px)}
 .hero__grid{display:grid;gap:30px}
 .hero h1{font-size:clamp(1.8rem,6.8vw,2.9rem);margin:.35em 0 .5em}
@@ -342,6 +341,7 @@ body.has-sticky{padding-bottom:80px}
   .js .rv{opacity:1;transform:none}
 }
 :focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:6px}
+.hero-timer{margin:12px 0 16px}
 .offer .wrap{max-width:840px}
 .offer__card{display:flex;gap:24px;align-items:center;background:linear-gradient(150deg,#2A0A78 0%,var(--plate) 62%);border:1px solid rgba(30,178,223,.38);border-radius:22px;padding:26px 30px;box-shadow:0 0 0 1px rgba(100,30,251,.18),0 22px 55px -22px rgba(30,178,223,.5)}
 .offer__img{flex:0 0 auto;width:300px;max-width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(30,178,223,.55))}
@@ -361,6 +361,24 @@ body.has-sticky{padding-bottom:80px}
 .offer__cta{margin-bottom:0}
 @media(max-width:640px){.offer__card{flex-direction:column;text-align:center;padding:24px 18px}.offer__img{width:min(300px,72vw)}.offer__timer{margin-left:auto;margin-right:auto;gap:8px}.offer__title{font-size:1.3rem}.tunit{min-width:54px;padding:10px 12px}.tunit__val{font-size:1.7rem}.tsep{font-size:1.7rem}}
 </style>
+<style>.wd{--wd-cyan:var(--cyan);--wd-green:var(--green);--wd-mut:var(--muted);--wd-line:rgba(150,120,255,.22);width:100%;max-width:520px;margin:0 auto;box-sizing:border-box;background:linear-gradient(180deg,rgba(58,36,120,.42),rgba(30,18,66,.42));border:1px solid var(--wd-line);border-radius:22px;padding:26px 20px 24px;box-shadow:0 24px 60px -24px rgba(90,50,200,.55),inset 0 1px 0 rgba(255,255,255,.04);text-align:center}
+.wd *{box-sizing:border-box}
+.wd-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#c9f5a8;background:rgba(120,200,70,.12);border:1px solid rgba(150,210,90,.42);padding:7px 14px;border-radius:999px;box-shadow:0 0 24px -6px rgba(150,220,90,.5)}
+.wd-badge .b{font-size:14px;filter:drop-shadow(0 0 6px rgba(255,220,120,.8))}
+.wd-title{font-size:clamp(19px,5.2vw,25px);line-height:1.2;font-weight:900;margin:16px 0 8px;letter-spacing:-.01em}
+.wd-title .hl{color:var(--wd-cyan)}
+.wd-sub{color:var(--wd-mut);font-size:14px;line-height:1.5;margin:0 auto 20px;max-width:38ch}
+.wd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (min-width:440px){.wd-grid{grid-template-columns:1fr 1fr 1fr}}
+.wd-tile{display:flex;align-items:center;gap:10px;padding:11px 12px;background:rgba(255,255,255,.035);border:1px solid rgba(160,140,230,.18);border-radius:13px;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.wd-tile:hover{transform:translateY(-2px);border-color:rgba(160,200,255,.4);background:rgba(255,255,255,.06)}
+.wd-chip{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;background:var(--c);box-shadow:0 4px 12px -4px rgba(0,0,0,.45)}
+.wd-chip svg{width:17px;height:17px;fill:currentColor;display:block}
+.wd-chip.is-light{color:#241436}
+.wd-name{font-size:12.5px;font-weight:700;line-height:1.15;text-align:left;color:#eef0ff}
+.wd-foot{color:var(--wd-mut);font-size:12px;margin:18px 0 0;opacity:.85}
+.wd-tile:focus-visible{outline:2px solid var(--wd-cyan);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.wd-tile{transition:none}}</style>
 </head>
 <body id="top">
 <header class="site-header">
@@ -464,13 +482,25 @@ var ABASE = "/fr/";
   } else { run(); }
 })();
 </script>
+<section class="section"><section class="wd" aria-label="Méthodes de retrait">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wd-ic" viewBox="0 0 24 24"><path d="M2.5 7A2.5 2.5 0 0 1 5 4.5h11A1.5 1.5 0 0 1 17.5 6v.6H6.2a.8.8 0 0 0 0 1.6H19A1.5 1.5 0 0 1 20.5 9.7v7.8A1.5 1.5 0 0 1 19 19H5a2.5 2.5 0 0 1-2.5-2.5V7Zm14.7 5.4a1.05 1.05 0 1 0 0 2.1 1.05 1.05 0 0 0 0-2.1Z"/></symbol></svg>
+      <span class="wd-badge"><span class="b">⚡</span> Retraits instantanés</span>
+      <h2 class="wd-title">Retire vers le portefeuille <span class="hl">que tu utilises déjà</span></h2>
+      <p class="wd-sub">Paiements directs vers ton Mobile Money en quelques minutes — sans compte bancaire.</p>
+      <div class="wd-grid">
+        <div class="wd-tile"><span class="wd-chip" style="--c:#ff7900"><svg><use href="#wd-ic"/></svg></span><span class="wd-name">Orange Money</span></div>
+        <div class="wd-tile"><span class="wd-chip is-light" style="--c:#ffcb05"><svg><use href="#wd-ic"/></svg></span><span class="wd-name">MTN MoMo</span></div>
+        <div class="wd-tile"><span class="wd-chip" style="--c:#4c6ef5"><svg><use href="#wd-ic"/></svg></span><span class="wd-name">Wave</span></div>
+        <div class="wd-tile"><span class="wd-chip" style="--c:#12b3a6"><svg><use href="#wd-ic"/></svg></span><span class="wd-name">Moov Money</span></div>
+        <div class="wd-tile"><span class="wd-chip" style="--c:#e40000"><svg><use href="#wd-ic"/></svg></span><span class="wd-name">Airtel Money</span></div>
+        <div class="wd-tile"><span class="wd-chip" style="--c:#21a457"><svg><use href="#wd-ic"/></svg></span><span class="wd-name">M-Pesa</span></div>
+      </div>
+      <p class="wd-foot">Les méthodes disponibles varient selon le pays.</p>
+    </section></section>
 <footer class="footer">
   <div class="wrap">
     <div class="footer__contact"><a class="footer__mail" href="mailto:info@1xcasino-guide.com?subject=1xCasino%20Guide">info@1xcasino-guide.com</a></div>
     <div class="footer__copy">Copyright © 2026 «1xCasino»</div>
-    <div class="footer__bottom">
-      <span class="badge-18">18+</span>
-    </div>
   </div>
 </footer>
 
