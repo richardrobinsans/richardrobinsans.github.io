@@ -385,7 +385,6 @@ body.has-sticky{padding-bottom:80px}
   </aside>
 </div>
 
-
 <section class="section offer" id="offer">
   <div class="wrap">
     <div class="offer__card">
@@ -394,7 +393,7 @@ body.has-sticky{padding-bottom:80px}
         <h2 class="offer__title">Не упусти свой шанс забрать <span class="hl">95 FS</span> в <span class="hl">Aviatrix2</span>!</h2>
         <p class="offer__sub" id="offerSub">Твоё персональное предложение ограничено!</p>
         <div class="offer__timer" id="offerTimer" aria-live="off" role="timer">
-          <div class="tunit"><span class="tunit__val" id="tHours">05</span></div>
+          <div class="tunit"><span class="tunit__val" id="tHours">24</span></div>
           <span class="tsep" aria-hidden="true">:</span>
           <div class="tunit"><span class="tunit__val" id="tMins">00</span></div>
           <span class="tsep" aria-hidden="true">:</span>
@@ -406,14 +405,15 @@ body.has-sticky{padding-bottom:80px}
   </div>
 </section>
 <script>
+var ABASE = "/ru/";
 (function(){
   var box = document.getElementById('offerTimer');
   if(!box) return;
-  var KEY = 'bonus_deadline', DUR = 5*60*60*1000; // 5 часов
+  var KEY = 'bonus_deadline_24h', DUR = 24*60*60*1000; // 24 hours from first launch
   function getCookie(n){ var m = document.cookie.match('(?:^|; )'+n+'=([^;]*)'); return m ? decodeURIComponent(m[1]) : null; }
   function setCookie(n,v,age){ document.cookie = n+'='+encodeURIComponent(v)+'; path=/; max-age='+age+'; SameSite=Lax'; }
   var dl = parseInt(getCookie(KEY), 10);
-  if(!dl || isNaN(dl)){ dl = Date.now() + DUR; setCookie(KEY, dl, 60*60*24*30); } // дедлайн хранится 30 дней; сброс — только чисткой cookie
+  if(!dl || isNaN(dl)){ dl = Date.now() + DUR; setCookie(KEY, dl, 60*60*24*30); } // deadline stored 30 days; reset only by clearing cookies
   var hEl = document.getElementById('tHours'), mEl = document.getElementById('tMins'), sEl = document.getElementById('tSecs');
   function pad(n){ return (n<10?'0':'')+n; }
   var iv;
@@ -431,7 +431,7 @@ body.has-sticky{padding-bottom:80px}
   var cta = document.getElementById('offerCta'); if(!cta) return;
   var ua = navigator.userAgent || navigator.vendor || '';
   var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  cta.setAttribute('href', isIOS ? '/ru/ios/' : '/ru/android/');
+  cta.setAttribute('href', isIOS ? ABASE+'ios/' : ABASE+'android/');
 })();
 (function(){
   var sub = document.getElementById('offerSub');
@@ -441,7 +441,7 @@ body.has-sticky{padding-bottom:80px}
   function run(){
     sub.innerHTML = '<span class="sub-typed"></span><span class="sub-rest"></span>';
     var typedEl = sub.firstChild, restEl = sub.lastChild;
-    restEl.textContent = full;               // резервируем финальную высоту сразу — блок не скачет
+    restEl.textContent = full;
     sub.classList.add('is-typing');
     var i = 0;
     (function type(){
@@ -464,7 +464,6 @@ body.has-sticky{padding-bottom:80px}
   } else { run(); }
 })();
 </script>
-
 <section class="section">
   <div class="wrap rich">
     <p class="eyebrow">DRAFT</p>
