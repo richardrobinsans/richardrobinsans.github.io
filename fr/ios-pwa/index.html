@@ -354,22 +354,25 @@ body.has-sticky{padding-bottom:80px}
 @keyframes offerCaret{50%{opacity:0}}
 @keyframes offerBlink{0%,100%{opacity:1}50%{opacity:.15}}
 .offer__timer{display:inline-flex;align-items:flex-start;gap:10px;margin:0 0 22px}
-.offer__timer.is-done{opacity:.5}
+.offer__timer.is-done{display:none}
 .tunit{display:flex;align-items:center;justify-content:center;min-width:70px;background:rgba(9,2,40,.62);border:1px solid rgba(30,178,223,.42);border-radius:14px;padding:12px 16px}
 .tunit__val{font-size:2.1rem;font-weight:800;line-height:1;color:var(--cyan);font-variant-numeric:tabular-nums;text-shadow:0 0 16px rgba(30,178,223,.65)}
 .tsep{font-size:2.1rem;font-weight:800;line-height:1;color:var(--cyan);opacity:.65;padding-top:9px}
 .offer__cta{margin-bottom:0}
 @media(max-width:640px){.offer__card{flex-direction:column;text-align:center;padding:24px 18px}.offer__img{width:min(300px,72vw)}.offer__timer{margin-left:auto;margin-right:auto;gap:8px}.offer__title{font-size:1.3rem}.tunit{min-width:54px;padding:10px 12px}.tunit__val{font-size:1.7rem}.tsep{font-size:1.7rem}}
 </style>
-<style>.pwa{max-width:640px;margin-inline:auto}
-.pwa h1{text-align:center;font-size:clamp(22px,5.6vw,32px);line-height:1.16;margin:2px 0 18px;font-weight:900;letter-spacing:-.01em}
+<style>.pwa{max-width:640px;margin-inline:auto;text-align:center}
+.pwa-hero{max-width:640px;margin:2px auto 0;font-size:clamp(23px,6vw,34px);line-height:1.15;font-weight:900;letter-spacing:-.01em;text-align:center}
+.pwa .eyebrow{margin:0 0 5px}
+.pwa h2{font-size:clamp(20px,5vw,28px);line-height:1.18;margin:0 0 18px;font-weight:900;letter-spacing:-.01em}
 .pwa__media{display:block;width:100%;max-width:420px;height:auto;margin:0 auto 26px;border-radius:16px}
-.pwa-steps{display:grid;gap:14px}
+.pwa-steps{display:grid;gap:14px;text-align:left}
 .pwa-step{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--plate),var(--header));border:1px solid var(--field);border-radius:16px;padding:14px 16px}
 .pwa-step__ic{flex:none;width:52px;height:52px;border-radius:15px;background:linear-gradient(135deg,#7535ff,#3d57ff);border:1px solid rgba(135,97,255,.55);display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(90,50,220,.6)}
 .pwa-step__ic svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .pwa-step__label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);margin-bottom:3px}
-.pwa-step__text{font-size:14px;line-height:1.45;color:var(--muted)}</style>
+.pwa-step__text{font-size:14px;line-height:1.45;color:var(--muted)}
+.pwa-step__cta{margin-top:12px}</style>
 </head>
 <body id="top">
 <header class="site-header">
@@ -396,11 +399,17 @@ body.has-sticky{padding-bottom:80px}
 
 <section class="section">
   <div class="wrap">
+    <h1 class="pwa-hero">Installe la PWA 1xCasino et reçois des bonus supplémentaires !</h1>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="wrap">
     <div class="pwa">
-      <h1>Comment installer PWA pour iOS</h1>
+      <p class="eyebrow">Installation</p>
+      <h2>Comment installer PWA pour iOS</h2>
       <img class="pwa__media" src="/assets/iospwa_fr.webp" alt="Comment installer PWA pour iOS" width="512" height="428" loading="lazy" decoding="async">
       <div class="pwa-steps">
-        <div class="pwa-step"><div class="pwa-step__ic"><svg viewBox="0 0 24 24"><path d="M12 3v13"/><path d="M8 7l4-4 4 4"/><path d="M6 12H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1"/></svg></div><div class="pwa-step__body"><div class="pwa-step__label">Étape 1</div><div class="pwa-step__text">Attendez que le site Web soit complètement chargé et appuyez sur le bouton « Partager »</div></div></div>
+        <div class="pwa-step"><div class="pwa-step__ic"><svg viewBox="0 0 24 24"><path d="M12 3v13"/><path d="M8 7l4-4 4 4"/><path d="M6 12H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1"/></svg></div><div class="pwa-step__body"><div class="pwa-step__label">Étape 1</div><div class="pwa-step__text">Allez sur 1xcasino-af-pwa.com et attendez que le site soit complètement chargé, puis appuyez sur le bouton « Partager »</div><a class="btn pwa-step__cta" href="https://1xcasino-af-pwa.com/" target="_blank" rel="noopener nofollow">Aller sur le site PWA iOS</a></div></div>
         <div class="pwa-step"><div class="pwa-step__ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8.5v7M8.5 12h7"/></svg></div><div class="pwa-step__body"><div class="pwa-step__label">Étape 2</div><div class="pwa-step__text">Sélectionnez « Ajouter à l'écran d'accueil »</div></div></div>
         <div class="pwa-step"><div class="pwa-step__ic"><svg viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg></div><div class="pwa-step__body"><div class="pwa-step__label">Étape 3</div><div class="pwa-step__text">Appuyez sur « Ajouter » dans le coin en haut à droite pour confirmer</div></div></div>
         <div class="pwa-step"><div class="pwa-step__ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 9"/></svg></div><div class="pwa-step__body"><div class="pwa-step__label">Étape 4</div><div class="pwa-step__text">1xCasino a été ajouté avec succès</div></div></div>
