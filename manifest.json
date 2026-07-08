@@ -15,6 +15,12 @@
     "entertainment",
     "games"
   ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://1xcasino-guide.com/manifest.json"
+    }
+  ],
   "icons": [
     {
       "src": "/assets/icons/icon-72.png",
