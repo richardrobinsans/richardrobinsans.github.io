@@ -16,6 +16,7 @@
 <meta name="description" content="This site isn't available to users in your region. Make sure any VPN or proxy is turned off and try again.">
 <link rel="alternate" hreflang="en" href="https://1xcasino-guide.com/block/">
 <link rel="alternate" hreflang="fr" href="https://1xcasino-guide.com/fr/block/">
+<link rel="alternate" hreflang="tr" href="https://1xcasino-guide.com/tr/block/">
 <link rel="alternate" hreflang="x-default" href="https://1xcasino-guide.com/block/">
 <style>
 :root{
@@ -90,10 +91,16 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .drawer__h{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
 .drawer__apps{margin-top:auto}
 .drawer__apps .btn{margin-bottom:10px;text-transform:none}
-.langsw{display:flex;flex-direction:column;gap:4px}
-.langsw a{padding:10px 12px;border-radius:9px;font-weight:700;color:var(--muted)}
-.langsw a:hover{background:var(--field);color:var(--text)}
-.langsw a[aria-current]{background:var(--violet);color:#fff}
+.langdd{position:relative}
+.langdd>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-radius:9px;font-weight:700;color:var(--text);background:var(--field);cursor:pointer;user-select:none}
+.langdd>summary::-webkit-details-marker{display:none}
+.langdd__cur{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.langdd__chev{flex:0 0 auto;color:var(--muted);transition:transform .2s}
+.langdd[open] .langdd__chev{transform:rotate(180deg)}
+.langdd__list{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.langdd__list a{padding:10px 12px;border-radius:9px;font-weight:700;color:var(--muted)}
+.langdd__list a:hover{background:var(--field);color:var(--text)}
+.langdd__list a[aria-current]{background:var(--violet);color:#fff}
 .gate__one{width:min(360px,100%);margin:30px auto 0}
 
 .hero{padding-block:clamp(28px,7vw,56px)}

@@ -16,6 +16,7 @@
 <meta name="description" content="Наглядное сравнение: приложение 1xCasino против браузера — загрузка, стабильность игр, экономия трафика и стабильный доступ к аккаунту.">
 <link rel="alternate" hreflang="en" href="https://1xcasino-guide.com/app-benefits/">
 <link rel="alternate" hreflang="fr" href="https://1xcasino-guide.com/fr/app-benefits/">
+<link rel="alternate" hreflang="tr" href="https://1xcasino-guide.com/tr/app-benefits/">
 <link rel="alternate" hreflang="x-default" href="https://1xcasino-guide.com/app-benefits/">
 <style>
 :root{
@@ -90,10 +91,16 @@ h1,h2,h3{line-height:1.18;font-weight:800;letter-spacing:-.01em}
 .drawer__h{display:block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
 .drawer__apps{margin-top:auto}
 .drawer__apps .btn{margin-bottom:10px;text-transform:none}
-.langsw{display:flex;flex-direction:column;gap:4px}
-.langsw a{padding:10px 12px;border-radius:9px;font-weight:700;color:var(--muted)}
-.langsw a:hover{background:var(--field);color:var(--text)}
-.langsw a[aria-current]{background:var(--violet);color:#fff}
+.langdd{position:relative}
+.langdd>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-radius:9px;font-weight:700;color:var(--text);background:var(--field);cursor:pointer;user-select:none}
+.langdd>summary::-webkit-details-marker{display:none}
+.langdd__cur{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.langdd__chev{flex:0 0 auto;color:var(--muted);transition:transform .2s}
+.langdd[open] .langdd__chev{transform:rotate(180deg)}
+.langdd__list{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.langdd__list a{padding:10px 12px;border-radius:9px;font-weight:700;color:var(--muted)}
+.langdd__list a:hover{background:var(--field);color:var(--text)}
+.langdd__list a[aria-current]{background:var(--violet);color:#fff}
 .gate__one{width:min(360px,100%);margin:30px auto 0}
 
 .hero{padding-block:clamp(28px,7vw,56px)}
@@ -461,7 +468,7 @@ body.has-sticky{padding-bottom:80px}
     <label for="navtoggle" class="drawer__close" aria-label="Close">×</label>
     <div class="drawer__sec">
       <span class="drawer__h">Язык</span>
-      <nav class="langsw" aria-label="Language"><a href="/app-benefits/">English</a><a href="/fr/app-benefits/">Français</a></nav>
+      <details class="langdd"><summary aria-label="Language"><span class="langdd__cur">Русский</span><svg class="langdd__chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><nav class="langdd__list" aria-label="Language"><a href="/app-benefits/">English</a><a href="/fr/app-benefits/">Français</a><a href="/tr/app-benefits/">Türkçe</a></nav></details>
     </div>
     <div class="drawer__sec drawer__apps">
       <a class="btn btn--block" href="/ru/android/"><svg class="os-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 8.5h-11A1.5 1.5 0 0 0 5 10v7a1.5 1.5 0 0 0 1.5 1.5H8V21a1 1 0 0 0 2 0v-2.5h4V21a1 1 0 0 0 2 0v-2.5h1.5A1.5 1.5 0 0 0 19 17v-7a1.5 1.5 0 0 0-1.5-1.5zM7.7 3.2a.5.5 0 0 1 .87-.5l1 1.74A6.4 6.4 0 0 1 12 4c.86 0 1.68.16 2.43.44l1-1.73a.5.5 0 1 1 .87.5l-.97 1.68A5.5 5.5 0 0 1 17.9 7.5H6.1a5.5 5.5 0 0 1 2.57-2.61z"/></svg> Android App</a>
